@@ -14,3 +14,8 @@ mixin footer-v02(btn, link)
     if (link)
       .footer__info
         a.footer__link(href='')= link
+
+mixin footer-v03(img)
+  .footer
+    button.footer__submit.btn._green
+      img(src=img)
