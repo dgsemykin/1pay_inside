@@ -1,0 +1,26 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/chosen-payway
+include ./layouts/currency
+include ./layouts/payment-info-row
+include ./layouts/payways
+include ./layouts/footer
+include ./layouts/outcard
+
+block content
+  .card
+    +header-v01('./files/logos/traffic.png', 'traffic.ru', 'Пожертвование с начислением 1000 бонусных баллов на счет Server x1000 fun.')
+    .card__body
+      .screen-1
+        +chosen-payway('Webmoney', './img/payways/webmoney.png')
+        +currency
+        .payment-info
+          +payment-info-row-max
+          +payment-info-row('Средства будут списаны с R-кошелька.', '_wallet')
+      .screen-2
+        +payways
+      .card__mouse
+        .card__mouse-inner
+    +footer-v01('Оплатить', '4 999', '00', '₽')
+    +outcard

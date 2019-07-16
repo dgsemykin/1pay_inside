@@ -1,0 +1,26 @@
+.profile-edit {
+	.profile-api__column {
+		width: 304px;
+	}
+	.profile-api__column + .profile-api__column {
+		margin-left: 60px;
+	}
+	&__add-email {
+		position: absolute;
+		bottom: 4px;
+		left: 100%;
+		margin-left: 12px;
+		white-space: nowrap;
+	}
+	&__remove-email {
+		display: block;
+		position: absolute;
+		right: -25px;
+		bottom: 15px;
+		width: 10px;
+		height: 10px;
+		background: data-uri('../../img/profile/remove.svg') no-repeat;
+		background-size: 10px;
+		cursor: pointer;
+	}
+}

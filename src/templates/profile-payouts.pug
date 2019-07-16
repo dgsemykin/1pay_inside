@@ -1,0 +1,265 @@
+extends ./layouts/profile/index
+
+include ./layouts/field
+include ./layouts/select-field
+include ./layouts/switch
+include ./layouts/payment-info-row
+include ./layouts/field
+
+block content
+
+  .payouts.content-panel
+    .content-panel__header
+      .content-panel__header-caption Выплаты
+    .project-settings__docs Вы можете переводить выплаты себе и своим партнерам, используя #[a(href='#') удобный API].
+    .content-panel__title Шаблоны выплат
+    table.table-projects.payouts__table
+      thead
+        tr
+          th._type Тип
+          th._name
+            .sort
+              .sort__title Название
+              .sort__arrow._asc._active
+          th._payway
+            .sort
+              .sort__title Платежная система
+              .sort__arrow._asc
+          th._number Номер счета
+          th._regularity Регулярность платежей
+          th._active Активирован
+          th._action Действия
+      tbody.list
+        tr.table-projects__row
+          td._type: img(src='./img/type-icon/card.svg')
+          td._name Игорь Visa
+          td._payway Карты
+          td._number Visa*2385
+          td._regularity: form
+            | Каждый
+            +inline-select(value='день', name='regularity', options=[{caption: 'День', value: 'day', checked:true}, {caption: 'Неделя', value: 'week'}, {caption: 'Месяц', value: 'month'}])
+          td._active: +switch('', true)
+          td._action
+            .content-panel__actions
+              button.btn._green._small(data-event='popup', data-popup='new-payment') Создать платёж
+              .content-panel__action._edit
+              .content-panel__action._remove
+        tr.table-projects__row
+          td._type: img(src='./img/type-icon/webmoney.svg')
+          td._name Миха WM
+          td._payway Webmoney
+          td._number R23564712004
+          td._regularity
+          td._active: +switch
+          td._action
+            .content-panel__actions
+              button.btn._green._small(data-event='popup', data-popup='new-payment') Создать платёж
+              .content-panel__action._edit
+              .content-panel__action._remove
+        tr.table-projects__row
+          td._type: img(src='./img/type-icon/qiwi.svg')
+          td._name Андрей КиВи
+          td._payway QIWI
+          td._number +79096121710
+          td._regularity
+          td._active: +switch
+          td._action
+            .content-panel__actions
+              button.btn._green._small(data-event='popup', data-popup='new-payment') Создать платёж
+              .content-panel__action._edit
+              .content-panel__action._remove
+        tr.table-projects__row
+          td.payouts__row-btn(colspan='7')
+            span.payouts__create-template.tooltip
+              img(src='./img/icons/plus-black.svg')
+              .tooltip__text._right._inverse Создать шаблон
+
+
+  .payouts.content-panel
+    .content-panel__header
+      .content-panel__header-caption Детализация
+      .content-panel__header-item._transaction
+        | Количество выплат:
+        span 10263
+
+      .content-panel__header-item._amount-of-income
+        | За период:
+        span 11.07.18 - 18.07.18
+      .content-panel__header-item._calendar
+        .datepicker-wrapper
+          .datepicker-wrapper__icon: img(src="./img/calendar.svg")
+          .datepicker-wrapper__text.datepicker-wrapper__text_gray.js-datepicker Выберите период
+    .content-panel__search
+      .content-panel__search-item
+        +field('search', 'поиск', '№ выплаты, № счета, сумма', './img/search.svg')(class="icons-bg-clean pl-to-icon")
+      .content-panel__filter-item._status
+        +muili-select(
+        [
+          {
+            options: [
+              {label: 'В обработке', value: '0', className: 'status status_blue'},
+              {label: 'Выполнено', value: '1', className: 'status status_success'},
+              {label: 'Ошибка', value: '2', className: 'status status_danger'}
+            ]
+          }
+        ],
+        'Статус платежа',
+        '_middle'
+        )
+      .content-panel__filter-item._payways
+        +muili-select(
+        [
+          {
+            title: 'Банковские карты',
+            options: [
+              {label: 'Mastercard', value: '0', img: './img/type-icon/mastercard.svg'},
+              {label: 'Visa', value: '1', img: './img/type-icon/visa.svg'},
+              {label: 'Maestro', value: '2', img: './img/type-icon/maestro.svg'},
+              {label: 'МИР', value: '3', img: './img/type-icon/mir.svg'}
+            ]
+          },
+          {
+            title: 'Электронные кошельки',
+            options: [
+              {label: 'Webmoney', value: '4', img: './img/type-icon/webmoney.svg'},
+              {label: 'QIWI', value: '5', img: './img/type-icon/qiwi.svg'},
+              {label: 'Яндекс.Деньги', value: '6', img: './img/type-icon/yamoney.svg'},
+              {label: 'Viber', value: '7', img: './img/type-icon/viber.svg'}
+            ]
+          },
+          {
+            title: 'Платежные системы',
+            options: [
+              {label: 'Apple Pay', value: '8', img: './img/type-icon/applepay.svg'},
+              {label: 'Samsung Pay', value: '9', img: './img/type-icon/samsung-pay.svg'},
+              {label: 'Альфа-Банк', value: '10', img: './img/type-icon/alfabank.svg'},
+              {label: 'Промсвязьбанк', value: '11', img: './img/type-icon/promsvyazbank.svg'}
+            ]
+          },
+          {
+            title: 'Цифровая валюта',
+            options: [
+              {label: 'Bitcoin', value: '12', img: './img/type-icon/bitcoin.svg'},
+              {label: 'Litecoin', value: '13', img: './img/type-icon/litecoin.svg'},
+              {label: 'Dashcoin', value: '14', img: './img/type-icon/dashcoin.svg'},
+              {label: 'Etherium', value: '15', img: './img/type-icon/etherium.svg'},
+              {label: 'Zcoin', value: '16', img: './img/type-icon/zcoin.svg'}
+            ]
+          }
+        ],
+        'Платежная система',
+        '_middle'
+        )
+      .content-panel__filter-item
+        +muili-select(
+        [
+          {
+            options: [
+              {label: 'Вручную', value: '1'},
+              {label: 'По расписанию', value: '2'},
+              {label: 'По API', value: '3'}
+            ]
+          }
+        ],
+        'Способ выплат',
+        '_middle'
+        )
+      .operation__container
+        .operation._csv.js-call-context Выгрузить CSV
+        .context-menu
+          .context-menu__item Все
+          .context-menu__item Выбранные
+    table.table-projects.payouts__table
+      thead
+        tr
+          th._pay-number
+            .sort
+              .sort__title № выплаты
+              .sort__arrow._asc._active
+          th._date
+            .sort
+              .sort__title Дата
+              .sort__arrow._asc
+          th._bill-number
+            .sort
+              .sort__title № счета
+              .sort__arrow._asc
+          th._sum
+            .sort
+              .sort__title Сумма
+              .sort__arrow._asc
+          th._enrol
+            .sort
+              .sort__title К зачислению
+              .sort__arrow._asc
+          th._status
+            .sort
+              .sort__title Статус
+              .sort__arrow._asc
+          th._method
+            .sort
+              .sort__title Способ
+              .sort__arrow._asc
+      tbody.list
+        tr.table-projects__row
+          td._pay-number 1
+          td._date 31.07.18 12:56:11
+          td._bill-number
+            .account
+              .account__icon
+                img(src="./img/type-icon/beeline.svg")
+              .account__number 79683647867
+          td._sum 145 ₽
+          td._enrol 134 ₽
+          td._status: .status.status_blue В обработке
+          td._method Вручную
+        tr.table-projects__row
+          td._pay-number 2
+          td._date 31.07.18 12:56:14
+          td._bill-number
+            .account
+              .account__icon
+                img(src="./img/type-icon/mts.svg")
+              .account__number 79169876080
+          td._sum 456 ₽
+          td._enrol 427 ₽
+          td._status: .status.status_success Выполнено
+          td._method По расписанию
+        tr.table-projects__row
+          td._pay-number 3
+          td._date 31.07.18 12:56:15
+          td._bill-number
+            .account
+              .account__icon
+                img(src="./img/type-icon/bitcoin.svg")
+              .account__number 36klM563Wky720PRq178
+          td._sum 9 832 ₽
+          td._enrol 9 613 ₽
+          td._status: .status.status_danger Ошибка
+          td._method По API
+
+  .popup.new-payment(data-popup='new-payment')
+    .popup__header
+      .popup__title Новый платеж
+      .popup__sub-title По шаблону: Андрей КиВи
+      .popup__close(data-event="popup-close", data-popup='new-payment')
+    .popup__body
+      .new-payment__row
+        .field__label Сумма к выплате
+        .new-payment__note Максимум
+          a.amount(href='#', data-fill='345 500.00', data-field='amount')
+            .amount__integer 345 500
+            .amount__float 00
+            .amount__currency
+        .field
+          label.field__body
+            input.field__input(type='text', data-field='amount')
+            .field__icon
+              img(src='./img/icons/rub.svg')
+      +payment-info-row('Комиссия 2,5% спишется с баланса', '_alert')
+    .popup__footer
+      button.btn._green(data-event="popup-close", data-popup='new-payment') Отправить
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(5)').classList.add('active');

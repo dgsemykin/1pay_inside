@@ -1,0 +1,21 @@
+extends ./layouts/auth/index
+
+include ./layouts/checkbox
+include ./layouts/field
+include ./layouts/radio
+
+block content
+  .auth.auth_small
+    .auth__header.auth__header_logo-to-up
+      .auth__title.auth__title_with-button
+        |Восстановление пароля
+        button: img(src="./img/arrow-left.svg")
+      .auth__logo
+        img(src="./files/logos/mpay.png", srcset="./files/logos/mpay.png 1x, ./files/logos/mpay@2x.png 2x, ./files/logos/mpay@3x.png 3x,", alt="Mpay")
+
+    .auth__body
+      .auth__description Для восстановления пароля введите адрес электронной почты, указанный при регистрации.
+      .auth__field.auth__field_big-mb
+        +field('email', 'АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ', 'my@company.ru', './img/email.svg', null, false, 'Введите ваш адрес электронной почты')
+      .auth__footer.auth__footer_right
+        button.button__item.button__item_green.button__item_footer() Отправить

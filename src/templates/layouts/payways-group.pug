@@ -1,0 +1,9 @@
+include ./payway
+
+mixin payways-group(group)
+  .payways__group
+    if (group.title)
+      .payways__title= group.title
+    .payways__list
+      each logo in group.logos
+        +payway(logo)

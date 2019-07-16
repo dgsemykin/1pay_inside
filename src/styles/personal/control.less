@@ -1,0 +1,93 @@
+.control {
+	display: flex;
+	flex-wrap: nowrap;
+	&__item {
+		position: relative;
+		width: 16px;
+		height: 16px;
+		flex: 0 0 16px;
+		margin-left: 12px;
+		margin-right: 12px;
+		cursor: pointer;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -21px;
+			left: 0;
+			height: 4px;
+			width: 100%;
+		}
+		&:hover {
+			&:after {
+				background: #272424;
+			}
+			&._active:after {
+				background: #4caf50;
+			}
+			.context-menu {
+				display: block;
+			}
+		}
+		&:first-of-type {
+			margin-left: 0;
+		}
+		&:last-of-type {
+			margin-right: 0;
+		}
+		&._notice {
+			background: data-uri('../../img/notification.svg');
+		}
+		&._support {
+			background: data-uri('../../img/cvc.svg');
+		}
+		&._nav {
+			background: data-uri('../../img/approved-wallet.svg');
+		}
+		&._active {
+			&._notice {
+				background: data-uri('../../img/notification-green.svg');
+			}
+			&._support {
+				background: data-uri('../../img/cvc-green.svg');
+			}
+			&._nav {
+				background: data-uri('../../img/approved-wallet-green.svg');
+			}
+		}
+	}
+	&__counter {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		padding: 3px 6px;
+		background-color: @red;
+		border-radius: 9px;
+		color: #fff;
+		font-size: 10px;
+		font-weight: bold;
+
+		transform: translate(0, -50%);
+		z-index: 2;
+	}
+	.context-menu {
+		right: 0;
+		margin-top: 40px;
+		&:before {
+			content: '';
+			position: absolute;
+			top: -24px;
+			left: 0;
+			width: 100%;
+			height: 24px;
+			opacity: 0;
+			z-index: 1;
+		}
+		&._nav {
+			width: 125px;
+		}
+		&._notice {
+			width: 250px;
+		}
+	}
+}

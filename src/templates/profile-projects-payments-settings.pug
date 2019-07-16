@@ -1,0 +1,41 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/project-info
+include ./layouts/profile/payment-preview
+include ./layouts/field
+include ./layouts/select-field
+
+block content
+  .panel
+    +project-info
+    .panel__tabs.tabs
+      .tabs__item._current Настройки проекта
+      .tabs__item Тарифы и комиссии
+      .tabs__item Настройки формы оплаты
+      .tabs__item Виджет оплаты
+    .panel__body
+      .project-settings
+        .project-settings__docs: a(href='#') Документация по настройке формы оплаты
+        .project-settings__row
+          .file-upload
+            .file-upload__label Логотип
+            .file-upload__container
+              label.file-upload__input-wrap
+                input.file-upload__input(type='file')
+              .file-upload__info
+                .file-upload__caption Файл не загружен
+                .file-upload__note Максимальный размер логотипа – #[b 36х150рх].
+                .file-upload__note Допустимые форматы для загрузки – #[b jpg и png].
+                button.file-upload__btn.btn._silver._small(data-event='popup', data-popup='payment-preview') Предпросмотр
+        .project-settings__notice Вы можете перенаправлять пользователя на разные страницы в случае успешной и не успешной оплаты. Оставьте поля пустыми, если не планируете использовать эту функцию.
+        .project-settings__row
+          +field('', 'Success url', 'website.ru/success', './img/profile/success-url.svg')
+        .project-settings__row
+          +field('', 'Fail url', 'website.ru/fail', './img/profile/fail-url.svg')
+
+      button.btn._green Сохранить
+  +payment-preview
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(3)').classList.add('active');

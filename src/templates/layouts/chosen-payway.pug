@@ -1,0 +1,11 @@
+mixin chosen-payway(payway, logo, noChange)
+  .chosen-payway(class=noChange ? '_no-change' : '')
+    .chosen-payway__title= payway
+    img.chosen-payway__logo(src!=logo)
+    if (!noChange)
+      .chosen-payway__change
+        | Другие
+        br
+        | способы
+        br
+        | оплаты

@@ -1,0 +1,37 @@
+include ./checkbox
+include ./radio
+
+mixin select-field(selectId, options, label)
+  if label
+    .field__label= label
+  select.select-input(id!=selectId)
+    each option in options
+      option(value!=option.value, seleced!=option.selected)= option.label
+
+mixin muili-select(groups, label, className)
+  if label
+    .field__label= label
+  .multi-select(class!=className)
+    .multi-select__value
+    .multi-select__container
+      .multi-select__list
+        if (groups.length > 1)
+          each group in groups
+            h3.multi-select__subtitle= group.title
+            div
+              each option in group.options
+                .multi-select__option
+                  +checkbox(option.label, option.selected, false, option.value, option.img, option.className)
+        else
+          each option in groups[0].options
+            .multi-select__option
+              +checkbox(option.label, option.selected, false, option.value, option.img, option.className)
+
+mixin inline-select
+  .inline-select
+    .inline-select__value= attributes.value || attributes.default
+    .inline-select__container
+      .inline-select__list
+        each option in attributes.options
+          .inline-select__option
+            +radio(attributes.name, option.caption, option.checked, option.disabled, option.value)

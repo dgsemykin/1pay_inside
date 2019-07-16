@@ -1,0 +1,7 @@
+mixin ticket
+  .ticket(class=attributes.active ? '_active' : '')
+    .ticket__title= attributes.title
+    .ticket__date= attributes.date
+    if (attributes.status)
+      .ticket__status.status(class= attributes.status.class)= attributes.status.msg
+    .ticket__msg= attributes.msg

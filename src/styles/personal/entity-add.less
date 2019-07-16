@@ -1,0 +1,64 @@
+@left-margin: 98px;
+
+.entity-add {
+	position: relative;
+	width: 415px;
+	margin: 120px auto 140px;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		width: 73px;
+		height: 64px;
+	}
+	&._project {
+		&:before {
+			top: -16px;
+			background: data-uri('../../img/profile/briefcase.svg') no-repeat;
+		}
+		.entity-add__btn {
+			width: 110px;
+		}
+	}
+	&._payouts {
+		&:before {
+			top: -13px;
+			background: data-uri('../../img/profile/payouts.svg') no-repeat;
+		}
+		.entity-add__btn {
+			width: 162px;
+		}
+	}
+	&._profile {
+		width: 465px;
+		&:before {
+			top: 4px;
+			background: data-uri('../../img/profile/employees.svg') no-repeat;
+		}
+		.entity-add__btn {
+			width: 226px;
+		}
+	}
+	&__caption {
+		line-height: 24px;
+		padding-left: @left-margin;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #ebebeb;
+		font-size: 20px;
+		color: #7b7b7b;
+	}
+	&__btn {
+		margin-top: 16px;
+		margin-left: @left-margin;
+		.btn__icon {
+			margin-right: 15px;
+		}
+	}
+	&__link {
+		color: #272424;
+	}
+	&__btn + &__link {
+		margin-left: 24px;
+	}
+}

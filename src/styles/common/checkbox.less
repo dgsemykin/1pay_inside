@@ -1,0 +1,58 @@
+@import '../variables';
+
+.checkbox {
+	display: block;
+	position: relative;
+	height: 16px;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		background-image: linear-gradient(to top, #4caf50, @lightGreen);
+		border-radius: 2px;
+		z-index: 1;
+	}
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 9;
+	}
+	&__button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		background: #ffffff;
+		border: solid 1px #d8d8d8;
+		border-radius: 2px;
+		z-index: 7;
+	}
+	&__icon {
+		vertical-align: top;
+		margin: 0 12px 0 -2px;
+	}
+	&__label {
+		margin-left: 30px;
+	}
+	&__text {
+		display: inline-block;
+		vertical-align: top;
+		height: 16px;
+		line-height: 20px;
+	}
+	&__input:checked + &__button {
+		border-color: #43a047;
+		background: data-uri('../../img/check.svg') no-repeat center transparent;
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+	}
+	&__input:disabled + &__button {
+		background: #ebebeb;
+		border-color: #d8d8d8;
+	}
+}

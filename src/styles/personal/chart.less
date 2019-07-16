@@ -1,0 +1,82 @@
+@import '../variables';
+
+.chart {
+  position: relative;
+  // padding: 18px 16px;
+
+  &_active {
+    display: block !important;
+  }
+
+  &_line {
+    display: none;
+    height: 350px;
+  }
+  &_bar {
+    display: none;
+    height: 350px;
+  }
+  &_pie {
+    display: none;
+    .activePie & {
+      display: block;
+    }
+    @size: 218px;
+    height: @size;
+    width: @size;
+
+    margin: 0 auto;
+  }
+}
+
+.chartjs-tooltip {
+  padding: 16px;
+  opacity: 1;
+  position: absolute;
+  background: #272424;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all .1s ease;
+  pointer-events: none;
+  transform: translate(-50%, 0);
+
+  font-family: Roboto, Arial, sans-serif;
+
+  table {
+    width: 174px;
+  }
+
+  th {
+    height: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    font-weight: bold;
+    font-size: 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  td {
+    padding-top: 6px;
+    width: 92px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    vertical-align: top;
+  }
+
+  .paid {
+    color: #4BC0C0;
+  }
+
+  .unpaid {
+    color: #FF6383;
+  }
+}
+
+.chartjs-tooltip-key {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}

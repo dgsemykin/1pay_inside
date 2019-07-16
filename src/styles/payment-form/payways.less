@@ -1,0 +1,37 @@
+@import '../variables';
+
+.payways {
+	overflow: hidden;
+	padding: 25px @padding 0;
+	margin: 0 -@padding;
+	border-top: 1px solid #d8d8d8;
+	&__group {
+		margin-bottom: 16px;
+	}
+	&__title {
+		line-height: 11px;
+		margin-bottom: 12px;
+		font-size: 10px;
+		font-weight: 700;
+		color: #272424;
+		text-transform: uppercase;
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.payway {
+		margin-right: 8px;
+		margin-bottom: 8px;
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+	&._hidden {
+		overflow: hidden;
+		padding: 0;
+		height: 0;
+		border: 0;
+		margin: 0;
+	}
+}

@@ -1,0 +1,46 @@
+.tns {
+	&-inner {
+		overflow: hidden;
+		margin: 0 auto!important;
+	}
+	&-controls {
+		width: 0;
+		height: 0;
+		z-index: 12;
+		button[data-controls="next"],
+		button[data-controls="prev"] {
+			display: none;
+			position: absolute;
+			top: 0;
+			width: 86px;
+			height: 86px;
+			cursor: pointer;
+			z-index: 11;
+			&:hover:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				width: 18px;
+				height: 17px;
+			}
+		}
+		button[data-controls="prev"] {
+			left: 0;
+			background: data-uri('../../img/slide-shadow-start.png') no-repeat;
+			&:hover:before {
+				left: 16px;
+				background: data-uri('../../img/arrow-left.svg') no-repeat;
+			}
+		}
+		button[data-controls="next"] {
+			right: 0;
+			background: data-uri('../../img/slide-shadow-end.png') no-repeat;
+			&:before {
+				right: 16px;
+				background: data-uri('../../img/arrow-right.svg') no-repeat;
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+@import '../variables';
+
+@blue: #0288d1;
+@border-color-hover: #29b6f6;
+@border-color-active: #0288d1;
+
+.currency {
+	padding: 23px 0 0;
+	&__caption {
+		line-height: 11px;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-weight: 700;
+		margin-bottom: 11px;
+	}
+	&__list {
+		display: flex;
+	}
+	&__item {
+		width: 60px;
+		height: 40px;
+		line-height: 38px;
+		margin-right: 8px;
+		text-align: center;
+		color: #272424;
+		border: 1px solid #d9d9d9;
+		cursor: pointer;
+		&:hover {
+			border-color: @border-color-hover;
+		}
+		&:active {
+			border-color: @border-color-active;
+		}
+		&._selected {
+			&:hover {
+				border-color: @border-color-hover;
+				color: @border-color-hover;
+			}
+			&,
+			&:active {
+				border-color: @border-color-active;
+				color: @border-color-active;
+			}
+		}
+	}
+}

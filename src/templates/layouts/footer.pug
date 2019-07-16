@@ -1,0 +1,16 @@
+mixin footer-v01(btn, integer, float, currency, info)
+  .footer
+    button.footer__submit.btn._green
+      =btn
+      .footer__integer= integer
+      .footer__float= float
+      .footer__currency= currency
+    if (info)
+      .footer__info= info
+
+mixin footer-v02(btn, link)
+  .footer
+    button.footer__submit.btn._green= btn
+    if (link)
+      .footer__info
+        a.footer__link(href='')= link

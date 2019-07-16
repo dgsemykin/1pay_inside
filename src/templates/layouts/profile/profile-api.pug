@@ -1,0 +1,20 @@
+extends index
+
+include project-info
+
+block content
+  .panel
+    +partner-info
+    .panel__tabs.tabs
+      .tabs__item Профиль
+      .tabs__item Безопасность
+      .tabs__item._current Настройка API
+      .tabs__item Уведомления
+      .tabs__item Активность
+      .tabs__item Идентификация
+    .panel__body
+      block api
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.profile-header__controls .control__item:nth-child(3)').classList.add('_active');

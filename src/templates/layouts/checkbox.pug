@@ -1,0 +1,9 @@
+mixin checkbox(caption, checked, disabled, value, img, className)
+  label.checkbox
+    input.checkbox__input(type='checkbox', checked!=checked, disabled!=disabled, value!=value)
+    .checkbox__button
+    if (caption)
+      .checkbox__label
+        if (img)
+          img.checkbox__icon(src!=img)
+        span.checkbox__text(class!=className)= caption

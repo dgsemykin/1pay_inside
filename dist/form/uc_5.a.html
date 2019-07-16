@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900&amp;amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="./css/payment-form.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="header">
+          <div class="header__top">
+            <div class="header__info">
+              <div class="header__title"><a href="/">pst.parkside.agency</a></div>
+            </div>
+            <div class="header__logo"><img src="./files/logos/PST.png"/></div>
+          </div>
+          <div class="header__caption">Счет №27</div>
+        </div>
+        <div class="card__body">
+          <div class="chosen-payway">
+            <div class="chosen-payway__title">Mastercard</div><img class="chosen-payway__logo" src="./img/payways/mastercard.png"/>
+            <div class="chosen-payway__change">Другие<br/>способы<br/>оплаты</div>
+          </div>
+          <form class="card-form">
+            <div class="card-form__row">
+              <div class="field card-form__number _required">
+                <div class="field__label">Номер карты</div>
+                <label class="field__body">
+                  <input class="field__input" type="text" placeholder="0000   0000   0000   0000"/>
+                  <div class="field__icon"><img src="./img/card.png" width="16"/></div>
+                </label>
+              </div>
+            </div>
+            <div class="card-form__row">
+              <div class="card-form__row">
+                <div class="field card-form__validity">
+                  <div class="field__label">Месяц / год</div>
+                  <label class="field__body">
+                    <input class="field__input" type="text" placeholder="00      00"/>
+                    <div class="field__icon"><img src="./img/calendar.png"/></div>
+                  </label>
+                </div>
+              </div>
+              <div class="field card-form__cvc">
+                <div class="field__label">CVC</div>
+                <label class="field__body">
+                  <input class="field__input" type="text" placeholder="000"/>
+                  <div class="field__icon tooltip"><img src="./img/cvc.png"/>
+                    <div class="tooltip__text">CVC код располагается на обратной стороне карты.</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </form>
+          <div class="payment-info">
+            <div class="payment-info__row">
+              <div class="payment-info__icon _protected"></div>
+              <div class="payment-info__text">Безопасность платежей PCI DSS.</div>
+            </div>
+            <label class="payment-info__row _accept">
+              <div class="payment-info__icon">
+                <label class="checkbox">
+                  <input class="checkbox__input" type="checkbox"/>
+                  <div class="checkbox__button"></div>
+                </label>
+              </div>
+              <div class="payment-info__text">Выражаю согласие с &#8203;<a href="/" target="_blank">офертой.</a></div>
+            </label>
+          </div>
+        </div>
+        <div class="footer">
+          <button class="footer__submit btn _green">Оплатить
+            <div class="footer__integer">1 420</div>
+            <div class="footer__float">47</div>
+            <div class="footer__currency">₽</div>
+          </button>
+          <div class="footer__info">Платеж включает все сборы</div>
+        </div>
+        <div class="outcard">
+          <div class="outcard__icon _msg"></div>
+          <div class="outcard__icon _lang">EN</div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/libs/perfect-scrollbar.min.js"></script>
+    <script src="./js/libs/tiny-slider.min.js"></script>
+    <script src="./js/libs/text-mask.min.js"></script>
+    <script src="./js/libs/vanilla-js-select.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

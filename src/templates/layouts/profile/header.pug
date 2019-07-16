@@ -1,0 +1,22 @@
+include ../profile/notice-context
+
+.profile-header
+  .profile-header__logo
+    img(src="./files/logos/mpay.png", alt="Mpay", srcset="./files/logos/mpay.png 1x, ./files/logos/mpay@2x.png 2x, ./files/logos/mpay@3x.png 3x")
+  .profile-header__content
+    .profile-header__amount.amount
+      .amount__integer 345 617
+      .amount__float 23
+      .amount__currency
+    .profile-header__controls
+      .control
+        .control__item._notice
+          .control__caller.js-call-context
+          +notice-context
+          .control__counter 999
+        .control__item._support
+        .control__item._nav
+          .control__caller.js-call-context
+          .context-menu._nav
+            .context-menu__item Настройки
+            .context-menu__item Выйти

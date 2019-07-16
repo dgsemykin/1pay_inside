@@ -1,0 +1,26 @@
+@import '../variables';
+
+.bill-info {
+	margin-top: 24px;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	border-top: 1px solid #d8d8d8;
+	&__row {
+		display: flex;
+		line-height: 11px;
+		margin-bottom: 15px;
+	}
+	&__caption {
+		width: 106px;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 10px;
+	}
+	&__value {
+		max-width: 250px;
+		font-size: 12px;
+		&._success {
+			color: @lightGreen;
+		}
+	}
+}

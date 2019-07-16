@@ -1,0 +1,59 @@
+.inline-select {
+	position: relative;
+	display: inline;
+	&.is-open &__container {
+		display: block;
+		height: auto;
+		opacity: 1;
+	}
+	&__value {
+		display: inline;
+		text-transform: lowercase;
+		border-bottom: 1px dashed #272424;
+		cursor: pointer;
+	}
+	&__container {
+		display: none;
+		position: absolute;
+		left: -40px;
+		height: 0;
+		padding: 4px 0;
+		margin: 4px 0 0;
+		background: #ffffff;
+		border-radius: 4px;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+		transition: .2s linear;
+		opacity: 0;
+		z-index: 999;
+	}
+	&__list {
+		position: relative;
+		overflow: hidden;
+		min-width: 100%;
+		max-height: 180px;
+		list-style: none;
+	}
+	&__option {
+		line-height: 16px;
+		padding: 0 21px 0 12px;
+		white-space: nowrap;
+		cursor: pointer;
+		&:hover {
+			background-color: #f2f2f2;
+		}
+		.radio {
+			display: flex;
+			align-items: center;
+			height: 32px;
+			padding: 8px 0;
+			&:before,
+			&__button {
+				top: 8px;
+			}
+			&__label {
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}

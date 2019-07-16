@@ -1,0 +1,48 @@
+.security-popup {
+	width: 915px;
+	&__body {
+		display: flex;
+		padding-top: 25px;
+	}
+	&__column {
+		& + & {
+			margin-left: 35px;
+		}
+		&._settings {
+			width: 305px;
+		}
+		&._qr {
+			width: 205px;
+		}
+		&._form {
+			flex-grow: 1;
+		}
+	}
+	&__row {
+		& + & {
+			margin-top:19px;
+		}
+	}
+	&__app {
+		margin-top: 23px;
+		img {
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 10px;
+			margin-right: 15px;
+		}
+	}
+	&__qr-code {
+		display: block;
+		margin: auto;
+	}
+	&__title {
+		line-height: 21px;
+		margin-bottom: 24px;
+		font-size: 18px;
+		font-weight: 500;
+	}
+	.alert {
+		margin-bottom: 12px;
+	}
+}

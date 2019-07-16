@@ -1,0 +1,36 @@
+extends ./layouts/profile/index
+
+include ./layouts/field
+
+block content
+  .panel
+    .panel__caption: .panel__caption-title Поддержка
+    .panel__body
+      .create-ticket
+        .create-ticket__subtitle Ваш персональный менеджер:
+        .create-ticket__manager Игорь Царевич
+        .create-ticket__contacts
+          .create-ticket__contacts-label Контакты:
+          .create-ticket__contact
+            .create-ticket__contact-icon: img(src='./img/profile/phone.svg')
+            | +7 962 941 56 66
+          .create-ticket__contact
+            .create-ticket__contact-icon: img(src='./img/profile/skype.svg')
+            | igor84
+          .create-ticket__contact
+            .create-ticket__contact-icon: img(src='./img/email.svg')
+            | ichar@mpay.ru
+          .create-ticket__contact
+            .create-ticket__contact-icon: img(src='./img/profile/telegram.svg')
+            | igor84
+        .create-ticket__form
+          .create-ticket__row
+            +field-textarea(class='_with-icon', label='Опишите вашу проблему', placeholder='Сообщение', icon='./img/profile/description.svg')
+          .create-ticket__row
+            button.btn._green Отправить
+            label.create-ticket__attach Прикрепить файл
+              input(type='file')
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.profile-header__controls .control__item:nth-child(2)').classList.add('_active');

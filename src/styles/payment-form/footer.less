@@ -1,0 +1,42 @@
+@import '../variables';
+
+.footer {
+	display: flex;
+	padding: @padding;
+	border-top: 1px solid #d8d8d8;
+	&._hidden {
+		display: none;
+	}
+	&__info {
+		position: absolute;
+		left: 16px;
+		line-height: 36px;
+		align-self: center;
+		color: #7b7b7b;
+	}
+	&__submit {
+		display: flex;
+	}
+	& &__submit {
+		margin-left: auto;
+	}
+	&__integer {
+		margin-left: 4px;
+	}
+	&__lang {
+		margin-right: 15px;
+	}
+	&__help {
+		display: inline-flex;
+		align-self: center;
+	}
+	&__float {
+		align-self: flex-start;
+		margin-top: -2px;
+		margin-left: 4px;
+		font-size: 10px;
+	}
+	&__currency {
+		margin-left: 4px;
+	}
+}

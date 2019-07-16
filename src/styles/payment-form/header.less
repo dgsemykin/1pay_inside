@@ -1,0 +1,47 @@
+@import '../variables';
+
+.header {
+	padding: 16px 16px 12px;
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+	}
+	&__logo {
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&__title {
+		font-size: 22px;
+		font-weight: 900;
+		a {
+			color: @base-text-color;
+		}
+	}
+	&__caption {
+		margin-top: 3px;
+		font-size: 12px;
+		color: #7b7b7b;
+	}
+	&__result-bill {
+		font-size: 22px;
+		font-weight: 900;
+	}
+	&._bill {
+		padding-bottom: 0;
+	}
+	&._with-bg {
+		height: 139px;
+		background: center no-repeat;
+		.header__title a {
+			color: #ffffff;
+		}
+		.header__caption {
+			font-weight: 500;
+			color: #ffffff;
+		}
+	}
+}

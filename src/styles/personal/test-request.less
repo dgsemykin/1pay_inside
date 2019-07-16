@@ -1,0 +1,22 @@
+.test-request {
+	width: 515px;
+	&__row {
+		display: flex;
+		& + & {
+			margin-top: 15px;
+		}
+	}
+	&__column {
+		width: 150px;
+		& + & {
+			margin-left: 16px;
+		}
+	}
+	.field,
+	.js-Select {
+		width: 100%;
+	}
+	.field__textarea {
+		height: 121px;
+	}
+}

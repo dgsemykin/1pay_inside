@@ -1,0 +1,64 @@
+@import '../variables';
+
+.alert {
+	display: flex;
+	flex-direction: column;
+	align-content: start;
+	position: relative;
+	min-height: 56px;
+	padding: 12px 16px 12px 64px;
+	margin: 24px 0 0;
+	border-radius: 4px;
+	border: solid 1px;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 16px;
+		width: 32px;
+		height: 32px;
+		margin: auto;
+		background: center no-repeat;
+	}
+	&__title {
+		font-weight: 700;
+	}
+	&__row {
+		line-height: 16px;
+		margin: auto 0;
+	}
+	&._warning {
+		color: #f57f17;
+		border-color: #f57f17;
+		background: #fffef0;
+		&:before {
+			background-image: data-uri('../../img/warning.svg');
+		}
+	}
+	&._await {
+		color: #0288d1;
+		border-color: #0288d1;
+		background: #e1f5fe;
+		&:before {
+			background-image: data-uri('../../img/await.svg');
+		}
+	}
+	&._success {
+		color: @lightGreen;
+		border-color: @lightGreen;
+		background: #e8f5e9;
+		&:before {
+			background-image: data-uri('../../img/success.svg');
+		}
+	}
+	&._fail {
+		color: #e53935;
+		border-color: #e53935;
+		background: #ffebee;
+		&:before {
+			background-image: data-uri('../../img/fail.svg');
+		}
+	}
+}

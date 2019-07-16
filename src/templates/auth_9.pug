@@ -1,0 +1,32 @@
+extends ./layouts/auth/index
+
+include ./layouts/checkbox
+include ./layouts/field
+include ./layouts/radio
+
+block content
+  .auth.auth_small
+    .auth__header.auth__header_logo-to-up
+      .auth__title Войти
+      .auth__logo
+        img(src="./files/logos/mpay.png", srcset="./files/logos/mpay.png 1x, ./files/logos/mpay@2x.png 2x, ./files/logos/mpay@3x.png 3x,", alt="Mpay")
+
+    .auth__body
+      .auth__field
+        +field('email', 'АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ', 'my@company.ru', './img/email.svg', null, false, 'Введите ваш адрес электронной почты')
+      .auth__field
+        .field.auth__pass
+          .field__label ПАРОЛЬ
+          label.field__body
+            input.field__input#inputPassword(type='password', placeholder='********')
+            .field__icon
+              img(src='./img/password.svg')
+            button.field__icon.field__icon_eye#buttonEye
+              img.show(src="./img/eye-hide.svg", alt="показать")
+              img.hide(src="./img/eye-show.svg", alt="скрыть")
+      .auth__footer.auth__footer_flex
+        button.button__item.button__item_green.button__item_footer() Войти
+        a(href="#") Напомнить пароль
+      .auth__suggestion
+        | Нет учетной записи?
+        a(href="#") Зарегистрироваться

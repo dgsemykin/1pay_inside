@@ -1,0 +1,22 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/notice
+
+block content
+  .panel
+    .panel__caption: span.panel__caption-title Уведомления
+    .panel__body
+      .notice-list
+        .notice-list__date 15 августа
+          .new 1
+        +notice(time='17:35', title='Заголовок', text='Компания MPay работает на рынке электронной коммерции с 2010 года. Мы предоставляем своим партнерам удобный и прозрачный сервис для эффективной монетизации проектов любой сложности.')
+      .notice-list
+        .notice-list__date 14 августа
+          .new 3
+        +notice(time='17:35', title='Заголовок', text='Компания MPay работает на рынке электронной коммерции с 2010 года. Мы предоставляем своим партнерам удобный и прозрачный сервис для эффективной монетизации проектов любой сложности.')
+        +notice(time='17:35', title='Длинный заголовок компания MPay работает на рынке электронной коммерции с 2010 года', text='Компания MPay работает на рынке электронной коммерции с 2010 года. Мы предоставляем своим партнерам удобный и прозрачный сервис для эффективной монетизации проектов любой сложности.')
+        +notice(time='17:35', title='Заголовок', text='Компания MPay работает на рынке электронной коммерции с 2010 года. Мы предоставляем своим партнерам удобный и прозрачный сервис для эффективной монетизации проектов любой сложности.')
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.profile-header__controls .control__item:nth-child(1)').classList.add('_active');

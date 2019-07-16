@@ -1,0 +1,70 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/project-info
+
+block content
+  .panel
+    +partner-info
+    .panel__tabs.tabs
+      .tabs__item Профиль
+      .tabs__item Безопасность
+      .tabs__item Настройка API
+      .tabs__item Уведомления
+      .tabs__item._current Активность
+      .tabs__item Идентификация
+    .panel__body
+      table.table-projects.profile-activity
+        thead
+          tr
+            th._date
+              .sort
+                .sort__title Дата и время
+                .sort__arrow._asc._active
+            th._ip
+              .sort
+                .sort__title IP-адрес
+                .sort__arrow._asc
+            th._browser
+              .sort
+                .sort__title Браузер
+                .sort__arrow._asc
+        tbody
+          tr.table-projects__row
+            td._date 31.07.18 12:56:11
+            td._ip 192.168.0.0
+            td._browser
+              span.browser__icon
+                img(src="./img/browsers/chrome.svg")
+              .browser__name Google Chrome
+          tr.table-projects__row
+            td._date 31.07.18 12:56:11
+            td._ip 192.168.0.0
+            td._browser
+              span.browser__icon
+                img(src="./img/browsers/ff.svg")
+              .browser__name Mozilla Firefox
+          tr.table-projects__row
+            td._date 31.07.18 12:56:11
+            td._ip 192.168.0.0
+            td._browser
+              span.browser__icon
+                img(src="./img/browsers/opera.svg")
+              .browser__name Opera
+          tr.table-projects__row
+            td._date 31.07.18 12:56:11
+            td._ip 192.168.0.0
+            td._browser
+              span.browser__icon
+                img(src="./img/browsers/ie.svg")
+              .browser__name Internet Explorer
+          tr.table-projects__row
+            td._date 31.07.18 12:56:11
+            td._ip 192.168.0.0
+            td._browser
+              span.browser__icon
+                img(src="./img/browsers/safari.svg")
+              .browser__name Safari
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.profile-header__controls .control__item:nth-child(3)').classList.add('_active');

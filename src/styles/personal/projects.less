@@ -1,0 +1,137 @@
+.table-projects {
+  border-collapse: collapse;
+
+  .sort {
+    &.asc {
+      span {
+        &:after {
+          margin-top: -4px;
+
+          border-top-color: #272424;
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &.desc {
+      span {
+        &:after {
+          border-top-color: #272424;
+        }
+      }
+    }
+  }
+
+  tbody {
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+  }
+
+  th {
+    padding-left: 6px;
+
+    height: 32px;
+
+    color: #272424;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+
+    span {
+      position: relative;
+      cursor: pointer;
+
+      &:after {
+        position: absolute;
+        right: -9px;
+        top: 50%;
+
+        margin-top: -3px;
+
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+
+        border-top: 5px solid #BFBFBF;
+        content: '';
+      }
+    }
+  }
+
+  &__row {
+    height: 38px;
+
+    border-bottom: 1px solid #d9d9d9;
+    vertical-align: middle;
+
+    &:hover {
+      background: #f2f2f2;
+      .js-edit-button {
+        display: block;
+      }
+    }
+
+    td {
+      padding-left: 6px;
+    }
+  }
+
+  &__date {
+    width: 89px;
+  }
+
+  &__id {
+    width: 86px;
+  }
+
+  &__name {
+    width: 105px;
+  }
+  .category-name {
+    width: 120px;
+  }
+
+  &__site {
+    width: 155px;
+  }
+
+  &__status {
+    width: 154px;
+  }
+
+  &__income-total {
+    width: 137px;
+  }
+
+  &__income-week {
+    width: 119px;
+  }
+
+  &__controls {
+    width: 40px;
+    text-align: center;
+
+    .js-edit-button {
+      display: none;
+      cursor: pointer;
+    }
+  }
+  &__pagination {
+    float: right;
+    margin-top: 16px;
+  }
+
+  .amount {
+    margin-top: 0;
+  }
+
+  .amount__integer, .amount__currency {
+    margin-right: 3px;
+    font-size: 14px;
+  }
+
+  .amount__float {
+    margin-top: 1px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,62 @@
+extends ./layouts/profile/index
+
+include ./layouts/chat/dialog
+include ./layouts/chat/form
+include ./layouts/profile/ticket
+include ./layouts/field
+
+block content
+  .panel._support-chat
+    .panel__caption
+      span.panel__caption-title Поддержка
+      .panel__project-info.project-info
+        .panel__caption-title Игорь Царев
+        .project-info__column
+          .project-info__row
+            .project-info__label Телефон:
+            .project-info__value +7 962 941 56 66
+          .project-info__row
+            .project-info__label Эл. почта:
+            .project-info__value ichar@mpay.ru
+        .project-info__column
+          .project-info__row
+            .project-info__label Skype:
+            .project-info__value igor84
+          .project-info__row
+            .project-info__label Telegram:
+            .project-info__value igor84
+        .project-info__column
+          button.btn._green(data-event='popup', data-popup='create-ticket') Новый запрос
+    .panel__body
+      .support-chat
+        .support-chat__list-wrapper
+          .support-chat__list.js-perfect-scrollbar
+            +ticket(title='Новый тикет', date='21.08.18 17:35', msg='Добрый день. Вас приветствует служба поддержки пользователей mPay. Одну …')
+            +ticket(title='21356', date='21.08.18 17:35', msg='Добрый день. Вас приветствует служба поддержки пользователей mPay. Одну …', status={msg: 'Ответ поддержки', class: 'status_success'}, active=true)
+            +ticket(title='35702', date='21.08.18 17:35', msg='Здравствуйте, у меня не прошла оплата банковской картой на АльфаБанк при …', status={msg: 'Закрыт', class: 'status_wait'})
+            +ticket(title='35702', date='21.08.18 17:35', msg='Здравствуйте, у меня не прошла оплата банковской картой на АльфаБанк при …', status={msg: 'Ожидается ответ', class: 'status_orange'})
+            +ticket(title='35702', date='21.08.18 17:35', msg='Здравствуйте, у меня не прошла оплата банковской картой на АльфаБанк при …', status={msg: 'Ожидается ответ', class: 'status_orange'})
+            +ticket(title='35702', date='21.08.18 17:35', msg='Здравствуйте, у меня не прошла оплата банковской картой на АльфаБанк при …', status={msg: 'Ожидается ответ', class: 'status_orange'})
+            +ticket(title='35702', date='21.08.18 17:35', msg='Здравствуйте, у меня не прошла оплата банковской картой на АльфаБанк при …', status={msg: 'Ожидается ответ', class: 'status_orange'})
+
+        .support-chat__body
+          .support-chat__dialog.js-perfect-scrollbar
+            +dialog
+          +form
+
+  .popup.create-ticket__popup(data-popup='create-ticket')
+    .popup__header
+      .popup__title Новый запрос
+      .popup__close(data-event="popup-close", data-popup='create-ticket')
+    .popup__body
+      .create-ticket__form
+        .create-ticket__row
+          +field-textarea(class='_with-icon', label='Опишите вашу проблему', placeholder='Сообщение', icon='./img/profile/description.svg')
+        .create-ticket__row
+          button.btn._green(data-event="popup-close", data-popup='create-ticket') Отправить
+          label.create-ticket__attach Прикрепить файл
+            input(type='file')
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.profile-header__controls .control__item:nth-child(2)').classList.add('_active');

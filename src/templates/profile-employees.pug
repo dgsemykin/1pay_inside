@@ -1,0 +1,145 @@
+extends ./layouts/profile/index
+
+include ./layouts/field
+include ./layouts/select-field
+include ./layouts/switch
+include ./layouts/payment-info-row
+include ./layouts/field
+
+block content
+
+  .employees.content-panel
+    .content-panel__header
+      .content-panel__header-caption Мои сотрудники: 4
+      .employees__search.content-panel__search
+        .content-panel__search-item
+          +field('search', '', 'Поиск', './img/search.svg')(class="icons-bg-clean pl-to-icon")
+        button.btn._green
+          img.btn__icon(src='./img/icons/plus.svg')
+          | Добавить
+    table.table-projects.employees__table
+      thead
+        tr
+          th._fio
+            .sort
+              .sort__title ФИО
+              .sort__arrow._asc._active
+          th._type
+            .sort
+              .sort__title Тип
+              .sort__arrow._asc
+          th._email
+            .sort
+              .sort__title E-mail
+              .sort__arrow._asc
+          th._phone
+            .sort
+              .sort__title Телефон
+              .sort__arrow._asc
+          th._actions
+      tbody          
+        tr.table-projects__row
+          td._fio Лущаев Андрей
+          td._type Основной
+          td._email om@mpay.ru
+          td._phone +7 968 357 61 45
+          td._actions
+            .content-panel__actions
+              .content-panel__action._edit
+              .content-panel__action._remove
+        tr.table-projects__row
+          td._fio Натали
+          td._type Бухгалтер
+          td._email nat@mail.ru
+          td._phone +7 968 357 61 45
+          td._actions
+            .content-panel__actions
+              .content-panel__action._edit
+              .content-panel__action._remove
+        tr.table-projects__row
+          td._fio Влад Прусенко
+          td._type Программист
+          td._email pro@ru.ru
+          td._phone +7 968 357 61 45
+          td._actions
+            .content-panel__actions
+              .content-panel__action._edit
+              .content-panel__action._remove
+        tr.table-projects__row
+          td._fio Олег Киркоров
+          td._type Поддержка
+          td._email support@mpay.ru
+          td._phone +7 968 357 61 45
+          td._actions
+            .content-panel__actions
+              .content-panel__action._edit
+              .content-panel__action._remove
+
+
+  .employees.content-panel
+    .content-panel__header
+      .content-panel__header-caption Активность пользователей
+    table.table-projects.payouts__table
+      thead
+        tr
+          th._date
+            .sort
+              .sort__title Дата и время
+              .sort__arrow._asc._active
+          th._fio
+            .sort
+              .sort__title ФИО
+              .sort__arrow._asc
+          th._ip
+            .sort
+              .sort__title IP-адрес
+              .sort__arrow._asc
+          th._browser
+            .sort
+              .sort__title Браузер
+              .sort__arrow._asc
+      tbody
+        tr.table-projects__row
+          td._date 31.07.18 12:56:11
+          td._fio Лущаев Андрей
+          td._ip 192.168.0.0
+          td._browser
+            span.browser__icon
+              img(src="./img/browsers/chrome.svg")
+            .browser__name Google Chrome
+        tr.table-projects__row
+          td._date 31.07.18 12:56:11
+          td._fio Натали
+          td._ip 192.168.0.0
+          td._browser
+            span.browser__icon
+              img(src="./img/browsers/ff.svg")
+            .browser__name Mozilla Firefox
+        tr.table-projects__row
+          td._date 31.07.18 12:56:11
+          td._fio Влад Прусенко
+          td._ip 192.168.0.0
+          td._browser
+            span.browser__icon
+              img(src="./img/browsers/opera.svg")
+            .browser__name Opera
+        tr.table-projects__row
+          td._date 31.07.18 12:56:11
+          td._fio Олег Киркоров
+          td._ip 192.168.0.0
+          td._browser
+            span.browser__icon
+              img(src="./img/browsers/ie.svg")
+            .browser__name Internet Explorer
+        tr.table-projects__row
+          td._date 31.07.18 12:56:11
+          td._fio Олег Киркоров
+          td._ip 192.168.0.0
+          td._browser
+            span.browser__icon
+              img(src="./img/browsers/safari.svg")
+            .browser__name Safari
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(6)').classList.add('active');

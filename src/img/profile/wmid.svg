@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Идентификация-№3" transform="translate(-319.000000, -829.000000)" fill="#272424">
+            <g id="Group-12" transform="translate(305.000000, 703.000000)">
+                <g id="Group-18-Copy-6" transform="translate(0.000000, 112.000000)">
+                    <g id="id" transform="translate(14.000000, 12.000000)">
+                        <path d="M1,2 L15,2 C15.5522847,2 16,2.44771525 16,3 L16,13 C16,13.5522847 15.5522847,14 15,14 L1,14 C0.44771525,14 6.76353751e-17,13.5522847 0,13 L0,3 C-6.76353751e-17,2.44771525 0.44771525,2 1,2 Z M5,5 C3.34314575,5 2,6.34314575 2,8 C2,9.65685425 3.34314575,11 5,11 C6.65685425,11 8,9.65685425 8,8 C8,6.34314575 6.65685425,5 5,5 Z M10,5 L10,7 L14,7 L14,5 L10,5 Z M10,9 L10,11 L14,11 L14,9 L10,9 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

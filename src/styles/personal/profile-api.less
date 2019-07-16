@@ -1,0 +1,125 @@
+.profile-api {
+	padding-bottom: 30px;
+	&__container {
+		display: flex;
+	}
+	&__column {
+		width: 320px;
+		line-height: 16px;
+		& + & {
+			width: 365px;
+			margin-left: 85px;
+		}
+	}
+	&._security &__column {
+		width: 305px;
+	}
+	&._security &__column + &__column {
+		width: 460px;
+		margin-left: 55px;
+	}
+	&__title {
+		line-height: 21px;
+		margin-bottom: 24px;
+		font-size: 18px;
+		font-weight: 500;
+		.switch {
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			top: 1px;
+			margin-left: 23px;
+		}
+	}
+	&__status {
+		float: right;
+		font-size: 10px;
+		font-weight: 500;
+		color: #4caf50;
+		text-transform: uppercase;
+		&._success {
+
+		}
+	}
+	&__row {
+		position: relative;
+		margin-bottom: 24px;
+	}
+	&__notice {
+		margin-bottom: 14px;
+		&._key {
+			max-width: 275px;
+			word-break: break-word;
+		}
+	}
+	&__note {
+		margin-top: 8px;
+		font-size: 12px;
+	}
+	&__form {
+		width: 305px;
+		.profile-api__notice {
+			margin-bottom: 25px;
+		}
+	}
+	&__popup {
+		&._confirm {
+			width: 315px;
+		}
+		&._alert {
+			width: 285px;
+		}
+		&._success {
+			width: 320px;
+		}
+		.popup__header {
+			border-bottom: 0;
+		}
+		.popup__body {
+			padding-bottom: 15px;
+		}
+	}
+	&__attention {
+		position: relative;
+		line-height: 16px;
+		padding-left: 45px;
+		margin-bottom: 15px;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -1px;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+		}
+		&._warning {
+			&:before {
+				width: 32px;
+				height: 30px;
+				background: data-uri('../../img/warning-red.svg') top left no-repeat;
+			}
+		}
+		&._success {
+			&:before {
+				width: 32px;
+				height: 24px;
+				background: data-uri('../../img/success.svg') top left no-repeat;
+			}
+		}
+	}
+	&__popup-btn {
+		float: right;
+		margin-top: 16px;
+	}
+	.field__resend {
+		right: -24px;
+		bottom: 13px;
+	}
+	.field__textarea {
+		height: 80px;
+	}
+	.alert {
+		margin: -2px 0 12px;
+	}
+}

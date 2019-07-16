@@ -1,0 +1,91 @@
+extends layouts/payment-form/index
+
+include ./layouts/field
+include ./layouts/checkbox
+include ./layouts/radio
+include ./layouts/switch
+
+block content
+  style.
+    .ui {
+      padding: 30px;
+      text-align: left
+    }
+    .ui__column {
+      display: inline-block;
+      vertical-align: top;
+      width: 280px;
+      margin-right: 30px;
+    }
+    .ui__row {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    .payway {
+      margin-right: 8px;
+    }
+  .ui
+    .ui__column
+      .ui__row
+        +field('card-form__number', '', '0000   0000   0000   0000')
+      .ui__row
+        +field('card-form__number', '', '0000   0000   0000   0000', '12')
+      .ui__row
+        +field('card-form__number', '', '0000   0000   0000   0000', '', true)
+
+      .ui__row
+        +checkbox('Чекбокс чекнут', true)
+      .ui__row
+        +checkbox('Чекбокс не чекнут')
+      .ui__row
+        +checkbox('Чекбокс неактивен', false, true)
+      br
+      .ui__row
+        +radio('Радиокнопка выбрана', true)
+      .ui__row
+        +radio('Радиокнопка не выбрана')
+      .ui__row
+        +radio('Радиокнопка неактивна', false, true)
+      br
+      .ui__row
+        +switch('Свитчер', true)
+    .ui__column
+      .ui__row
+        +field-card('', '480', '_mastercard')
+      .ui__row
+        +field-card('', '480', '_visa')
+      .ui__row
+        +field-card('', '480', '_maestro')
+      .ui__row
+        +field-card('', '480', '_mir')
+
+      .ui__row
+        +field-phone('card-form__phone', null, '916', '_mts')
+      .ui__row
+        +field-phone('card-form__phone', '', '988', '_megafon')
+      .ui__row
+        +field-phone('card-form__phone', '', '926', '_beeline')
+      .ui__row
+        +field-phone('card-form__phone', '', '999', '_tele2')
+    .ui__column
+      .ui__row
+        select#select1.select-input
+          option Пункт 1
+          option Пункт 2
+          option Пункт 3
+          option Пункт 4
+      .ui__row
+        button.footer__submit.btn._green
+          | Оплатить
+          .footer__integer 4999
+          .footer__float 99
+          .footer__currency ₽
+      .ui__row
+        button.footer__submit.btn._green(disabled)
+          | Оплатить
+          .footer__integer 4999
+          .footer__float 99
+          .footer__currency ₽
+      .ui__row
+        .payway: img.payway__logo(src='./img/payways/ethereum.png')
+        .payway._selected: img.payway__logo(src='./img/payways/ethereum.png')

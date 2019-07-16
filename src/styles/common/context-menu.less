@@ -1,0 +1,23 @@
+@import '../variables';
+
+.context-menu {
+	display: none;
+	position: absolute;
+	white-space: nowrap;
+	padding: 4px 0;
+	border-radius: 3px;
+	background-color: #ffffff;
+	box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+	z-index: 9;
+	&__item {
+		line-height: 14px;
+		padding: 9px 12px;
+		cursor: pointer;
+		&:hover {
+			background-color: #f2f2f2;
+		}
+	}
+}
+&._opened + .context-menu {
+	display: block;
+}

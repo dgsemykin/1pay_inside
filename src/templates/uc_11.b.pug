@@ -1,0 +1,32 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/chosen-payway
+include ./layouts/payment-info-row
+include ./layouts/outcard
+
+block content
+  .card
+    +header-v01('./files/logos/park-uno.png', 'parkuno.ru', 'Счет №154')
+    .card__body
+      +chosen-payway('Bitcoin', './img/payways/bitcoin.png')
+      .qr
+        .qr__description Переведите точную сумму&nbsp;
+          b 0,019332 BTC&nbsp;
+          | на заданный BTC-адрес 1 транзакцией.
+          img.qr__code(src='./files/qr-code.png')
+        .qr__id 36klM563Wky720PRq178
+      .payment-info._qr
+        +payment-info-row('Необходимо перевести в точности указанную сумму для успешной оплаты.', '_rub')
+        +payment-info-row('Оплата пройдет как только мы получим 6 подтверждений от Bitcoin-сети.', '_protected')
+        +payment-info-row('Bitcoin-адрес выдан вам системой только для этого пополения, его можно использовать только 1 раз.', '_wallet')
+    .qr-footer
+      .qr-footer__flex
+        .qr-footer__info
+          .qr-footer__sum
+            .qr-footer__integer 4 999
+            .qr-footer__float 00
+            .qr-footer__currency ₽
+          .qr-footer__note 10 000 ₽
+        .qr-footer__btn.btn._green Я оплатил
+    +outcard

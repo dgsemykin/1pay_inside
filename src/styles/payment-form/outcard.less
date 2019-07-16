@@ -1,0 +1,24 @@
+@import '../variables';
+
+.outcard {
+	display: flex;
+	position: absolute;
+	bottom: -43px;
+	left: @padding;
+	&__icon {
+		width: 27px;
+		height: 27px;
+		line-height: 25px;
+		font-size: 10px;
+		text-align: center;
+		color: #7b7b7b;
+		border: solid 1px #7b7b7b;
+		border-radius: 2px;
+		cursor: pointer;
+		&._msg {
+			margin-right: 12px;
+			background: data-uri('../../img/msg.svg') center no-repeat;
+			background-size: 16px 13px;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+@import '../variables';
+
+.three-dot-button {
+	@size: 4px;
+	height: @size;
+	width: @size;
+	border-radius: 50%;
+	background-color: #4caf50;
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	opacity: 0;
+	transition: opacity .25s ease;
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		height: @size;
+		width: @size;
+		background-color: #4caf50;
+		border-radius: 50%;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&:before {
+		left: 150%;
+	}
+	&:after {
+		right: 150%;
+	}
+}

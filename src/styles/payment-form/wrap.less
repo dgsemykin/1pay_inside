@@ -1,0 +1,31 @@
+.wrap {
+	display: block;
+	position: absolute;
+	overflow: hidden;
+	min-width: 500px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	&:after {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		margin-left: -3px;
+	}
+	&._no-after {
+		&:after {
+			display: none;
+		}
+	}
+	&_fixed {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: #f7f7f7 url('../../files/bg-img.png') 0 0 repeat;
+	}
+}

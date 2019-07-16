@@ -1,0 +1,43 @@
+include ../alert
+
+mixin create-project-2
+  .create-project.popup(data-popup='create-project-step-2')
+    .popup__header
+      .popup__title.create-project__title
+        img.create-project__icon(src='./img/profile/protect.png', width='54')
+        | Подтверждение владения сайтом
+      .popup__close(data-event="popup-close", data-popup='create-project-step-2')
+    .popup__body
+      .create-project__tabs
+        .create-project__tab 1. Сведения о проекте
+        .create-project__tab._current 2. Подтверждение и проверка
+      if attributes.showError
+        +alert('_fail', ['Домен не подтвержден. Проверьте правильность всех действий и нажмите на кнопку «Подтвердить».'])
+      .create-project__notice Выберите удобный способ подтверждения и следуйте инструкции.
+      .create-project__instruction
+        .create-project__column
+          .create-project__subtitle С помощью файла
+          .step
+            .step__order 1
+            | #[a(href='#') Скачайте] или создайте файл с именем:
+            .create-project__code 592345168364.txt
+            | и содержимым:
+            .create-project__code 485612ew452xe
+          .step
+            .step__order 2
+            | Разместите его в корне вашего сайта.
+          .step
+            .step__order 3
+            | Нажмите на кнопку «Подтвердить».
+        .create-project__column
+          .create-project__subtitle С помощью мета-тега
+          .step
+            .step__order 1
+            | Разместите мета-тег в секции head главной страницы вашего сайта:
+            .create-project__code &lt;meta name=‘’mpay’’ content=‘’485612ew452xe’’/&gt;
+          .step
+            .step__order 2
+            | Нажмите на кнопку «Подтвердить».
+    .popup__footer
+      span.create-project__complete-later Подтвердить позже
+      button.btn._green(data-event='popup', data-popup='create-project-step-3') Подтвердить

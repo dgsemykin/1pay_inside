@@ -1,0 +1,38 @@
+extends ./layouts/profile/index
+
+include ./layouts/field
+include ./layouts/payment-info-row
+include ./layouts/payways-slide
+include ./layouts/checkbox
+
+block content
+  .panel
+    .panel__caption
+      .panel__breadcrumbs
+        a(href='#') Выплаты
+        a(href='#') Мои шаблоны
+        span Редактирование шаблона
+    .panel__body
+      .payout-edit
+        .payout-edit__row
+          +field('', 'Название', 'Мой шаблон', './img/profile/name.svg')(class='okey')
+
+        .payout-edit__row
+          .field__label Способ выплат
+          +payways-slide(['./img/payways/card.png', './img/payways/phone.png', './img/payways/webmoney.png', './img/payways/yamoney.png', './img/payways/qiwi.png'])
+
+        .payout-edit__row
+          +payment-info-row('Комиссия 3,5%', '_alert')
+          +payment-info-row('Максимальный платеж 6 000 ₽. Минимальный 10 ₽.', '_rub')
+
+        .payout-edit__row
+          +field-card('Номер карты')(error='Убедитесь в правильности введенных реквизитов. Отменять платежи нельзя.')
+        .payout-edit__row
+          +checkbox('Списывать комиссию с баланса', true)
+        .payout-edit__row
+          .payout-edit__notice По умолчанию комиссия удерживается с суммы выплаты. Активируйте эту функцию и комиссия будет списываться с баланса, а вы будете получать в точности отправленную сумму.
+        button.btn._green Сохранить
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(5)').classList.add('active');

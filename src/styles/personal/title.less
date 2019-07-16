@@ -1,0 +1,21 @@
+@import '../variables';
+
+.title {
+	display: flex;
+	align-items: flex-start;
+
+	margin-top: 24px;
+
+	font-size: 22px;
+	color: @base-text-color;
+	&__text {
+		font-family: inherit;
+		font-weight: normal;
+		margin-right: 10px;
+	}
+	&__amount {
+		&.amount {
+			margin-top: 0;
+		}
+	}
+}

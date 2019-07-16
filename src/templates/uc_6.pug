@@ -1,0 +1,21 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/chosen-payway
+include ./layouts/field
+include ./layouts/payment-info-row
+include ./layouts/outcard
+include ./layouts/footer
+
+block content
+  .card
+    +header-v01('./files/logos/brick.png', 'brick-studio.ru', 'Верстка письма, счет №147')
+    .card__body
+      +chosen-payway('Билайн', './img/payways/beeline.png')
+      form.card-form
+        +field-phone('card-form__phone', 'Номер мобильного телефона')
+      .payment-info
+        +payment-info-row('Минимальная сумма оплаты 1 ₽.', '_rub')
+        +payment-info-row('После оплаты на счету должно остаться 10 ₽.', '_wallet')
+    +footer-v01('Оплатить', '9 050', '00', '₽')
+    +outcard

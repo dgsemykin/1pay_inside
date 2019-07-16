@@ -1,0 +1,29 @@
+@import '../variables';
+
+.profile-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  &__logo {
+    height: 54px;
+    img {
+      height: 100%;
+    }
+  }
+  &__content {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+   }
+  &__amount {
+    margin-right: 50px;
+    &.amount {
+      margin-top: 0 !important;
+      color: @blue !important;
+      font-size: 22px;
+      font-weight: normal;
+    }
+  }
+  &__controls {}
+}

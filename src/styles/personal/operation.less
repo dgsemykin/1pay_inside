@@ -1,0 +1,51 @@
+.operation {
+	line-height: 34px;
+	height: 36px;
+	padding: 0 27px 0 40px;
+	font-weight: 500;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+	background-image: linear-gradient(to bottom, #ffffff, #ebebeb);
+	border: solid 1px #d9d9d9;
+	cursor: pointer;
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+	}
+	&:before {
+		top: 9px;
+		left: 11px;
+		width: 16px;
+		height: 16px;
+	}
+	&:after {
+		top: 16px;
+		right: 11px;
+		border-width: 5px 3px;
+		border-style: solid;
+		border-color: transparent;
+		border-top-color: #272424;
+	}
+	&._opened{
+		background-image: linear-gradient(to top, #ffffff, #ebebeb);
+		&:after {
+			border-color: transparent;
+			border-bottom-color: #272424;
+			top: 11px;
+		}
+	}
+	&__container {
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+	}
+	&._csv:before {
+		background-image: data-uri('../../img/icons/download.svg');
+	}
+	&._send:before {
+		top: 10px;
+		background-image: data-uri('../../img/icons/resend.svg');
+	}
+}

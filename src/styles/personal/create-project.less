@@ -1,0 +1,140 @@
+.create-project {
+	width: 745px;
+	.popup__header {
+		border-bottom: 0;
+	}
+	.popup__body {
+		padding-top: 0;
+	}
+	.field__textarea {
+		height: 120px;
+	}
+	&__title {
+		padding-top: 1px;
+		line-height: 64px;
+		margin: 0;
+		img {
+			vertical-align: top;
+			position: relative;
+			top: -1px;
+			margin-right: 24px;
+		}
+	}
+	&__tabs {
+		display: flex;
+		margin: 0 -16px 24px;
+		box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.13);
+	}
+	&__tab {
+		position: relative;
+		width: 50%;
+		height: 38px;
+		line-height: 38px;
+		text-align: center;
+		color: #7b7b7b;
+		&._current {
+			border-right: 18px solid #ffffff;
+			background: #0288d1;
+			color: #ffffff;
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				border-style: solid;
+				border-width: 19px 18px;
+			}
+			&:before {
+				display: none;
+				left: 0;
+				border-color: transparent transparent transparent #ffffff;
+			}
+			&:after {
+				display: block;
+				right: -36px;
+				border-color: transparent transparent transparent #0288d1;
+			}
+		}
+		& + &._current {
+			width: 50%;
+			border-right: 0;
+			&:after {
+				display: none;
+			}
+			&:before {
+				display: block;
+			}
+		}
+	}
+	&__instruction,
+	&__form {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__column {
+		width: 345px;
+	}
+	&__row {
+		& + & {
+			margin-top: 21px;
+		}
+	}
+	&__notice {
+		margin-bottom: 23px;
+	}
+	.alert {
+		margin-bottom: 24px;
+	}
+	&__instruction &__column {
+		&:first-child {
+			width: 293px;
+		}
+		&:nth-child(2) {
+			width: 390px;
+		}
+	}
+	&__subtitle {
+		line-height: 25px;
+		font-size: 22px;
+		margin-bottom: 16px;
+	}
+	&__code {
+		line-height: 22px;
+		padding: 5px 12px;
+		margin: 7px 0;
+		font-weight: 600;
+		background-color: #ebebeb;
+	}
+	&__complete-later {
+		line-height: 36px;
+		margin-right: 25px;
+		text-decoration: underline;
+		cursor: pointer;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	&__success {
+		position: relative;
+		padding: 65px 0 60px 200px;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 63px;
+			left: 33px;
+			width: 98px;
+			height: 148px;
+			background: data-uri('../../img/profile/rocket.svg') no-repeat;
+		}
+	}
+	&__success-title {
+		margin-bottom: 35px;
+	}
+	&__success-description {
+		line-height: 16px;
+	}
+	&__success-btn {
+		margin-top: 23px;
+	}
+}

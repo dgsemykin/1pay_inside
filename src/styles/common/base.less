@@ -1,0 +1,41 @@
+@import '../variables';
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f7f7f7;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+	min-width: 500px;
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	color: @base-text-color;
+}
+a {
+	color: #0288d1;
+	&:hover {
+		text-decoration: none;
+	}
+}
+.clr {
+	clear: both;
+}
+.solid {
+	white-space: nowrap;
+}
+
+.wrapper {
+	width: 1290px;
+	margin-right: auto;
+	margin-left: auto;
+}

@@ -1,0 +1,58 @@
+include ../field
+
+mixin notifications-email
+  .notification-settings.popup(data-popup='notifications-email')
+    .popup__header
+      .popup__title Электронная почта
+      .popup__close(data-event="popup-close", data-popup='notifications-email')
+    .popup__body
+      .notification-settings__notice Введите адрес электронной почты, который хотите настроить.
+      if (!attributes.filled)
+        +field('', 'Эл. почта', 'my@company.ru', './img/email.svg')
+      else
+        +field('', 'Эл. почта', 'my@company.ru', './img/email.svg', 'my@company.ru', true, null, {msg: attributes.status.msg, class: attributes.status.class})
+    .popup__footer
+      button.btn._green(data-event="popup-close", data-popup='notifications-email')= attributes.filled ? 'Изменить' : 'Подтвердить'
+
+mixin notifications-telegram
+  .notification-settings.popup(data-popup='notifications-telegram')
+    .popup__header
+      .popup__title Telegram
+      .popup__close(data-event="popup-close", data-popup='notifications-telegram')
+    .popup__body
+      .notification-settings__notice Краткая инструкция как найти бота в telegram и как его включить
+      if (!attributes.filled)
+        +field('', 'Код', '0123456789', './img/profile/code.svg')
+      else
+        +field('', 'Код', '0123456789', './img/profile/code.svg', '49843897589754875438958438', true, null, {msg: 'Подтверждено', class: '_success'})
+    .popup__footer
+      button.btn._green(data-event="popup-close", data-popup='notifications-telegram')= attributes.filled ? 'Изменить' : 'Подтвердить'
+
+mixin notifications-phone
+  .notification-settings.popup(data-popup='notifications-phone')
+    .popup__header
+      .popup__title Смс
+      .popup__close(data-event="popup-close", data-popup='notifications-phone')
+    .popup__body
+      .notification-settings__notice Обратите внимание, что СМС сообщения платные: 2руб./СМС
+      if (!attributes.filled)
+        +field('', 'Телефон', '+7 000 000 00 00', './img/profile/phone.svg')
+      else
+        +field('', 'Телефон', '+7 000 000 00 00', './img/profile/phone.svg', '+799999999999', true, null, {msg: 'Подтверждено', class: '_success'})
+    .popup__footer
+      button.btn._green(data-event='popup', data-popup='notifications-sms')= attributes.filled ? 'Изменить' : 'Подтвердить'
+
+mixin notifications-sms
+  .notification-settings.popup(data-popup='notifications-sms')
+    .popup__header
+      .popup__title Смс
+      .popup__close(data-event="popup-close", data-popup='notifications-sms')
+    .popup__body
+      .notification-settings__notice Обратите внимание, что СМС сообщения платные: 2руб./СМС
+      +field('_sms-code', 'Код', '123456', './img/profile/code.svg')
+    .popup__footer
+      if (attributes.state)
+        .notification-settings__wait Повторная отправка#[br]через 29 сек
+      else
+        .notification-settings__action Отправить смс еще раз
+      button.btn._green(data-event="popup-close", data-popup='notifications-sms') Подтвердить

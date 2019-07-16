@@ -1,0 +1,6 @@
+mixin switch(caption, checked, disabled)
+  label.switch
+    input.switch__input(type='checkbox', checked!=checked, disabled!=disabled)
+    .switch__button
+    if (caption)
+      .switch__label= caption

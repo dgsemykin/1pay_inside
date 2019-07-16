@@ -1,0 +1,101 @@
+.create-ticket {
+	width: 450px;
+	margin: 55px auto 0;
+	font-size: 14px;
+	line-height: 16px;
+	&__subtitle {
+		line-height: 19px;
+		margin-bottom: 3px;
+		font-weight: 600;
+	}
+	&__manager {
+		line-height: 21px;
+		margin-bottom: 24px;
+		font-size: 18px;
+		font-weight: 500;
+	}
+	&__contacts {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 24px;
+	}
+	&__contacts-label {
+		width: 100%;
+		margin-bottom: 7px;
+	}
+	&__contact {
+		position: relative;
+		width: 170px;
+		height: 16px;
+		line-height: 18px;
+		padding-left: 29px;
+		margin-bottom: 8px;
+		color: #7b7b7b;
+	}
+	&__contact-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 17px;
+		height: 16px;
+		img {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+		}
+	}
+	&__form {
+		.field {
+			width: 100%;
+		}
+		.field__textarea {
+			height: 120px;
+		}
+	}
+	&__row {
+		display: flex;
+		margin-bottom: 24px;
+	}
+	&__attach {
+		position: relative;
+		align-self: center;
+		margin-left: 60px;
+		border-bottom: 1px dashed #272424;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -28px;
+			width: 16px;
+			height: 16px;
+			background: data-uri('../../img/profile/attach.svg') left center no-repeat;
+		}
+		input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			cursor: pointer;
+			z-index: 9;
+			&::-webkit-file-upload-button {
+				display: none;
+			}
+		}
+	}
+	&__popup {
+		width: 482px;
+		.popup__header {
+			border-bottom: 0;
+		}
+		.create-ticket__row:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

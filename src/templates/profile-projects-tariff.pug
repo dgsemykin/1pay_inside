@@ -1,0 +1,73 @@
+extends ./layouts/profile/index
+
+include  ./layouts/profile/project-info
+include ./layouts/field
+
+block content
+    .panel
+      +project-info
+      .panel__tabs.tabs
+        .tabs__item Настройки проекта
+        .tabs__item._current Тарифы и комиссии
+        .tabs__item Настройки формы оплаты
+        .tabs__item Виджет оплаты
+      .panel__body
+        table.table-projects.tariff-table
+          thead
+            tr
+              th._payway
+                .sort
+                  .sort__title Платежная система
+                  .sort__arrow._asc
+              th._shop-commission
+                .sort
+                  .sort__title Комиссия магазина
+                  .sort__arrow._asc._active
+              th._user-commission
+                .sort
+                  .sort__title Комиссия пользователя
+                  .sort__arrow._asc
+          tbody
+            tr.table-projects__row
+              td._payway
+                span.tariff-table__icon
+                  img(src="./img/type-icon/megafon.svg")
+                .tariff-table__payway Мегафон
+              td._shop-commission
+                +field-numeric('1 %')
+              td._user-commission
+                +field-numeric('2 %')
+            tr.table-projects__row
+              td._payway
+                span.tariff-table__icon
+                  img(src="./img/type-icon/mastercard.svg")
+                .tariff-table__payway Mastercard
+              td._shop-commission
+                +field-numeric('2 %')
+              td._user-commission
+                +field-numeric('0.5 %')
+            tr.table-projects__row
+              td._payway
+                span.tariff-table__icon
+                  img(src="./img/type-icon/alfabank.svg")
+                .tariff-table__payway Альфа-Банк
+              td._shop-commission
+                +field-numeric('3 %')
+              td._user-commission
+                +field-numeric('1 %')
+            tr.table-projects__row
+              td._payway
+                span.tariff-table__icon
+                  img(src="./img/type-icon/yamoney.svg")
+                .tariff-table__payway Яндекс.Деньги
+              td._shop-commission
+                +field-numeric('10 %')
+              td._user-commission
+                +field-numeric('0 %')
+
+        button.tariff-table__save.btn._green Сохранить
+
+    script(src='/js/personal-table.js')
+    script.
+      document.querySelector('.nav__item.active').classList.remove('active');
+      document.querySelector('.nav__item:nth-child(3)').classList.add('active');

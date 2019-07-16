@@ -1,0 +1,18 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/add-employee
+
+block content
+  .panel
+    .panel__body
+      .entity-add._profile
+        .entity-add__caption В этом разделе вы можете добавлять сотрудников с различными правами доступа
+        button.entity-add__btn.btn._green(data-event='popup', data-popup='add-employee')
+          img.btn__icon(src='./img/icons/plus.svg')
+          | Добавить учетную запись
+
+  +add-employee
+  script(src='/js/personal-table.js')
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(6)').classList.add('active');

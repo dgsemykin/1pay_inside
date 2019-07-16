@@ -1,0 +1,55 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/project-info
+include ./layouts/alert
+include ./layouts/field
+include ./layouts/switch
+
+block content
+  .panel
+    +partner-info
+    .panel__tabs.tabs
+      .tabs__item._current Профиль
+      .tabs__item Безопасность
+      .tabs__item Настройка API
+      .tabs__item Уведомления
+      .tabs__item Активность
+      .tabs__item Идентификация
+    .panel__body
+      .profile-api.profile-edit
+        .profile-api__title Контактная информация
+        .profile-api__container
+          .profile-api__column
+            .profile-api__row
+              +field('', 'Имя', 'Иванов Иван', './img/profile/name.svg')
+            .profile-api__row
+              .field
+                .field__label Телефон
+                label.field__body
+                  input.field__input(type='text', placeholder='+7 000 000 00 00', data-mask="phone")
+                  .field__icon: img(src='./img/profile/phone.svg')
+            .profile-api__row
+              +field('', 'Skype', 'mpay', './img/profile/skype.svg')
+            button.btn._green Сохранить
+
+          .profile-api__column(data-container='email')
+            .profile-api__row
+              +field('', 'Основной адрес эл. почты', 'my@company.ru', './img/email.svg', 'igor@mpay.ru', true)
+              button.btn._silver.profile-edit__add-email(data-event='add-email')
+                img.btn__icon(src='./img/icons/plus-black.svg')
+                | Добавить
+            .profile-api__row
+              +field('', 'Дополнительный адрес эл. почты', 'my@company.ru', './img/email.svg', 'igor2@mpay.ru', false, false, {msg: 'Не подтвержден', class: '_warning'})
+              .profile-edit__remove-email(data-event='remove-parent')
+            .profile-api__row
+              +field('', 'Дополнительный адрес эл. почты', 'my@company.ru', './img/email.svg', 'igor3@mpay.ru', false, false, {msg: 'Подтвержден', class: '_success'})
+              .profile-edit__remove-email(data-event='remove-parent')
+
+        template(id='email-template')
+          .profile-api__row
+            .field
+              .field__label Дополнительный адрес эл. почты
+              label.field__body
+                input.field__input(type='text', placeholder='my@company.ru')
+                .field__icon: img(src='./img/email.svg')
+            .profile-edit__remove-email(data-event='remove-parent')

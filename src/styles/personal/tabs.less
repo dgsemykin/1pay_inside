@@ -1,0 +1,16 @@
+.tabs {
+	display: flex;
+	border-bottom: 1px solid #ebebeb;
+	&__item {
+		line-height: 30px;
+		margin-right: 35px;
+		border-bottom: 4px solid transparent;
+		color: #7b7b7b;
+		cursor: pointer;
+		&._current {
+			color: #272424;
+			border-bottom-color: #272424;
+			cursor: default;
+		}
+	}
+}

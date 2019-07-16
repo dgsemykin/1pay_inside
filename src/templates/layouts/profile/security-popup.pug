@@ -1,0 +1,36 @@
+include ../field
+include ../alert
+
+mixin security-popup(error)
+  .popup.security-popup(data-popup='security-popup')
+    .popup__header
+      .popup__title Настройка авторизации
+      .popup__close(data-event="popup-close", data-popup='security-popup')
+    .popup__body.security-popup__body
+      .security-popup__column._settings
+        .security-popup__title Настройка XYZ
+        .step
+          .step__order 1
+          | Загрузите и установите приложение XYZ.
+        .step
+          .step__order 2
+          | В приложении XYZ откройте «Меню» и выберите «Настроить аккаунт».
+        .step
+          .step__order 3
+          | Выберите «Сканировать штрихкод». Воспользуйтесь камерой телефона для сканирования штрихкода.
+        .security-popup__app Ссылки для загрузки приложения XYZ.
+          img(src='./img/appstore-icon.svg')
+          img(src='./img/play-market.svg')
+      .security-popup__column._qr
+        .security-popup__title Сканирование QR-кода
+        img.security-popup__qr-code(src='./files/qr-code.png')
+      .security-popup__column._form
+        .security-popup__title Ввод верификационного кода
+        if (error)
+          +alert('_fail', ['Вы ввели неверный код'])
+        .security-popup__row
+          +field-password(label='Ваш код', placeholder='********')
+        .security-popup__row
+          +field-password(label='Ваш код 2', placeholder='********')
+    .popup__footer
+      button.btn._green Подключить

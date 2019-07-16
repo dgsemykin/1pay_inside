@@ -1,0 +1,15 @@
+extends ./layouts/profile/index
+
+block content
+  .panel
+    .panel__body
+      .entity-add._project
+        .entity-add__caption Чтобы принимать платежи создайте свой первый проект.
+        button.entity-add__btn.btn._green
+          img.btn__icon(src='./img/icons/plus.svg')
+          | Создать
+
+  script(src='/js/personal-table.js')
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(3)').classList.add('active');

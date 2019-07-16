@@ -1,0 +1,40 @@
+div.sort {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding-right: 10px;
+	cursor: pointer;
+	&__title {
+
+	}
+	&__arrow {
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 4px;
+			right: 0;
+			border: solid transparent;
+			border-width: 5px 3px;
+		}
+		&:after,
+		&._asc:after {
+			border-top-color: #bfbfbf;
+		}
+		&._desc:after {
+			top: -1px;
+			border-top-color: transparent;
+			border-bottom-color: #bfbfbf;
+		}
+		.sort.asc &:after,
+		&._active._asc:after {
+			border-top-color: #272424;
+		}
+		.sort.desc &:after,
+		&._active._desc:after {
+			top: -1px;
+			border-top-color: transparent;
+			border-bottom-color: #272424;
+		}
+	}
+}

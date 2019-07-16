@@ -1,0 +1,31 @@
+include ../field
+include ../select-field
+include ../checkbox
+
+mixin add-employee
+  .popup.add-employee(data-popup='add-employee')
+    .popup__header
+      .popup__title Профиль сотрудника
+      .popup__close(data-event="popup-close", data-popup='add-employee')
+    .popup__body
+      .add-employee__row
+        +field('', 'ФИО', 'Иван Петров')(class='without-icon')
+      .add-employee__row
+        +field('', 'Телефон', '+7 495 374 61 86')(class='without-icon')
+      .add-employee__row
+        +field('', 'E-mail', 'info@mpay.ru')(class='without-icon')
+      .add-employee__row
+        +select-field('js-employee-type', [{value: '1', label: 'Основной'},{value: '2', label: 'Бухгалтер'},{value: '3', label: 'Программист'},{value: '4', label: 'Поддержка'}], 'Тип')
+        .add-employee__note Пользователь получит доступы в разделы:
+          | #[br]– статистика
+          | #[br]– выплаты
+          | #[br]– поддержка
+      .add-employee__row
+        +field('', 'Логин', 'ivanov')(class='without-icon')
+        +checkbox('E-mail в качестве логина', true)
+      .add-employee__row
+        +field-password(label='Пароль', placeholder='*****', noIcon=true)
+      .add-employee__row
+        +field-password(label='Повтор пароля', placeholder='*****', noIcon=true)
+    .popup__footer
+      button.btn._green Сохранить

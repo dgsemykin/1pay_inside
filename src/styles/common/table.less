@@ -1,0 +1,71 @@
+@import '../variables';
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  &__head {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: .2px;
+    color: @base-text-color;
+    text-transform: uppercase;
+    th {
+      padding: 10px 6px;
+      text-align: left;
+    }
+  }
+  &__body {
+    tr {
+      transition: background-color .25s linear;
+      &:hover {
+        background-color: #f2f2f2;
+        .three-dot-button {
+          opacity: 1;
+        }
+      }
+    }
+    td {
+      padding: 5px 6px;
+
+      border: 1px solid #d9d9d9;
+
+      border-left: none;
+      border-right: none;
+      
+      color: @base-text-color;
+      font-size: 14px;
+      &:first-of-type {
+        border-left: 1px solid #d9d9d9;
+      }
+      &:last-of-type {
+        border-right: 1px solid #d9d9d9;
+      }
+      .amount {
+        margin-top: 0;
+        font-size: 14px;
+        &__float {
+          margin-top: -1px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  &__checkbox {
+    height: 40px;
+    width: 40px;
+    padding: 5px 6px !important;
+    text-align: center;
+    vertical-align: middle;
+    .checkbox {
+      margin-left: 5px;
+    }
+  }
+  &__control {
+    padding: 5px 12px !important;
+  }
+  &__call-context {
+    min-width: 14px;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+}

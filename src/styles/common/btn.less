@@ -1,0 +1,101 @@
+@import '../variables';
+
+.btn {
+	height: 36px;
+	line-height: 34px;
+	padding: 0 12px;
+	text-align: center;
+	border-radius: 2px;
+	border: solid 1px;
+	cursor: pointer;
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	&._green {
+		box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+		background-color: #4caf50;
+		background-image: linear-gradient(to top, #4caf50, @lightGreen);
+		border-color: #43a047;
+		color: #ffffff;
+		&:hover {
+			background-image: linear-gradient(to top, #4caf50, #65e019);
+		}
+		&:active {
+			background-image: linear-gradient(to top, #4caf50, #4ead13);
+		}
+		&:active:disabled,
+		&:disabled {
+			color: #7b7b7b;
+			border-color: #d8d8d8;
+			background: #ebebeb;
+			font-weight: 500;
+			box-shadow: none;
+			cursor: default;
+		}
+	}
+
+	&._silver {
+		font-weight: 600;
+		box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+		background-color: #ebebeb;
+		background-image: linear-gradient(to bottom, #ffffff, #ebebeb);;
+		border-color: #d9d9d9;
+		color: #272424;
+		&:hover {
+			background-image: linear-gradient(to bottom, #ffffff, #ebebeb);;
+		}
+		&:active {
+			background-image: linear-gradient(to top, #ffffff, #ebebeb);
+		}
+		&:active:disabled,
+		&:disabled {
+			color: #7b7b7b;
+			border-color: #d8d8d8;
+			background: #ebebeb;
+			font-weight: 500;
+			box-shadow: none;
+			cursor: default;
+		}
+	}
+
+	&._red {
+		font-weight: 500;
+		box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+		background-color: #e61717;
+		background-image: linear-gradient(to top, #c23a3a, #e61717);
+		border: solid 1px #994242;
+		color: #ffffff;
+		&:hover {
+			background-image: linear-gradient(to bottom, #c23a3a, #e61717);;
+		}
+		&:active {
+			background-image: linear-gradient(to top, #c23a3a, #e61717);
+		}
+	}
+
+	&._small {
+		height: 27px;
+		line-height: 25px;
+		font-size: 10px;
+		text-transform: uppercase;
+	}
+	&._disabled {
+		color: #7b7b7b;
+		border-color: #d8d8d8;
+		background: #ebebeb;
+		font-weight: 500;
+		box-shadow: none;
+		cursor: default;
+	}
+
+	&__icon {
+		position: relative;
+		top: 2px;
+		margin-right: 12px;
+	}
+}
+
+a.btn {
+	display: inline-block;
+	text-decoration: none;
+}

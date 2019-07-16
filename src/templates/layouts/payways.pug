@@ -1,0 +1,9 @@
+include ./payways-group
+
+mixin payways(className)
+  .payways(class!=className)
+    +payways-group({title: 'Банковские карты', logos: ['./img/payways/visa.png', './img/payways/mastercard.png', './img/payways/maestro.png', './img/payways/mir.png']})
+    +payways-group({title: 'Мобильные операторы', logos: ['./img/payways/mts.png', './img/payways/megafon.png', './img/payways/beeline.png', './img/payways/tele2.png']})
+    +payways-group({title: 'Электронные кошельки', logos: ['./img/payways/webmoney.png', './img/payways/qiwi.png', './img/payways/yamoney.png', './img/payways/viber.png']})
+    +payways-group({title: 'Платежные системы', logos: ['./img/payways/applepay.png', './img/payways/samsungpay.png', './img/payways/alfabank.png', './img/payways/promsvyazbank.png']})
+    +payways-group({title: 'Криптовалюта', logos: ['./img/payways/bitcoin.png', './img/payways/litecoin.png', './img/payways/dash.png', './img/payways/ethereum.png', './img/payways/zcash.png']})

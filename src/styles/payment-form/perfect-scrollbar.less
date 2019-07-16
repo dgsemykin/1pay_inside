@@ -1,0 +1,40 @@
+
+/*
+ * Container style
+ */
+.ps {
+	overflow: hidden !important;
+	overflow-anchor: none;
+	-ms-overflow-style: none;
+	touch-action: auto;
+	-ms-touch-action: auto;
+}
+
+/*
+ * Scrollbar rail styles
+ */
+.ps__rail-x {
+	display: none;
+}
+
+.ps__rail-y {
+	display: none;
+}
+
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+}
+
+
+/* MS supports */
+@supports (-ms-overflow-style: none) {
+	.ps {
+		overflow: auto !important;
+	}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.ps {
+		overflow: auto !important;
+	}
+}

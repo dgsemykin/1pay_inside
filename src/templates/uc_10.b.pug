@@ -1,0 +1,26 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/chosen-payway
+include ./layouts/payment-info-row
+include ./layouts/outcard
+
+block content
+  .card
+    +header-v01('./files/logos/park-uno.png', 'parkuno.ru', 'Счет №154')
+    .card__body
+      +chosen-payway('Apple Pay', './img/payways/applepay.png')
+      .qr
+        .qr__description Для проведения платежа необходима последняя версия операционной системы iOS, MacOS или WatchOS. Если у вас есть iPhone, вы можете отсканировать QR-code или открыть ссылку на эту страницу в браузере Safari.
+        img.qr__code(src='./files/qr-code.png')
+      .payment-info._qr
+        +payment-info-row('Включена комиссия 10 ₽.', '_alert')
+        +payment-info-row('Безопасность платежей PCI DSS.', '_protected')
+    .qr-footer
+      .qr-footer__center
+        .qr-footer__sum
+          .qr-footer__integer 4 999
+          .qr-footer__float 00
+          .qr-footer__currency ₽
+        .qr-footer__note Платеж включает все сборы
+    +outcard

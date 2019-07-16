@@ -1,0 +1,27 @@
+@import '../variables';
+
+.data {
+  display: flex;
+  align-items: center;
+
+  margin-top: 13px;
+
+  color: @base-text-color;
+  &:first-of-type {
+    margin-top: 16px;
+  }
+  &:last-of-type{
+    margin-bottom: -6px;
+  }
+
+  &__title {
+    width: 84px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+  }
+  &__text {
+    font-size: 12px;
+  }
+}

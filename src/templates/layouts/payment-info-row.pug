@@ -1,0 +1,25 @@
+include ./checkbox
+
+mixin payment-info-row(text, iconClass)
+  .payment-info__row
+    .payment-info__icon(class!=iconClass)
+    .payment-info__text= text
+
+mixin payment-info-row-max
+  .payment-info__row
+    .payment-info__icon._rub
+    .payment-info__text
+      span Максимальная сумма платежа &#8203;
+        span.solid 15 000 ₽.
+
+mixin payment-info-row-accept
+  label.payment-info__row._accept
+    .payment-info__icon
+      +checkbox
+    .payment-info__text Выражаю согласие с &#8203;
+      a(href='/', target='_blank') офертой.
+
+mixin payment-info-row-blue(text, iconClass)
+  .payment-info__row._blue
+    .payment-info__icon(class!=iconClass)
+    .payment-info__text= text

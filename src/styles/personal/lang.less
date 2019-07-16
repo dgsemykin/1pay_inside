@@ -1,0 +1,25 @@
+@import '../variables';
+
+.lang {
+	margin-left: auto;
+	display: flex;
+	justify-content: space-between;
+	&__item {
+		padding: 0 8px;
+		&:first-of-type {
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: 1px;
+				background-color: @textColor;
+			}
+		}
+		&.active {
+			font-weight: bold;
+		}
+	}
+}

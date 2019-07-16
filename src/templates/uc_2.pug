@@ -1,0 +1,12 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/payways
+include ./layouts/outcard
+
+block content
+  .card
+    +header-v01('./files/logos/park-uno.png', 'parkuno.ru', 'Счет №14566645')
+    .card__body
+      +payways
+    +outcard

@@ -1,0 +1,23 @@
+extends ./layouts/profile/profile-api
+
+include ./layouts/alert
+include ./layouts/field
+include ./layouts/switch
+
+block api
+  .profile-api
+    .profile-api__container
+      .profile-api__column
+        .profile-api__title API Key
+        .profile-api__row
+          +field('', 'API Key', '', './img/profile/key.svg', 'a7zlUF85afRvZrgoOBJJpOmFLcBz0phb')
+          .field__resend
+      .profile-api__column
+        .profile-api__title Сертификат
+          +switch('', true)
+        .profile-api__form
+          .profile-api__notice Текст как создать CSR
+          +alert('_await', ['Сертификат отправлен на почту'])
+          .profile-api__row
+            +field-textarea(class='_with-icon' label='CSR', placeholder='fvhivirei...', icon='./img/profile/description.svg')
+          button.btn._green Получить сертификат

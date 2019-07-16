@@ -1,0 +1,36 @@
+mixin project-info
+  .panel__caption
+    .panel__breadcrumbs
+      a(href='#') Мои проекты
+      span LoveDate360
+    .panel__project-info.project-info
+      .project-info__column._logo
+        a.project-info__logo: img(src='./files/logos/dating.svg')
+      .project-info__column._cats
+        .project-info__row
+          .project-info__label Вебсайт
+          .project-info__value: a(href='#') dating.ru
+        .project-info__row
+          .project-info__label Категория
+          .project-info__value
+            .category-name._velvet Знакомства
+      .project-info__column._status
+        .project-info__row
+          .project-info__label Добавлен
+          .project-info__value 15.06.18
+        .project-info__row
+          .project-info__label Статус
+          .project-info__value
+            .status.status_success Активен
+
+mixin partner-info
+  .panel__caption
+    span.panel__caption-title Настройки, ID партнера: 12345
+    .panel__project-info.project-info
+      .project-info__column
+        .project-info__row
+          .project-info__label Логин:
+          .project-info__value igor@mpay.ru
+        .project-info__row
+          .project-info__label Партнер с:
+          .project-info__value 22.08.2018

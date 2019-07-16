@@ -1,0 +1,60 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/notifications-popups
+include ./layouts/profile/project-info
+include ./layouts/field
+include ./layouts/select-field
+include ./layouts/switch
+
+block content
+  .panel
+    +partner-info
+    .panel__tabs.tabs
+      .tabs__item Профиль
+      .tabs__item Безопасность
+      .tabs__item Настройка API
+      .tabs__item._current Уведомления
+      .tabs__item Активность
+      .tabs__item Идентификация
+    .panel__body
+      .profile-api.notifications
+        .profile-api__container
+          .profile-api__column
+            .profile-api__title Реестры
+            .profile-api__row
+              .profile-api__notice Укажите удобный период и адрес электронной почты для получения реестров платежей
+            .profile-api__row
+              +field('', 'Адрес электронной почты', 'my@company.ru', './img/email.svg', 'my@company.ru', false, null, {class: '_success',msg: 'Активировано'})
+              .profile-api__note Получать на эл. почту каждый
+                +inline-select(value='день', name='regularity', options=[{caption: 'День', value: 'day', checked:true}, {caption: 'Неделя', value: 'week'}, {caption: 'Месяц', value: 'month'}])
+            button.btn._green Сохранить
+          .profile-api__column
+            .profile-api__title Уведомление об ошибках
+            .profile-api__row
+              .profile-api__notice Уведомление об ошибках в работе ваших скриптов можно отправлять следующим способом:
+            .profile-api__row
+              .custom-field
+                .custom-field__label Эл. почта
+                  +switch('', true)
+                .custom-field__value igor@mpay.ru
+                .custom-field__action(data-event='popup', data-popup='notifications-email') настроить
+            .profile-api__row
+              .custom-field
+                .custom-field__label Telegram
+                  +switch('', true)
+                .custom-field__action(data-event='popup', data-popup='notifications-telegram') настроить
+            .profile-api__row
+              .custom-field
+                .custom-field__label Смс
+                  +switch('', true)
+                .custom-field__value +7 926 000 11 22
+                .custom-field__action(data-event='popup', data-popup='notifications-phone') настроить
+
+    +notifications-email(filled=true, status={msg: 'Ожидает подтверждения', class: '_warning'})
+    +notifications-telegram(filled=true)
+    +notifications-phone(filled=true)
+    +notifications-sms(state=true)
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.profile-header__controls .control__item:nth-child(3)').classList.add('_active');

@@ -1,0 +1,32 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/chosen-payway
+include ./layouts/payment-info-row
+include ./layouts/outcard
+include ./layouts/footer
+
+block content
+  .card
+    +header-v01('./files/logos/brick.png', 'brick-studio.ru', 'Пожертвование с начислением 1000 бонусных баллов на счет Server x1000 fun.')
+    .card__body
+      +chosen-payway('Яндекс Деньги', './img/payways/yamoney.png')
+      .payment-info
+        +payment-info-row('Включена комиссия.', '_alert')
+        .payment-info__row
+          .payment-info__icon._anon-wallet
+          .payment-info__text
+            span Анонимные кошельки до &#8203;
+              span.solid 15 000 ₽.
+        .payment-info__row
+          .payment-info__icon._approved-wallet
+          .payment-info__text
+            span Именные кошельки до &#8203;
+              span.solid 60 000 ₽.
+        .payment-info__row
+          .payment-info__icon._personal-wallet
+          .payment-info__text
+            span Идентифицированные кошельки до &#8203;
+              span.solid 250 000 ₽.
+    +footer-v01('Оплатить', '8 040', '00', '₽')
+    +outcard

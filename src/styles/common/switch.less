@@ -1,0 +1,51 @@
+@import '../variables';
+
+.switch {
+	display: block;
+	position: relative;
+	height: 18px;
+	cursor: pointer;
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 9;
+	}
+	&__button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 36px;
+		height: 18px;
+		background: #7b7b7b;
+		border: 1px solid #7b7b7b;
+		border-radius: 9px;
+		z-index: 7;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 1px;
+			bottom: 0;
+			width: 14px;
+			height: 14px;
+			margin: auto;
+			background: #ffffff;
+			border-radius: 100%;
+			transition: all 250ms ease-in-out;
+		}
+	}
+	&__label {
+		line-height: 18px;
+		margin-left: 49px;
+	}
+	&__input:checked + &__button {
+		border-color: #43a047;
+		background-image: linear-gradient(to top, #4caf50, @lightGreen);
+		&:before {
+			left: 19px;
+		}
+	}
+}

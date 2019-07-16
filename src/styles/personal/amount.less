@@ -1,0 +1,65 @@
+@import '../variables';
+
+.amount {
+	display: flex;
+	align-items: flex-start;
+
+	margin-top: 15px;
+
+	color: @base-text-color;
+	font-size: 20px;
+
+	&_big {
+		font-size: 22px;
+
+		.amount__float {
+			font-size: 14px;
+			font-weight: 500;
+		}
+	}
+
+	&_in-cell {
+		margin-top: 9px;
+	}
+
+	&__percent {
+
+		&:after {
+			content: '%';
+			margin-left: 5px;
+		}
+	}
+
+	&__integer {
+		margin-right: 5px;
+		font-weight: 400;
+
+		&:after {
+			content: ',';
+		}
+		&_without-comma {
+			&:after {
+				content: none;
+			}
+		}
+	}
+
+	&__float {
+		font-size: 14px;
+		font-weight: 500;
+		margin-right: 5px;
+		margin-top: 2px;
+	}
+
+	&__currency {
+		font-weight: 400;
+
+		&_bold {
+			font-weight: 400;
+		}
+
+		&:before {
+			content: '₽';
+		}
+	}
+}

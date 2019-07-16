@@ -1,0 +1,122 @@
+mixin field(className, label, placeholder, icon, value, disabled, error, status)
+  .field(class!=className)
+    if (label)
+      .field__label= label
+    label.field__body(class!=attributes.class)
+      if status
+        .field__status(class!=status.class)= status.msg
+      input.field__input(type='text', placeholder!=placeholder, value!=value, disabled!=disabled)
+      if (icon)
+        .field__icon
+          img(src!=icon)
+      if error
+        .field__error= error
+
+mixin field-cvv(className, placeholder, inverse)
+  .field(class!=className)
+    .field__label CVC
+    label.field__body
+      input.field__input(type='text', placeholder!=placeholder)
+      .field__icon.tooltip
+        img(src='./img/cvc.png')
+        if (!inverse)
+          .tooltip__text CVC код располагается на обратной стороне карты.
+        else
+          .tooltip__text._inverse CVC код располагается на обратной стороне карты.
+
+mixin field-card(label, value, icon)
+  .field.card-form__number._required
+    if (label)
+      .field__label= label
+    label.field__body
+      input.field__input(type='text', placeholder='0000   0000   0000   0000', value!=value)
+      .field__icon
+        img(src='./img/card.png', width='16')
+      if (icon)
+        .field__type-icon(class!=icon)
+      if attributes.error
+        .field__error= attributes.error
+
+mixin field-validity(value)
+  .card-form__row
+    .field.card-form__validity
+      .field__label Месяц / год
+      label.field__body
+        input.field__input(type='text', placeholder='00      00', value!=value)
+        .field__icon
+          img(src='./img/calendar.png')
+        if (icon)
+          .field__type-icon(class!=icon)
+
+mixin field-phone(className, label, value, icon)
+  .field(class!=className)
+    if (label)
+      .field__label= label
+    label.field__body
+      input.field__input(type='text', placeholder='000 000 00 00', value!=value)
+      .field__icon
+      if (icon)
+        .field__type-icon(class!=icon)
+
+mixin field-alfa(value)
+  .field.card-form__alpha-login
+    .field__label Ваш логин в «Альфа-клик»
+    label.field__body
+      input.field__input(type='text', placeholder='000 000 00 00', value!=value)
+      .field__icon
+        img(src='./img/icons/personal-wallet.png')
+
+mixin field-numeric(value, placeholder, className, disabled)
+  .field._numeric(class!=className)
+    label.field__body
+      input.field__input(type='text', data-step='0.5', placeholder!=placeholder, value!=value, disabled!=disabled, readonly)
+      .field__numeric-control._up
+      .field__numeric-control._down
+
+mixin field-textarea
+  .field(class!=attributes.class)
+    if (attributes.label)
+      .field__label= attributes.label
+    label.field__body
+      if attributes.status
+        .field__status(class!=attributes.status.class)= attributes.status.msg
+      textarea.field__textarea(placeholder!=attributes.placeholder, disabled!=attributes.disabled)= attributes.value
+      if (attributes.icon)
+        .field__icon
+          img(src!=attributes.icon)
+      if error
+        .field__error= error
+
+mixin field-password
+  .field(class!=attributes.class)
+    if (attributes.label)
+      .field__label= attributes.label
+    label.field__body(class=attributes.noIcon ? "without-icon" : "")
+      if attributes.status
+        .field__status(class!=attributes.status.class)= attributes.status.msg
+      input.field__input(type='password', placeholder!=attributes.placeholder, value!=attributes.value, disabled!=attributes.disabled)
+      if (attributes.icon)
+        .field__icon
+          img(src!=attributes.icon)
+      else if (!attributes.noIcon)
+        .field__icon
+          img(src='./img/icons/password.svg')
+      if (attributes.togglePswd)
+        i.field__toggle-pswd
+      if error
+        .field__error= attributes.error
+
+mixin field-date
+  - attributes.icon = attributes.icon || './img/calendar.svg'
+  .field(class!=attributes.class)
+    if (attributes.label)
+      .field__label= attributes.label
+    label.field__body
+      if attributes.status
+        .field__status(class!=attributes.status.class)= attributes.status.msg
+      input.field__input.js-datepicker(type='text', placeholder!=attributes.placeholder, value!=attributes.value, disabled!=attributes.disabled)
+      if (attributes.icon)
+        .field__icon
+          img(src!=attributes.icon)
+      if attributes.error
+        .field__error= attributes.error

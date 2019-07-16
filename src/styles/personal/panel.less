@@ -1,0 +1,74 @@
+@import '../variables';
+
+.panel {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 20px 0 fade(black, 5%);
+  padding: 16px;
+
+  &__caption {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+
+    display: flex;
+
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+    color: #272424;
+  }
+  &__caption-title {
+    align-self: center;
+    font-size: 22px;
+  }
+
+  &__caption-right-column {
+    margin-left: auto;
+  }
+  &__search {
+    display: inline-block;
+    vertical-align: top;
+    width: 275px;
+    margin-right: 24px;
+    .field__icon {
+      width: 39px;
+      height: 34px;
+    }
+    .pl-to-icon .field__input {
+      padding-left: 39px;
+    }
+    .field__input {
+      height: 36px;
+    }
+  }
+  &__breadcrumbs {
+    font-size: 22px;
+    a {
+      position: relative;
+      margin-right: 32px;
+      text-decoration: none;
+      color: #7b7b7b;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: -27px;
+        border-style: solid;
+        border-width: 4px 7px;
+        border-color: transparent;
+        border-left-color: #272424;
+        cursor: default;
+      }
+    }
+    span {
+
+    }
+  }
+  &__project-info {
+    margin: -1px 0 -1px auto;
+  }
+  &__tabs {
+    padding: 0 15px;
+    margin: -6px -15px 25px;
+  }
+}

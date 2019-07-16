@@ -1,0 +1,89 @@
+@import '../variables';
+
+.pagination {
+	font-size: 10px;
+	font-weight: 500;
+	a, span {
+		display: inline-block;
+		vertical-align: top;
+	}
+	&__arrow {
+		position: relative;
+		height: 27px;
+		line-height: 25px;
+		padding: 0 11px;
+		margin-right: 8px;
+		border: 1px solid #d9d9d9;
+		color: #272424;
+		text-transform: uppercase;
+		border-radius: 2px;
+		box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+		background-image: linear-gradient(to bottom, #ffffff, #ebebeb);
+		cursor: pointer;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 10px;
+			border: solid transparent;
+			border-width: 3px 5px;
+		}
+		&._prev {
+			padding-left: 24px;
+			&:after {
+				left: 6px;
+				border-right-color: #272424;
+			}
+		}
+		&._next {
+			padding-right: 24px;
+			margin-right: 0;
+			&:after {
+				right: 6px;
+				border-left-color: #272424;
+			}
+		}
+		&._disabled {
+			color: #7b7b7b;
+			background: #ebebeb;
+			border-color: #d8d8d8;
+			box-shadow: none;
+			cursor: default;
+			&._prev {
+				&:after {
+					border-right-color: #bfbfbf;
+				}
+			}
+			&._next {
+				&:after {
+					border-left-color: #bfbfbf;
+				}
+			}
+		}
+	}
+	&__page {
+		width: 27px;
+		height: 27px;
+		line-height: 25px;
+		margin-right: 8px;
+		color: #7b7b7b;
+		text-align: center;
+		border: 1px solid transparent;
+		border-radius: 2px;
+		cursor: pointer;
+		&._current {
+			color: #272424;
+			border-color: #d9d9d9;
+			cursor: default;
+		}
+	}
+	&__pointer {
+		width: 24px;
+		height: 27px;
+		line-height: 25px;
+		margin-right: 8px;
+		color: #7b7b7b;
+		text-align: center;
+		cursor: default;
+	}
+}

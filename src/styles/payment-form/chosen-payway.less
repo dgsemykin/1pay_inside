@@ -1,0 +1,71 @@
+@import '../variables';
+
+@payway-height: 64;
+@background: #f7f7f7;
+
+.chosen-payway {
+	position: relative;
+	overflow: hidden;
+	height: unit(@payway-height, px);
+	padding-left: @padding;
+	margin: 0 -@padding;
+	border-top: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;
+	background-color: @background;
+	box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+	&__title {
+		line-height: unit(@payway-height - 2, px);
+		font-size: 22px;
+		color: @base-text-color;
+	}
+	&__logo {
+		position: absolute;
+		display: inline-flex;
+		align-self: center;
+		top: 0;
+		right: 113px;
+		bottom: 0;
+		margin: auto;
+	}
+	&__change {
+		position: absolute;
+		overflow: hidden;
+		width: 94px;
+		height: unit(@payway-height - 2, px);
+		top: 0;
+		right: 0;
+		padding: 12px 17px 0 27px;
+		font-size: 10px;
+		font-weight: 500;
+		line-height: 13px;
+		text-transform: uppercase;
+		background: @blue;
+		color: #ffffff;
+		cursor: pointer;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 13px;
+			height: unit(@payway-height - 2, px);
+			background: data-uri('../../img/chosen-btn-round.png') no-repeat;
+			cursor: default;
+			z-index: 10;
+		}
+	}
+	&__caption {
+		display: inline-flex;
+		align-self: center;
+		font-size: 10px;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+	.btn {
+
+	}
+	&._no-change &__logo {
+		right: 36px;
+	}
+}

@@ -1,0 +1,17 @@
+mixin dialog
+  .dialog
+    .dialog__msg._client
+      .dialog__bubble Здравствуйте, у меня не прошла оплата банковской картой на АльфаБанк при оплате счета на услуги. Что делать?
+      .dialog__timestamp 20:41
+    .dialog__msg._client
+      .dialog__bubble
+        img(src='./files/screenshot.png')
+      .dialog__timestamp 20:41
+    .dialog__msg._manager
+      .dialog__bubble Добрый день. Вас приветствует служба поддержки пользователей mPay. Одну минуточку. Посмотрю.
+      .dialog__timestamp 20:42
+    .dialog__msg._manager
+      .typing.dialog__bubble
+        .typing__circle._bounce1
+        .typing__circle._bounce2
+        .typing__circle._bounce3

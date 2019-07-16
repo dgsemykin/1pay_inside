@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="119" height="117" viewBox="0 0 119 117">
+    <defs>
+        <path id="b" d="M0 0h96v95H0z"/>
+        <filter id="a" width="106.2%" height="106.3%" x="-3.1%" y="-3.2%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        </filter>
+        <linearGradient id="c" x1="34.175%" x2="68.209%" y1="17.017%" y2="17.017%">
+            <stop offset="0%" stop-color="#9CDBF8"/>
+            <stop offset="100%" stop-color="#6ECEF4"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#75B859" d="M60 0l59 44H0z"/>
+        <path fill="#307330" d="M0 44h119v73H0z"/>
+        <g transform="translate(12 10)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#FFF" xlink:href="#b"/>
+        </g>
+        <path fill="url(#c)" d="M2 2h92v25H2z" transform="translate(12 10)"/>
+        <path fill="#BFBFBF" d="M27 47h66v6H27zM40 61h40v4H40zM40 69h40v4H40zM40 77h40v4H40z"/>
+        <path fill="#EBEBEB" d="M40 82h40v4H40z"/>
+        <path fill="#3C8F3C" d="M0 44l52 37-52 36zM119 44L67 81l52 36z"/>
+        <path fill="#75B859" d="M60 73l59 44H0z"/>
+    </g>
+</svg>

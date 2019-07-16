@@ -1,0 +1,55 @@
+.dialog {
+	height: 430px;
+	padding: 16px 16px 8px 0;
+	margin-right: -16px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	z-index: 1;
+	&__msg {
+		position: relative;
+		display: flex;
+		margin-bottom: 8px;
+		&._client {
+			.dialog__bubble {
+				margin-left: auto;
+				color: #ffffff;
+				border-bottom-right-radius: 0;
+				background-color: #0288d1;
+			}
+			.dialog__timestamp {
+				right: 263px;
+			}
+		}
+		&._manager {
+			.dialog__bubble {
+				border-bottom-left-radius: 0;
+				background-color: #ebebeb;
+			}
+			.dialog__timestamp {
+				left: 263px;
+			}
+		}
+		&._client + &._manager,
+		&._manager + &._client {
+			margin-top: 16px;
+		}
+	}
+	&__bubble {
+		max-width: 253px;
+		padding: 16px;
+		border-radius: 20px;
+		&.typing {
+			height: 40px;
+		}
+	}
+	&__timestamp {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		height: 11px;
+		line-height: 11px;
+		margin: auto;
+		font-size: 10px;
+		color: #bfbfbf;
+	}
+}

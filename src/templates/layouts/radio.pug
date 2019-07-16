@@ -1,0 +1,6 @@
+mixin radio(name, caption, checked, disabled, value)
+  label.radio
+    input.radio__input(type='radio', name !=name, value!=value, checked!=checked, disabled!=disabled)
+    .radio__button
+    if (caption)
+      .radio__label= caption

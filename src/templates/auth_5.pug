@@ -1,0 +1,31 @@
+extends ./layouts/auth/index
+
+include ./layouts/checkbox
+include ./layouts/field
+include ./layouts/radio
+
+block content
+  .auth.auth_small
+    .auth__header.auth__header_logo-to-up
+      .auth__title Подтверждение
+      .auth__logo
+        img(src="./files/logos/mpay.png", srcset="./files/logos/mpay.png 1x, ./files/logos/mpay@2x.png 2x, ./files/logos/mpay@3x.png 3x,", alt="Mpay")
+      .auth__picture.auth__picture_envelop
+        .auth__stripe
+          span
+          span
+          span
+        img(src="./img/letter-in-envelope.svg", alt="")
+        .auth__stripe
+          span
+          span
+          span
+
+    .auth__body
+      .auth__description Для подтверждения регистрации перейдите по ссылке в письме, которое мы вам отправили на:
+      .auth__description.auth__description_email konstantin@bakehouse.moscow
+
+    .auth__suggestion
+      |Не получили письмо?
+      a#sendAgain(href="#") Повторить
+      .auth__tips#showTip Мы отправили письмо

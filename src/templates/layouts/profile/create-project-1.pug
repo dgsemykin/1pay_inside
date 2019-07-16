@@ -1,0 +1,22 @@
+mixin create-project-1
+  .create-project.popup(data-popup='create-project-step-1')
+    .popup__header
+      .popup__title.create-project__title
+        img.create-project__icon(src='./img/profile/briefcase.svg')
+        | Добавление нового проекта
+      .popup__close(data-event="popup-close", data-popup='create-project-step-1')
+    .popup__body
+      .create-project__tabs
+        .create-project__tab._current 1. Сведения о проекте
+        .create-project__tab 2. Подтверждение и проверка
+      .create-project__form
+        .create-project__column
+          .create-project__row
+            +field('', 'Название', 'Мой проект', './img/profile/name.svg')
+          .create-project__row
+            +field('', 'Адрес сайта', 'website.ru', './img/profile/link.svg')
+        .create-project__column
+          .create-project__row
+            +field-textarea(class='_with-icon' label='Описание', placeholder='Расскажите несколько слов о вашем проекте', icon='./img/profile/description.svg')
+    .popup__footer
+      button.btn._green(data-event='popup', data-popup='create-project-step-2') Далее

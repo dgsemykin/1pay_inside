@@ -1,0 +1,118 @@
+body {
+	@media all and (-ms-high-contrast: none) {
+		.alert {
+			&._warning {
+				&:before {
+					background-image: data-uri('../../img/warning.png');
+				}
+			}
+			&._await {
+				&:before {
+					background-image: data-uri('../../img/await.png');
+				}
+			}
+			&._success {
+				&:before {
+					background-image: data-uri('../../img/success.png');
+				}
+			}
+		}
+
+		.chat-form {
+			&__attach {
+				background: data-uri('../../img/attach.png') no-repeat;
+			}
+		}
+
+		.chat {
+			&__close {
+				background: data-uri('../../img/close.png') no-repeat;
+			}
+		}
+
+		.checkbox {
+			&__input:checked + &__button {
+				background-image: data-uri('../../img/check.png');
+			}
+		}
+
+		.field {
+			&__type-icon {
+				&._beeline {
+					background-image: data-uri('../../img/type-icon/beeline.png');
+				}
+				&._maestro {
+					background-image: data-uri('../../img/type-icon/maestro.png');
+				}
+				&._mastercard {
+					background-image: data-uri('../../img/type-icon/mastercard.png');
+				}
+				&._megafon {
+					background-image: data-uri('../../img/type-icon/megafon.png');
+				}
+				&._mir {
+					background-image: data-uri('../../img/type-icon/mir.png');
+				}
+				&._mts {
+					background-image: data-uri('../../img/type-icon/mts.png');
+				}
+				&._tele2 {
+					background-image: data-uri('../../img/type-icon/tele2.png');
+				}
+				&._visa {
+					background-image: data-uri('../../img/type-icon/visa.png');
+				}
+			}
+		}
+
+		.outcard {
+			&__icon {
+				&._msg {
+					background-img: data-uri('../../img/msg.png');
+				}
+			}
+		}
+
+		.payment-info {
+			&__icon {
+				&._alert {
+					background-image: data-uri('../../img/icons/alert.png');
+				}
+				&._anon-wallet {
+					background-image: data-uri('../../img/icons/anon-wallet.png');
+				}
+				&._approved-wallet {
+					background-image: data-uri('../../img/icons/approved-wallet.png');
+				}
+				&._personal-wallet {
+					background-image: data-uri('../../img/icons/personal-wallet.png');
+					background-size: 16px;
+				}
+				&._protected {
+					background-image: data-uri('../../img/icons/protected.png');
+				}
+				&._rub {
+					background-image: data-uri('../../img/icons/rub.png');
+				}
+				&._wallet {
+					background-image: data-uri('../../img/icons/wallet.png');
+				}
+			}
+		}
+
+		.tns {
+			button[data-controls="prev"] {
+				background-image: data-uri('../../img/slide-shadow-start.png');
+				&:hover:before {
+					background-image: data-uri('../../img/arrow-left.png');
+				}
+			}
+			button[data-controls="next"] {
+				background-image: data-uri('../../img/slide-shadow-end.png');
+				&:before {
+					background-image: data-uri('../../img/arrow-right.png');
+				}
+			}
+		}
+	}
+}

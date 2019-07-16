@@ -1,0 +1,58 @@
+extends ./layouts/profile/index
+
+include  ./layouts/profile/project-info
+include ./layouts/field
+include ./layouts/select-field
+
+block content
+    .panel
+      +project-info
+      .panel__tabs.tabs
+        .tabs__item._current Настройки проекта
+        .tabs__item Тарифы и комиссии
+        .tabs__item Настройки формы оплаты
+        .tabs__item Виджет оплаты
+      .panel__body
+        .project-settings
+          .project-settings__docs: a(href='#') Документация по настройке проекта
+          .project-settings__notice На этот адрес мы будем уведомлять вашу платформу об изменении статуса платежа.
+          .project-settings__row
+            .project-settings__url
+              +field('project-settings__url-field', 'URL разработчика', 'website.ru', './img/profile/link.svg')
+              button.btn._silver.project-settings__btn Тест соединения
+            button.btn._silver._small(data-event='popup', data-popup='test-request') Тестовый запрос
+          .project-settings__row
+            +field('project-settings__api-field', 'API key', '', './img/profile/key.svg', 'a7zlUF85afRvZrgoOBJJpOmFLcBz0phb', true)
+            button.btn._silver.project-settings__btn Изменить
+          .project-settings__row
+            +field('project-settings__id-field', 'ID', '', './img/profile/id.svg', '123456', true)
+
+        button.btn._green Сохранить
+
+    .test-request.popup(data-popup='test-request')
+      .popup__header
+        .popup__title Тестовый запрос
+        .popup__close(data-event="popup-close", data-popup='test-request')
+      .popup__body
+        .test-request__row
+          .test-request__column
+            +select-field('test-request__method', [{value: '1', label: '1'}, {value: '1', label: '1'}], 'Метод оплаты')
+          .test-request__column
+            +select-field('test-request__account', [{value: '1', label: '1'}, {value: '1', label: '1'}], 'Account')
+          .test-request__column
+            +select-field('test-request__type', [{value: '1', label: '1'}, {value: '1', label: '1'}], 'Тип платежа')
+        .test-request__row
+          .test-request__column
+            +field('test-request__sum', 'Сумма платежа', '', '', '10')(class='without-icon')
+          .test-request__column
+            +field('test-request__id', 'ID платежа', '', '', '914')(class='without-icon')
+        .test-request__row
+          +field-textarea(class='test-request__request', label='Запрос к серверу', value='params[payerSum]=0.00', disabled=true)
+        .test-request__row
+          +field-textarea(class='test-request__response', label='Ответ сервера', value='{«result', disabled=true)
+      .popup__footer
+        button.btn._green Отправить запрос
+
+    script.
+      document.querySelector('.nav__item.active').classList.remove('active');
+      document.querySelector('.nav__item:nth-child(3)').classList.add('active');

@@ -1,0 +1,128 @@
+@import '../variables';
+
+.card {
+	display: block;
+	vertical-align: middle;
+	position: relative;
+	text-align: left;
+	width: 392px;
+	margin: 100px auto 0;
+	border-radius: 3px;
+	background-color: #ffffff;
+	box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+	&__body {
+		position: relative;
+		padding-right: @padding;
+		padding-left: @padding;
+		.screen-1 {
+			background: #ffffff;
+			z-index: 11;
+			&._hidden {
+				position: absolute;
+				overflow: hidden;
+				top: 0;
+				right: 0;
+				left: 0;
+				padding: 0 16px;
+			}
+		}
+		.screen-2 {
+			position: absolute;
+			overflow: hidden;
+			top: 0;
+			right: 0;
+			left: 0;
+			height: 0;
+			border-radius: 0 0 3px 3px;
+			z-index: 12;
+			&._visible {
+
+			}
+			.payways {
+				margin: 0;
+				border-top: 0;
+				background: #ffffff;
+			}
+		}
+		&._shadowed {
+			.card__mouse {
+				display: block;
+			}
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				right: 0;
+				left: 0;
+				height: 86px;
+				background-repeat: repeat-x;
+				z-index: 13;
+			}
+			&:before {
+				top: 0;
+				background-image: data-uri('../../img/top-shadow.png');
+			}
+			&:after {
+				bottom: -1px;
+				background-image: data-uri('../../img/bottom-shadow.png');
+			}
+			&._on-top {
+				&:before {
+					display: none;
+				}
+			}
+			&._on-bottom {
+				.card__mouse {
+					display: none;
+				}
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+	&__mouse {
+		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 16px;
+		width: 16px;
+		height: 24px;
+		margin: auto;
+		transform: translateX(-50%);
+		border: 2px solid #272424;
+		background-color: #ffffff;
+		border-radius: 8px;
+		z-index: 20;
+	}
+	&__mouse-inner {
+		top: 4px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 4px;
+		height: 4px;
+		border-radius: 100%;
+		position: absolute;
+		background-color: #272424;
+		animation: mouseWheel 4s linear 0s infinite;
+	}
+	&._chat {
+		width: 340px;
+	}
+}
+
+@keyframes mouseWheel {
+	0% {
+		top: 4px;
+	}
+	13% {
+		top: 12px;
+	}
+	25% {
+		top: 4px;
+	}
+	100% {
+		top: 4px;
+	}
+}

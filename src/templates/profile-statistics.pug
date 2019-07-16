@@ -1,0 +1,240 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/statistic-rows
+include ./layouts/profile/pagination
+include ./layouts/checkbox
+include ./layouts/field
+include ./layouts/select-field
+include ./layouts/svg-icons
+
+block content
+
+  .statistics.content-panel
+    .content-panel__header
+      .content-panel__header-caption 11.07.18 - 18.07.18
+      .content-panel__header-item._transaction
+        |Транзакций:
+        span.amount__integer.amount__integer_without-comma 10263
+
+      .content-panel__header-item._amount-of-income
+        |Сумма дохода:
+        span.amount
+          .amount__integer 34 567
+          .amount__float 45
+          .amount__currency
+
+      .content-panel__header-item._calendar
+        .datepicker-wrapper
+          .datepicker-wrapper__icon: img(src="./img/calendar.svg")
+          .datepicker-wrapper__text.datepicker-wrapper__text_gray.js-datepicker Выберите период
+
+    .content-panel__search
+      .content-panel__search-item
+        +field('search', 'поиск', 'Телефон, счет, номер транзакции', './img/search.svg')(class="icons-bg-clean pl-to-icon")
+      .content-panel__filter-item._status
+        +muili-select(
+          [
+            {
+              options: [
+                {label: 'Успешно', value: '0', className: 'status status_success'},
+                {label: 'Ожидание', value: '1', className: 'status status_wait'},
+                {label: 'Ошибка', value: '2', className: 'status status_danger'},
+                {label: 'Отменен', value: '3', className: 'status status_blue'}
+              ]
+            }
+          ],
+          'Статус',
+          '_middle'
+        )
+      .content-panel__filter-item
+        +muili-select(
+          [
+            {
+              options: [
+                {label: 'dating.ru', value: '1'},
+                {label: 'kisses.ru', value: '2'},
+                {label: 'playo.ru', value: '3'},
+                {label: 'marble.com', value: '4'},
+                {label: 'lion-ticket.ru', value: '5'},
+                {label: 'mapping-custom.ru', value: '6'}
+              ]
+            }
+          ],
+          'Проекты',
+          '_middle'
+        )
+      .content-panel__filter-item._payways
+        +muili-select(
+          [
+            {
+              title: 'Банковские карты',
+              options: [
+                {label: 'Mastercard', value: '0', img: './img/type-icon/mastercard.svg'},
+                {label: 'Visa', value: '1', img: './img/type-icon/visa.svg'},
+                {label: 'Maestro', value: '2', img: './img/type-icon/maestro.svg'},
+                {label: 'МИР', value: '3', img: './img/type-icon/mir.svg'}
+              ]
+            },
+            {
+              title: 'Электронные кошельки',
+              options: [
+                {label: 'Webmoney', value: '4', img: './img/type-icon/webmoney.svg'},
+                {label: 'QIWI', value: '5', img: './img/type-icon/qiwi.svg'},
+                {label: 'Яндекс.Деньги', value: '6', img: './img/type-icon/yamoney.svg'},
+                {label: 'Viber', value: '7', img: './img/type-icon/viber.svg'}
+              ]
+            },
+            {
+              title: 'Платежные системы',
+              options: [
+                {label: 'Apple Pay', value: '8', img: './img/type-icon/applepay.svg'},
+                {label: 'Samsung Pay', value: '9', img: './img/type-icon/samsung-pay.svg'},
+                {label: 'Альфа-Банк', value: '10', img: './img/type-icon/alfabank.svg'},
+                {label: 'Промсвязьбанк', value: '11', img: './img/type-icon/promsvyazbank.svg'}
+              ]
+            },
+            {
+              title: 'Цифровая валюта',
+              options: [
+                {label: 'Bitcoin', value: '12', img: './img/type-icon/bitcoin.svg'},
+                {label: 'Litecoin', value: '13', img: './img/type-icon/litecoin.svg'},
+                {label: 'Dashcoin', value: '14', img: './img/type-icon/dashcoin.svg'},
+                {label: 'Etherium', value: '15', img: './img/type-icon/etherium.svg'},
+                {label: 'Zcoin', value: '16', img: './img/type-icon/zcoin.svg'}
+              ]
+            }
+          ],
+          'Способ оплаты',
+          '_middle'
+        )
+      .content-panel__filter-item._operator
+        +muili-select(
+          [
+            {
+              options: [
+                {label: 'Мегафон', value: '2', img: './img/type-icon/megafon.svg'},
+                {label: 'Билайн', value: '3', img: './img/type-icon/beeline.svg'},
+                {label: 'МТС', value: '1', img: './img/type-icon/mts.svg'},
+                {label: 'Теле2', value: '0', img: './img/type-icon/tele2.svg'}
+              ]
+            }
+          ],
+          'Оператор',
+          '_middle'
+        )
+      .content-panel__search-item._button
+        button.btn._green(type="button") Показать
+    .statistics__operation
+      .operation__container
+        .operation._csv.js-call-context Выгрузить CSV
+        .context-menu
+          .context-menu__item Все
+          .context-menu__item Выбранные
+      .operation__container
+        .operation._send.js-call-context Переотправить
+        .context-menu
+          .context-menu__item Все
+          .context-menu__item Выбранные
+    .statistics__table
+      table.table
+        thead.table__head
+          tr
+            th.table__checkbox: +checkbox
+            th
+              .sort
+                .sort__title Дата
+                .sort__arrow._asc._active
+            th
+              .sort
+                .sort__title № Платежа
+                .sort__arrow._asc
+            th
+              .sort
+                .sort__title Проект
+                .sort__arrow._asc
+            th
+              .sort
+                .sort__title Счет
+                .sort__arrow._asc
+            th
+              .sort
+                .sort__title Статус
+                .sort__arrow._asc
+            th
+              .sort
+                .sort__title Сумма
+                .sort__arrow._asc
+            th
+              .sort
+                .sort__title Доход
+                .sort__arrow._asc
+            th
+        tbody.table__body
+          +statistic-rows
+
+      +pagination('statistics__pagination')
+
+      .selected-result
+        .selected-result__caption Выбрано:
+        .selected-result__value 1 из 12456
+
+      .clr
+
+    .payment-details.popup(data-popup='payment-details')
+      .popup__header
+        .popup__title № 9283748928374892837483748
+        .popup__sub-title Детализация платежа
+        .popup__close(data-event="popup-close", data-popup='payment-details')
+      .popup__body
+        .payment-details__scroll
+          .payment-details__msg-body._in
+            .payment-details__msg
+              .payment-details__msg-head
+                .payment-details__status init
+                .payment-details__link.tooltip https://xxx.abc-def.gh/ijklm/nopqrs/very-very-very-long-t…
+                  .tooltip__text._down._inverse https://xxx.abc-def.gh/ijklm/nopqrs/very-very-very-long-text?tuvxyz=1234567890
+              .payment-details__msg-text https://api.mpay.ru/init_payment?payment_type=mc&partner_id=1234&amount=50&phone=79261234567&sign=d724e1e6453a43397bb2aa6d6be9cc06
+            .payment-details__timestamp
+              .payment-details__time 20:41:13
+              .payment-details__date 17.07
+          .payment-details__msg-body._from
+            .payment-details__msg
+              .payment-details__msg-head
+                .payment-details__status status
+                .payment-details__link HTTP POST https://abc.de
+              .payment-details__msg-text {"subscription_id":"43f3c973824aded6f6ec419c2b4cf6bd","status":3,"status_description":"SUCCESS","init_time":"1531753718","operator_id":1,"operator_name":"mts"}
+            .payment-details__timestamp
+              .payment-details__time 20:41:13
+              .payment-details__date 17.07
+          .payment-details__msg-body._in
+            .payment-details__msg
+              .payment-details__msg-head
+                .payment-details__status init
+                .payment-details__link HTTP GET https://abc.de
+              .payment-details__msg-text 500 Internal server error
+            .payment-details__timestamp
+              .payment-details__time 20:41:13
+              .payment-details__date 17.07
+          .payment-details__msg-body._from
+            .payment-details__msg
+              .payment-details__msg-head
+                .payment-details__status status
+                .payment-details__link HTTP POST https://abc.de
+              .payment-details__msg-text {"subscription_id":"43f3c973824aded6f6ec419c2b4cf6bd","status":3,"status_description":"SUCCESS","init_time":"1531753718","operator_id":1,"operator_name":"mts"}
+            .payment-details__timestamp
+              .payment-details__time 20:41:13
+              .payment-details__date 17.07
+          .payment-details__msg-body._in
+            .payment-details__msg
+              .payment-details__msg-head
+                .payment-details__status init
+                .payment-details__link HTTP GET https://abc.de
+              .payment-details__msg-text 500 Internal server error
+            .payment-details__timestamp
+              .payment-details__time 20:41:13
+              .payment-details__date 17.07
+
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(2)').classList.add('active');

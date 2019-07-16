@@ -1,0 +1,24 @@
+extends ./layouts/profile/index
+
+include ./layouts/field
+include ./layouts/profile/create-project-1
+include ./layouts/profile/create-project-2
+include ./layouts/profile/create-project-3
+
+block content
+  .panel
+    .panel__body
+      .entity-add._project
+        .entity-add__caption Чтобы принимать платежи создайте свой первый проект.
+        button.entity-add__btn.btn._green(data-event='popup', data-popup='create-project-step-1')
+          img.btn__icon(src='./img/icons/plus.svg')
+          | Создать
+  .popup__wrap
+    +create-project-1
+  +create-project-2
+  +create-project-3
+
+  script(src='/js/personal-table.js')
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(3)').classList.add('active');

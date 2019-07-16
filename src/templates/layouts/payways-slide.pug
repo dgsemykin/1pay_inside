@@ -1,0 +1,8 @@
+include ./payway
+
+mixin payways-slide(logos)
+  .payways-slide._start
+    .payways-slide__slider
+      each logo in logos
+        .payways-slide__item
+          +payway(logo)

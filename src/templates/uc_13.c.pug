@@ -1,0 +1,26 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/bill-info-row
+include ./layouts/outcard
+include ./layouts/footer
+
+block content
+  .card
+    +header-bill('./files/logos/parkside.png', 'Чек №34687216')
+    .card__body
+      .bill-info
+        -
+          var info = [
+            {caption: 'Сайт:', value: 'parkside.agency'},
+            {caption: 'Описание:', value: 'Счёт №54'},
+            {caption: 'Способ оплаты:', value: 'Банковская карта'},
+            {caption: 'Сумма покупки:', value: '24 151,18 ₽'},
+            {caption: 'Статус:', value: 'Успешная оплата с помощью АльфаБанк', className: '_success'},
+            {caption: 'Дата покупки:', value: '6 июня 2018'},
+            {caption: 'Время покупки:', value: '21:45'}
+          ]
+        each item in info
+          +bill-info-row(item.caption, item.value, item.className)
+    +footer-v02('Вернуться в магазин')
+    +outcard

@@ -1,0 +1,18 @@
+extends ./layouts/profile/profile-api
+
+include ./layouts/switch
+include ./layouts/field
+
+block api
+  .profile-api
+    .profile-api__container
+      .profile-api__column
+        .profile-api__title API Key
+        .profile-api__row
+          +field('', 'API Key', '', './img/profile/key.svg', 'a7zlUF85afRvZrgoOBJJpOmFLcBz0phb')
+          .field__resend
+      .profile-api__column
+        .profile-api__title Сертификат
+          +switch('', true)
+        .profile-api__notice._key 45:B5:E4:6F:36:AD:0A:98:94:B4:02:66:2B:12:17:F2:56:26:A0:E0;com.example
+        button.btn._silver Удалить сертификат

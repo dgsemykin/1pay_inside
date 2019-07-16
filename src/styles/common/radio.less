@@ -1,0 +1,54 @@
+@import '../variables';
+
+.radio {
+	display: block;
+	position: relative;
+	height: 16px;
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 9;
+	}
+	&__button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		background: #ffffff;
+		border: solid 1px #d8d8d8;
+		border-radius: 100%;
+		z-index: 7;
+	}
+	&__label {
+		line-height: 16px;
+		margin-left: 28px;
+	}
+	&__input:checked + &__button {
+		border-color: #43a047;
+		background-image: linear-gradient(to top, #4caf50, @lightGreen);
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 8px;
+			height: 8px;
+			margin: auto;
+			background: #ffffff;
+			border-radius: 100%;
+		}
+	}
+	&__input:disabled + &__button {
+		background: #ebebeb;
+		border-color: #d8d8d8;
+		&:before {
+			display: none;
+		}
+	}
+}

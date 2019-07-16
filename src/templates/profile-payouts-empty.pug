@@ -1,0 +1,15 @@
+extends ./layouts/profile/index
+
+block content
+  .panel
+    .panel__body
+      .entity-add._payouts
+        .entity-add__caption У вас пока нет ни одного шаблона для выплат
+        a.entity-add__btn.btn._green(href='#')
+          img.btn__icon(src='./img/icons/plus.svg')
+          | Создать шаблон
+        a.entity-add__link(href='#') API для выплат
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(5)').classList.add('active');

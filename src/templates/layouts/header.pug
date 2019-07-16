@@ -1,0 +1,34 @@
+mixin header-v01(logo, title, caption)
+  .header
+    .header__top
+      .header__info
+        .header__title
+          a(href='/')= title
+      .header__logo: img(src!=logo)
+    if (caption)
+      .header__caption= caption
+
+mixin header-v02(logo, title, caption)
+  .header
+    .header__top
+      .header__info
+        .header__title
+          a= title
+        if (caption)
+          .header__caption= caption
+      .header__logo: img(src!=logo)
+
+mixin header-v03(logo, title, caption)
+  .header._with-bg(style='background-image: url(./files/bg.png);')
+    .header__top
+      .header__info
+        .header__title
+          a= title
+      .header__logo: img(src!=logo)
+    .header__caption= caption
+
+mixin header-bill(logo, bill)
+  .header._bill
+    .header__top
+      .header__result-bill= bill
+      .header__logo: img(src!=logo)

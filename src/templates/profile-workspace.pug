@@ -1,0 +1,318 @@
+extends ./layouts/profile/index
+
+include ./layouts/chart
+include ./layouts/svg-icons
+include ./layouts/field
+
+block content
+  .top-bar
+    .top-bar__menu
+      a.top-bar__item.active(href='#') Сегодня
+      a.top-bar__item(href='#') Неделя
+      a.top-bar__item(href='#') Прошлая неделя
+      a.top-bar__item(href='#') Месяц
+      a.top-bar__item(href='#') Прошлый месяц
+    .top-bar__calendar
+      .datepicker-wrapper
+        .datepicker-wrapper__icon: img(src="./img/calendar.svg")
+        .datepicker-wrapper__text.js-datepicker Выберите период
+
+  h1.title
+    .title__text Доход за 13.07 составил:
+    .title__amount.amount
+      .amount__integer 345 617
+      .amount__float 86
+      .amount__currency.amount__currency_bold
+
+  .cell
+    .cell__left
+      .cell__item.cell__item_one
+        .cell__wrapper.cell__wrapper_hoverable
+
+          .cell__header
+            .cell__title
+              .cell__text ВСЕГО ПЛАТЕЖЕЙ
+              .cell__count 7380
+
+          .cell__body
+            .cell__value.amount.amount_in-cell.amount_big
+              .amount__integer 2 345 617
+              .amount__float 23
+              .amount__currency
+              
+
+      .cell__item.cell__item_one
+        .cell__wrapper.cell__wrapper_hoverable
+
+          .cell__header
+            .cell__title
+              .cell__text Оплачено
+              .cell__count 3245
+            .cell__icon
+              img(src="img/access.svg", alt="")
+
+          .cell__body
+            .cell__value.amount.amount_in-cell.amount_big
+              .amount__integer 2 345 617
+              .amount__float 23
+              .amount__currency
+              
+      .cell__item.cell__item_one
+        .cell__wrapper.cell__wrapper_hoverable
+
+          .cell__header
+            .cell__title
+              .cell__text Не оплачено
+              .cell__count 4135
+            .cell__icon
+              img(src="img/cancel.svg", alt="")
+              
+          .cell__body
+            .cell__value.amount.amount_in-cell.amount_big
+              .amount__integer 2 345 617
+              .amount__float 23
+              .amount__currency
+              
+      .cell__item.cell__item_three
+        .cell__wrapper
+          .cell__header.cell__header_pb-line
+            .cell__title
+              .cell__text СВОДНАЯ СТАТИСТИКА
+            .cell__control
+              button.cell__control_chart-switcher.js-toggle-chart._active(data-type='line'): include ../img/icons/chart-line.svg
+              button.cell__control_chart-switcher.js-toggle-chart(data-type='bar'): include ../img/icons/chart-bar.svg
+              a(href="") Детальная статистика
+          .cell__body
+            .chart.chart_line.chart_active(data-type='line')
+              +chart('line')
+            .chart.chart_bar(data-type='bar')
+              +chart('bar')
+
+      .cell__item.cell__item_one
+        .cell__wrapper
+          
+          .cell__header
+            .cell__title
+              .cell__text СРЕДНИЙ ЧЕК
+
+          .cell__body
+            .cell__value.amount
+              .amount__integer 345 617
+              .amount__float 23
+              .amount__currency
+              
+      .cell__item.cell__item_one
+        .cell__wrapper
+          
+          .cell__header
+            .cell__title
+              .cell__text МАКСИМАЛЬНЫЙ ПЛАТЕЖ
+
+          .cell__body
+            .cell__value.amount
+              .amount__integer 345 617
+              .amount__float 23
+              .amount__currency
+              
+      .cell__item.cell__item_one
+        .cell__wrapper
+          
+          .cell__header
+            .cell__title
+              .cell__text МИНИМАЛЬНЫЙ ПЛАТЕЖ
+
+          .cell__body
+            .cell__value.amount
+              .amount__integer 345 617
+              .amount__float 23
+              .amount__currency
+              
+      .cell__item.cell__item_three
+        .cell__wrapper
+          .cell__header.cell__header_pb-line
+            .cell__title
+              .cell__text.cell__text_triangle._opened#newsButton НОВОСТИ
+            .cell__control
+              a(href="") Все новости
+          .cell__body#newsBody
+            #newsWrap
+              .news
+                .news__title Новость 1
+                .news__date 11 июля 2018, 17:31
+                .news__body
+                  p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+              .news
+                .news__title Новость 2
+                .news__date 11 июля 2018, 17:32
+                .news__body
+                  p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения.
+
+    .cell__right
+      .cell__item.cell__item_three
+        .cell__wrapper
+          .cell__header
+            .cell__title
+              .cell__text Конверсия
+              .cell__count 45
+            .cell__icon
+              img(src="img/percent.svg", alt="")
+              
+          .cell__body
+            .cell__value.amount.amount_in-cell.amount_big
+              .amount__percent 70
+              
+      .cell__item.cell__item_three
+        .cell__wrapper.cell__wrapper_hoverable
+          .cell__header
+            .cell__title
+              .cell__text КОРРЕКТИРОВКИ
+              .cell__count 300
+            .cell__icon
+              img(src="img/faders.svg", alt="")
+
+          .cell__body
+            .cell__value.amount.amount_in-cell.amount_big
+              .amount__integer -16457
+              .amount__float 45
+              .amount__currency
+              
+      .cell__item.cell__item_three
+        .cell__wrapper.cell__wrapper_hoverable
+          .cell__header
+            .cell__title
+              .cell__text РАССЫЛКИ
+              .cell__count 30
+            .cell__icon
+              img(src="img/mind.svg", alt="")
+
+          .cell__body
+            .cell__value.amount.amount_in-cell.amount_big
+              .amount__integer -16457
+              .amount__float 23
+              .amount__currency
+              
+      .cell__item.cell__item_three
+        .cell__wrapper
+          .cell__header.cell__header_pb-line
+            .cell__title
+              .cell__text ПРОЕКТЫ
+            .cell__header-button
+              button(data-template="activeList")
+                +list-icon()
+              button.active(data-template="activePie")
+                +pie-icon()
+
+          .js-scroll
+            .cell__body.cell__body_scroll.activePie
+
+              .list-view
+                .list-view__item
+                  .list-view__description
+                    .list-view__title Pandawow
+                    .list-view__tag.list-view__tag_blue Игры
+                  .list-view__sum
+                    .amount
+                      .amount__integer 345 617
+                      .amount__float 23
+                      .amount__currency
+                .list-view__item
+                  .list-view__description
+                    .list-view__title EcoSet
+                    .list-view__tag.list-view__tag_green Здоровье
+                  .list-view__sum
+                    .amount
+                      .amount__integer 345 617
+                      .amount__float 23
+                      .amount__currency
+                .list-view__item
+                  .list-view__description
+                    .list-view__title HealthCare
+                    .list-view__tag.list-view__tag_pink Эротика
+                  .list-view__sum
+                    .amount
+                      .amount__integer 345 617
+                      .amount__float 23
+                      .amount__currency
+                .list-view__item
+                  .list-view__description
+                    .list-view__title NinjaWorld
+                    .list-view__tag.list-view__tag_blue Игры
+                  .list-view__sum
+                    .amount
+                      .amount__integer 345 617
+                      .amount__float 23
+                      .amount__currency
+                .list-view__item
+                  .list-view__description
+                    .list-view__title Pandawow
+                    .list-view__tag.list-view__tag_blue Игры
+                  .list-view__sum
+                    .amount
+                      .amount__integer 345 617
+                      .amount__float 23
+                      .amount__currency
+
+              .chart.chart_pie
+                +chart('pie1')
+
+      .cell__item.cell__item_three
+        .cell__wrapper
+          .cell__header.cell__header_pb-line
+            .cell__title
+              .cell__text СПОСОБЫ ОПЛАТЫ
+            .cell__header-button
+              .cell__header-button
+              button.active(data-template="activeList")
+                +list-icon()
+              button(data-template="activePie")
+                +pie-icon()
+
+          .cell__body.cell__body_scroll.activeList
+
+            .list-view
+              .list-view__item
+                .list-view__description.list-view__description_brand
+                  .list-view__icon
+                    img(src="img/mts-icon.svg")
+                  .list__brand МТС
+                .list-view__sum
+                  .amount
+                    .amount__integer 3459
+                    .amount__float 00
+                    .amount__currency
+
+              .list-view__item
+                .list-view__description.list-view__description_brand
+                  .list-view__icon
+                    img(src="img/megafon-icon.svg")
+                  .list__brand Мегафон
+                .list-view__sum
+                  .amount
+                    .amount__integer 38459
+                    .amount__float 00
+                    .amount__currency
+
+              .list-view__item
+                .list-view__description.list-view__description_brand
+                  .list-view__icon
+                    img(src="img/beeline-icon.svg")
+                  .list__brand Билайн
+                .list-view__sum
+                  .amount
+                    .amount__integer 999459
+                    .amount__float 00
+                    .amount__currency
+
+              .list-view__item
+                .list-view__description.list-view__description_brand
+                  .list-view__icon
+                    img(src="img/apple-icon.svg")
+                  .list__brand Apple Pay
+                .list-view__sum
+                  .amount
+                    .amount__integer 4459
+                    .amount__float 00
+                    .amount__currency
+
+            .chart.chart_pie
+              +chart('pie2')

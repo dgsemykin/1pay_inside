@@ -1,0 +1,39 @@
+extends ./layouts/auth/index
+
+include ./layouts/checkbox
+include ./layouts/field
+include ./layouts/radio
+
+block content
+  .auth.auth_small
+    .auth__header.auth__header_logo-to-up
+      .auth__title Регистрация
+      .auth__logo
+        img(src="./files/logos/mpay.png", srcset="./files/logos/mpay.png 1x, ./files/logos/mpay@2x.png 2x, ./files/logos/mpay@3x.png 3x,", alt="Mpay")
+
+    .auth__body
+      .figure
+        .figure__item
+          .figure__picture
+            img(src="./img/businessman-color.svg")
+          .figure__checkbox
+            +radio('business-type', 'Юридическое лицо', true)
+        .figure__item
+          .figure__picture
+            img(src="./img/youngman-color.svg")
+          .figure__checkbox
+            +radio('business-type', 'Физическое лицо')
+
+      .auth__field
+        +field('email', 'АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ', 'my@company.ru', './img/email.svg', null, false, 'Введите ваш адрес электронной почты')
+      .auth__field
+        +field('inn', 'ИНН', '0000000000', './img/organization.svg', null, false, 'Введите ИНН вашей организации')
+      .auth__field.auth__field_checkbox
+        +checkbox('Я принимаю условия')
+        |&nbsp;
+        a(href="#") публичной оферты.
+    .auth__footer.auth__footer_right
+      button.button__item.button__item_green.button__item_footer() Подключить
+    .auth__suggestion
+      | Уже партнер MPay?
+      a(href="#") Войти

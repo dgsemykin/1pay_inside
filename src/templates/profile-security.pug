@@ -1,0 +1,49 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/project-info
+include ./layouts/profile/security-popup
+include ./layouts/field
+include ./layouts/switch
+
+block content
+  .panel
+    +partner-info
+    .panel__tabs.tabs
+      .tabs__item Профиль
+      .tabs__item._current Безопасность
+      .tabs__item Настройка API
+      .tabs__item Уведомления
+      .tabs__item Активность
+      .tabs__item Идентификация
+    .panel__body
+      .profile-api._security
+        .profile-api__container
+          .profile-api__column
+            .profile-api__title Пароль
+            .profile-api__row
+              +field-password(label='Текущий пароль', placeholder='********', togglePswd=true)
+            .profile-api__row
+              +field-password(label='Новый пароль', placeholder='********', togglePswd=true)
+            .profile-api__row
+              +field-password(label='Новый пароль еще раз', placeholder='********', togglePswd=true)
+            button.profile-api__btn.btn._green Сохранить
+          .profile-api__column
+            .profile-api__title Двухэтапная аутентификация
+              label.switch
+                input.switch__input.js-security-switch(type='checkbox', checked)
+                .switch__button
+            .profile-api__notice Рекомендуем вам усилить безопасность аккаунта от взлома, настроив дополнительное подтверждение при входе с помощью приложения Google Authentificator
+
+  .popup.profile-api__popup._alert(data-popup='security-alert')
+    .popup__header
+      .popup__title Подтверждение
+      .popup__close(data-event="popup-close", data-popup='security-alert')
+    .popup__body
+      .profile-api__notice Вы уверены, что хотите выключить двухэтапную аутентификацию?
+      button.btn._red.profile-api__popup-btn(data-event="popup-close", data-popup='security-alert') Выключить
+      .clr
+  +security-popup
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.profile-header__controls .control__item:nth-child(3)').classList.add('_active');

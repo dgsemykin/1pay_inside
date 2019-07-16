@@ -1,0 +1,58 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/project-info
+include ./layouts/alert
+include ./layouts/field
+include ./layouts/switch
+
+block content
+  .panel
+    +partner-info
+    .panel__tabs.tabs
+      .tabs__item Профиль
+      .tabs__item Безопасность
+      .tabs__item Настройка API
+      .tabs__item Уведомления
+      .tabs__item Активность
+      .tabs__item._current Идентификация
+    .panel__body
+      .profile-api.identity
+        .profile-api__title Паспортные данные
+          +switch('', true)
+        .profile-api__container.identity__id-info
+          .profile-api__column
+            .profile-api__row
+              +field-date(label='Дата рождения', placeholder='01.01.2018', icon='./img/profile/birthday.svg')
+            .profile-api__row
+              +field('', 'Инн (10/10)', '0000000000', './img/profile/colonnade.svg')
+            .profile-api__row
+              .file-upload
+                .file-upload__label Скан паспорта
+                .file-upload__container
+                  label.file-upload__input-wrap
+                    input.file-upload__input(type='file')
+                  .file-upload__info
+                    .file-upload__caption Файлы не загружены
+                    .file-upload__note Загрузите первую страницу и страницу прописки
+                    .file-upload__note Допустимые форматы для загрузки – #[b jpg] и #[b png].
+            button.btn._green Сохранить
+
+          .profile-api__column
+            .profile-api__row
+              +field('', 'Серия и номер паспорта', '0000 000000', './img/profile/documents.svg')
+            .profile-api__row
+              +field-date(label='Дата выдачи паспорта', placeholder='01.01.2018')
+            .profile-api__row
+              +field-textarea(label='Кем выдан паспорта', placeholder='Отделение по району', icon='./img/profile/address.svg', class='_with-icon')
+
+        .profile-api__container.identity__webmoney
+          .profile-api__column
+            .profile-api__title WebMoney ID
+            .profile-api__notice Так же вы можете подтвердить личность, добавив наш кошелек Webmoney в список доверенных для вашего WMID
+            .profile-api__row
+              +field('', 'WMID', '1234567890', './img/profile/wmid.svg')
+            button.btn._green Изменить
+
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.profile-header__controls .control__item:nth-child(3)').classList.add('_active');

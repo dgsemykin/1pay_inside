@@ -1,0 +1,36 @@
+extends ./layouts/profile/index
+
+include  ./layouts/profile/project-info
+include ./layouts/field
+
+block content
+    .panel
+      +project-info
+      .panel__tabs.tabs
+        .tabs__item._current Настройки проекта
+        .tabs__item Тарифы и комиссии
+        .tabs__item Настройки формы оплаты
+        .tabs__item Виджет оплаты
+      .panel__body
+        .project-settings
+          .project-settings__docs: a(href='#') Документация по настройке проекта
+          .project-settings__notice На этот адрес мы будем уведомлять вашу платформу об изменении статуса платежа.
+          .project-settings__row
+            .project-settings__url
+              +field('project-settings__url-field', 'URL разработчика', 'website.ru', './img/profile/link.svg', '', false, '', {
+                class: '_error',
+                msg: 'Ошибка'
+              })
+              button.btn._silver.project-settings__btn Тест соединения
+            button.btn._silver._small Тестовый запрос
+          .project-settings__row
+            +field('project-settings__api-field', 'API key', '', './img/profile/key.svg', 'a7zlUF85afRvZrgoOBJJpOmFLcBz0phb', true)
+            button.btn._silver.project-settings__btn Изменить
+          .project-settings__row
+            +field('project-settings__id-field', 'ID', '', './img/profile/id.svg', '123456', true)
+
+          button.btn._green Сохранить
+
+    script.
+      document.querySelector('.nav__item.active').classList.remove('active');
+      document.querySelector('.nav__item:nth-child(3)').classList.add('active');

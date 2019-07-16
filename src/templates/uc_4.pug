@@ -1,0 +1,20 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/currency
+include ./layouts/payment-info-row
+include ./layouts/outcard
+include ./layouts/payways-slide
+include ./layouts/footer
+
+block content
+  .card
+    +header-v01('./files/logos/traffic.png', 'traffic.ru', 'Счет №14566645')
+    .card__body
+      +payways-slide(['./img/payways/webmoney.png', './img/payways/card.png', './img/payways/phone.png', './img/payways/applepay.png', './img/payways/qiwi.png'])
+      +currency
+      .payment-info
+        +payment-info-row-max
+        +payment-info-row('Средства будут списаны с R-кошелька.', '_wallet')
+    +footer-v01('Оплатить', '4 999', '00', '₽')
+    +outcard

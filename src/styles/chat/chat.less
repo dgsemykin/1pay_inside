@@ -1,0 +1,52 @@
+@import '../variables';
+@import "../common/index";
+@import "../payment-form/card";
+@import "../payment-form/wrap";
+@import "../typing";
+@import "chat-form";
+@import "chat-intro";
+@import "dialog";
+
+
+.chat {
+	padding: 46px @padding 65px;
+	&__close {
+		position: absolute;
+		top: @padding;
+		right: @padding;
+		width: 14px;
+		height: 14px;
+		background: data-uri('../../img/close.svg') no-repeat;
+		cursor: pointer;
+	}
+	&__header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: 16px @padding 15px;
+		height: 46px;
+		line-height: 16px;
+		border-bottom: 1px solid #d8d8d8;
+		background: #ffffff;
+		z-index: 11;
+	}
+	&__manager {
+		margin-left: 26px;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	&__status {
+		display: inline-block;
+		vertical-align: top;
+		width: 14px;
+		height: 14px;
+		background-image: linear-gradient(to top, #4caf50, @lightGreen);
+		outline: #43a047;
+		border-radius: 100%;
+		&._head {
+			float: left;
+		}
+	}
+}

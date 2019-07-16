@@ -1,0 +1,70 @@
+@import '../variables';
+
+.card-form {
+	padding: 23px 0 0;
+	&__row {
+		display: flex;
+		& + & {
+			margin-top: 24px;
+		}
+	}
+	&__number {
+		width: 268px;
+		.field__icon {
+			img {
+				width: 16px;
+				height: 12px;
+			}
+		}
+	}
+	&__validity {
+		width: 122px;
+		margin-right: 24px;
+		.field__icon {
+			img {
+				width: 16px;
+				height: 16px;
+			}
+		}
+		.field__body:before {
+			content: '/';
+			position: absolute;
+			top: 13px;
+			left: 80px;
+			line-height: 16px;
+		}
+	}
+	&__cvc {
+		width: 122px;
+		.field__icon {
+			img {
+				width: 16px;
+				height: 16px;
+			}
+		}
+	}
+	&__alpha-login {
+		width: 150px;
+		.field__icon {
+			img {
+				width: 16px;
+				height: 16px;
+			}
+		}
+	}
+	&__phone {
+		width: 268px;
+		.field__icon {
+			&:before {
+				content: '+7';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 43px;
+				line-height: 38px;
+				text-align: center;
+			}
+		}
+	}
+}

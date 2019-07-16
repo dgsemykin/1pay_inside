@@ -1,0 +1,30 @@
+@import '../variables';
+
+.payways-slide {
+	position: relative;
+	overflow: hidden;
+	height: 88px;
+	padding: 12px @padding;
+	margin: 0 -@padding;
+	background-color: #f7f7f7;
+	border-top: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;
+	box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+	&._start {
+		button[data-controls="next"] {
+			display: block;
+		}
+	}
+	&._end {
+		button[data-controls="prev"] {
+			display: block;
+		}
+	}
+	&__slider {
+		position: relative;
+		overflow: hidden;
+	}
+	&__item {
+		float: left;
+	}
+}

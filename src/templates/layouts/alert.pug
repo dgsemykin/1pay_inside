@@ -1,0 +1,6 @@
+mixin alert(className, text, title)
+  .alert(class!=className)
+    if (title)
+      .alert__title= title
+    each row in text
+      .alert__row= row

@@ -1,0 +1,31 @@
+@import '../variables';
+
+.chat-form {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 65px;
+	padding: 22px (@padding * 3) 22px @padding;
+	border-top: 1px solid #d8d8d8;
+	background: #ffffff;
+	z-index: 10;
+	&__input {
+		width: 100%;
+		height: 20px;
+		line-height: 20px;
+		resize: none;
+		font-family: 'Roboto', Arial, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+	}
+	&__attach {
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		width: 15px;
+		height: 16px;
+		background: data-uri('../../img/attach.svg') no-repeat;
+		cursor: pointer;
+	}
+}

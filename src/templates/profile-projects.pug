@@ -1,0 +1,156 @@
+extends ./layouts/profile/index
+
+include ./layouts/profile/pagination
+include ./layouts/checkbox
+include ./layouts/field
+include ./layouts/svg-icons
+
+block content
+  .panel
+    .panel__caption
+      span.panel__caption-title Мои проекты: 6
+      .panel__caption-right-column
+        +field('search panel__search', '', 'Название проекта, адрес сайта', './img/search.svg')(class="icons-bg-clean pl-to-icon")
+        button.btn._green
+          img.btn__icon(src='./img/icons/plus.svg')
+          | Добавить
+
+    .panel__body
+      table.table-projects#projects
+        thead
+          tr
+            th.table-projects__date
+              .sort(data-sort='date')
+                .sort__title Создан
+                .sort__arrow
+            th.table-projects__id
+              .sort(data-sort='id')
+                .sort__title Id
+                .sort__arrow
+            th.table-projects__name
+              .sort(data-sort='name')
+                .sort__title Название
+                .sort__arrow
+            th.table-projects__category
+              .sort(data-sort='category')
+                .sort__title Категория
+                .sort__arrow
+            th.table-projects__site
+              .sort(data-sort='site')
+                .sort__title Сайт
+                .sort__arrow
+            th.table-projects__status
+              .sort(data-sort='status')
+                .sort__title Статус
+                .sort__arrow
+            th.table-projects__income-total
+              .sort(data-sort='income-total')
+                .sort__title Доход за всё время
+                .sort__arrow
+            th.table-projects__income-week
+              .sort(data-sort='income-week')
+                .sort__title Доход за неделю
+                .sort__arrow
+            th.table-projects__controls
+        tbody.list
+
+          tr.table-projects__row
+            td.table-projects__date.date(data-timestamp='1533230873') 02.08.18
+            td.table-projects__id.id 34563
+            td.table-projects__name.name LoveDate360
+            td.table-projects__category.category-name._velvet Знакомства
+            td.table-projects__site.site dating.ru
+            td.table-projects__status: .status.status_orange Ожидает подтверждения
+            td.table-projects__income-total.income-total(data-income='0')
+            td.table-projects__income-week.income-week(data-income='0')
+            td.table-projects__controls: img.js-edit-button(src='./img/icons/pen.svg')
+
+          tr.table-projects__row
+            td.table-projects__date.date(data-timestamp='1532539672') 25.07.18
+            td.table-projects__id.id 34562
+            td.table-projects__name.name Panda24
+            td.table-projects__category.category-name._blue Игры
+            td.table-projects__site.site pandagames.ru
+            td.table-projects__status: .status.status_blue На модерации
+            td.table-projects__income-total.income-total(data-income='0')
+            td.table-projects__income-week.income-week(data-income='0')
+            td.table-projects__controls: img.js-edit-button(src='./img/icons/pen.svg')
+
+          tr.table-projects__row
+            td.table-projects__date.date(data-timestamp='1532626072') 26.07.18
+            td.table-projects__id.id 34563
+            td.table-projects__name.name EcoMeal
+            td.table-projects__category.category-name._green Здоровье
+            td.table-projects__site.site ecoset.ru
+            td.table-projects__status: .status.status_danger Отклонен
+            td.table-projects__income-total
+            td.table-projects__income-week
+            td.table-projects__controls: img.js-edit-button(src='./img/icons/pen.svg')
+
+          tr.table-projects__row
+            td.table-projects__date.date(data-timestamp='1533144472') 01.08.18
+            td.table-projects__id.id 34566
+            td.table-projects__name.name Pron
+            td.table-projects__category.category-name._pink Эротика
+            td.table-projects__site.site xxx-be.ru
+            td.table-projects__status: .status.status_success Отклонен
+            td.table-projects__income-total.income-total(data-income='180.00')
+              .amount
+                .amount__integer 180
+                .amount__float 00
+                .amount__currency
+
+            td.table-projects__income-week.income-week(data-income='14.00')
+              .amount
+                .amount__integer 14
+                .amount__float 00
+                .amount__currency
+            td.table-projects__controls: img.js-edit-button(src='./img/icons/pen.svg')
+
+          tr.table-projects__row
+            td.table-projects__date.date(data-timestamp='1539106072') 10.09.18
+            td.table-projects__id.id 34572
+            td.table-projects__name.name finance
+            td.table-projects__category.category-name._turquoise Бизнес
+            td.table-projects__site.site trading.moscow
+            td.table-projects__status: .status.status_wait Приостановлен
+            td.table-projects__income-total.income-total(data-income='181.00')
+              .amount
+                .amount__integer 181
+                .amount__float 00
+                .amount__currency
+
+            td.table-projects__income-week.income-week(data-income='15.00')
+              .amount
+                .amount__integer 15
+                .amount__float 00
+                .amount__currency
+            td.table-projects__controls: img.js-edit-button(src='./img/icons/pen.svg')
+
+          tr.table-projects__row
+            td.table-projects__date.date(data-timestamp='1522603672') 01.04.18
+            td.table-projects__id.id 34572
+            td.table-projects__name.name Velo
+            td.table-projects__category.category-name._orange Спорт
+            td.table-projects__site.site velobike.tv
+            td.table-projects__status: .status.status_success Активен
+            td.table-projects__income-total.income-total(data-income='182.00')
+              .amount
+                .amount__integer 182
+                .amount__float 00
+                .amount__currency
+
+            td.table-projects__income-week.income-week(data-income='16.00')
+              .amount
+                .amount__integer 16
+                .amount__float 00
+                .amount__currency
+            td.table-projects__controls: img.js-edit-button(src='./img/icons/pen.svg')
+
+      +pagination('table-projects__pagination')
+      .clr
+
+  script(src='/js/personal-table.js')
+  script.
+    document.querySelector('.nav__item.active').classList.remove('active');
+    document.querySelector('.nav__item:nth-child(3)').classList.add('active');

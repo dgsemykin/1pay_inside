@@ -1,0 +1,42 @@
+.panel._support-chat {
+	padding: 0;
+	.panel__caption {
+		padding: 16px;
+		margin-bottom: 0;
+	}
+}
+
+.support-chat {
+	display: flex;
+	&__list-wrapper {
+		flex: 0 307px;
+		padding: 5px 0;
+		border-right: 1px solid #ebebeb;
+	}
+	&__list {
+		position: relative;
+		max-height: 70vh;
+	}
+	&__body {
+		position: relative;
+		flex-grow: 1;
+		margin-top: 5px;
+	}
+	&__dialog {
+		position: relative;
+		height: 60vh;
+	}
+	.chat-form,
+	.dialog {
+		padding-right: 120px;
+		padding-left: 120px;
+	}
+	.chat-form {
+		margin-top: -65px;
+	}
+	.dialog {
+		height: auto;
+		padding-bottom: 0;
+		margin-bottom: 10px;
+	}
+}

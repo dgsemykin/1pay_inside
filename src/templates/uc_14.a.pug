@@ -1,0 +1,19 @@
+extends layouts/chat/index
+
+block content
+  .card._chat
+    .chat
+      .chat__close
+      .chat-intro
+        .chat-intro__manager
+          .chat-intro__avatar
+            img(src='./files/igor.png')
+          .chat__status.chat-intro__status
+          .chat-intro__name Игорь Царевич
+        .chat-intro__greeting
+          | Добрый день. Вас приветствует служба поддержки пользователей mPay.
+          br
+          | Чем могу Вам помочь?
+      .chat-form
+        textarea.chat-form__input(placeholder='Сообщение...')
+        .chat-form__attach
