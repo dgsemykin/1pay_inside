@@ -15,7 +15,7 @@ mixin footer-v02(btn, link)
       .footer__info
         a.footer__link(href='')= link
 
-mixin footer-v03(img)
+mixin footer-v03()
   .footer
-    button.footer__submit.btn._green
-      img(src=img)
+    button.footer__submit.footer__submit.btn._green._spinner
+      include ./../layouts/spinner
