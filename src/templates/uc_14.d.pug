@@ -1,14 +1,13 @@
 extends layouts/payment-form/index
 
-include ./layouts/chat/dialog
-include ./layouts/chat/form
+include ./layouts/outcard
+include ./layouts/footer
 
 block content
-  .card._chat
-    .chat
-      .chat__header
-        .chat__status._head
-        .chat__manager Игорь Царевич
-        .chat__close
-      +dialog
-      +form
+  .card
+    .card__body
+      .payment-info_waiting
+        .lds-ripple__wrap
+          include ./layouts/ripple
+          | Ожидание платежа…
+    +outcard
