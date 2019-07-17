@@ -6,8 +6,8 @@ include ./layouts/footer
 block content
   .card
     .card__body
-      .payment-info_waiting
+      .payment-info__waiting
         .lds-ripple__wrap
           include ./layouts/ripple
-          | Ожидание платежа…
+          p.lds-ripple__text Ожидание платежа…
     +outcard

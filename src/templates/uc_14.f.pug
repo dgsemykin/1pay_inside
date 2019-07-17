@@ -6,6 +6,9 @@ include ./layouts/footer
 block content
   .card
     .card__body
-      .payment-info_simple-pay
+      .payment-info__simple-pay
+        .payment-info__simple-pay_status
+          img.payment-info__success(src='./img/simple-payment-error.svg')
+          p.payment-info__text-status Ошибка платежа
     +footer-v02('Вернуться в магазин')
     +outcard
