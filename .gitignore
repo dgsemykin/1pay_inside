@@ -5,3 +5,4 @@ node_modules/
 dest/
 *.sketch
 \.tmp/
+*.7z
