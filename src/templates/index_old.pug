@@ -1,0 +1,132 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(href="./css/personal.css", rel="stylesheet", type="text/css")
+    style.
+      ul.column {
+        padding: 30px 0 20px 30px;
+        text-align: left;
+        display: inline-block;
+        width: 20%;
+        vertical-align: top;
+      }
+
+      ul.column._short {
+        width: 150px;
+      }
+
+      ul.inner {
+        display:block;
+        padding:0;
+        margin:10px 0 10px 20px;
+      }
+
+      li + li {
+        margin-top: 5px;
+      }
+  body
+
+    ul.column._short
+      li: a(href='./uc_1.html', target='_blank') UC 1
+      li: a(href='./uc_2.html', target='_blank') UC 2
+      li: a(href='./uc_3.html', target='_blank') UC 3
+      li: a(href='./uc_4.html', target='_blank') UC 4
+      li: a(href='./uc_5.a.html', target='_blank') UC 5a
+      li: a(href='./uc_5.b.html', target='_blank') UC 5b
+      li: a(href='./uc_6.html', target='_blank') UC 6
+      li: a(href='./uc_7.html', target='_blank') UC 7
+      li: a(href='./uc_8.html', target='_blank') UC 8
+      li: a(href='./uc_9.html', target='_blank') UC 9
+      li: a(href='./uc_10.a.html', target='_blank') UC 10a
+      li: a(href='./uc_10.b.html', target='_blank') UC 10b
+      li: a(href='./uc_11.a.html', target='_blank') UC 11a
+      li: a(href='./uc_11.b.html', target='_blank') UC 11b
+      li: a(href='./uc_12.a.html', target='_blank') UC 12a
+      li: a(href='./uc_12.b.html', target='_blank') UC 12b
+      li: a(href='./uc_13.a.html', target='_blank') UC 13a
+      li: a(href='./uc_13.b.html', target='_blank') UC 13b
+      li: a(href='./uc_13.c.html', target='_blank') UC 13c
+      li: a(href='./uc_13.d.html', target='_blank') UC 13d
+      li: a(href='./uc_14.a.html', target='_blank') UC 14a
+      li: a(href='./uc_14.b.html', target='_blank') UC1 14b
+      li: a(href='./uc_14.c.html', target='_blank') UC 14c
+      li: a(href='./uc_14.d.html', target='_blank') UC 14d
+      li: a(href='./uc_14.e.html', target='_blank') UC 14e
+      li: a(href='./uc_14.f.html', target='_blank') UC 14f
+      li: a(href='./ui.html', target='_blank') UI
+
+    ul.column
+      li: a(href='./profile-statistics.html', target='_blank') Statistic
+      li: a(href='./profile-workspace.html', target='_blank') Workspace
+      li Projects
+        ul.inner
+          li: a(href='./profile-projects.html', target='_blank') List
+          li: a(href='./profile-projects-empty.html', target='_blank') Empty
+          li: a(href='./profile-projects-create.html', target='_blank') Create
+            ul.inner
+              li: a(href='./profile-projects-create-error.html', target='_blank') Create with Error - step 2
+      li: a(href='./profile-projects-settings.html', target='_blank') Settings
+        ul.inner
+          li: a(href='./profile-projects-settings-error.html', target='_blank') Settings(Error)
+          li: a(href='./profile-projects-settings-success.html', target='_blank') Settings(Success)
+      li: a(href='./profile-projects-tariff.html', target='_blank') Tariff
+      li: a(href='./profile-projects-payments-settings.html', target='_blank') Payment Settings
+        ul.inner
+          li: a(href='./profile-projects-payments-settings-logo.html', target='_blank') Payment Settings with Logo
+      li Api
+        ul.inner
+          li: a(href='./profile-api-settings.html', target='_blank') Settings
+          li: a(href='./profile-api-confirm.html', target='_blank') Confirm
+          li: a(href='./profile-api-alert.html', target='_blank') Alert
+          li: a(href='./profile-api-success.html', target='_blank') Success
+          li: a(href='./profile-api-attention.html', target='_blank') Attention
+          li: a(href='./profile-api-exist.html', target='_blank') Exist
+          li: a(href='./profile-api-getting.html', target='_blank') Getting
+          li: a(href='./profile-api-getting-await.html', target='_blank') Getting Await
+          li: a(href='./profile-api-getting-error.html', target='_blank') Getting Error
+    ul.column
+      li: a(href='./profile-activity.html', target='_blank') Activity
+      li: a(href='./profile-security.html', target='_blank') Security
+        ul.inner
+          li: a(href='./profile-security-error.html', target='_blank') Security popup with Error
+      li Payouts
+        ul.inner
+          li: a(href='./profile-payouts.html', target='_blank') Main page
+          li: a(href='./profile-payouts-edit.html', target='_blank') Edit
+          li: a(href='./profile-payouts-empty.html', target='_blank') Empty
+      li Identity
+        ul.inner
+          li: a(href='./profile-identity.html', target='_blank') Filled
+          li: a(href='./profile-identity-empty.html', target='_blank') Empty
+          li: a(href='./profile-identity-error.html', target='_blank') Error
+          li: a(href='./profile-identity-await.html', target='_blank') Await
+          li: a(href='./profile-identity-verified.html', target='_blank') Verified
+      li Profile and employees
+        ul.inner
+          li: a(href='./profile-empty.html', target='_blank') Empty, add employee
+          li: a(href='./profile-edit.html', target='_blank') Edit
+          li: a(href='./profile-employees.html', target='_blank') Employees
+          li: a(href='./profile-employees-empty.html', target='_blank') Employees empty activity
+      li Notifications
+        ul.inner
+          li: a(href='./profile-notifications.html', target='_blank') Clean
+          li: a(href='./profile-notifications-filled.html', target='_blank') Filled
+          li: a(href='./profile-notifications-list.html', target='_blank') List
+      li Support
+        ul.inner
+          li: a(href='./support-create.html', target='_blank') Create ticket
+          li: a(href='./support-list.html', target='_blank') Chat
+
+    ul.column
+      li: a(href='./auth_1.html', target='_blank') Auth 1
+      li: a(href='./auth_2.html', target='_blank') Auth 2
+      li: a(href='./auth_3.html', target='_blank') Auth 3
+      li: a(href='./auth_4.html', target='_blank') Auth 4
+      li: a(href='./auth_5.html', target='_blank') Auth 5
+      li: a(href='./auth_6.html', target='_blank') Auth 6
+      li: a(href='./auth_7.html', target='_blank') Auth 7
+      li: a(href='./auth_8.html', target='_blank') Auth 8
+      li: a(href='./auth_9.html', target='_blank') Auth 9
