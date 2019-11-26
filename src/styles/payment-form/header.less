@@ -1,7 +1,7 @@
 @import '../variables';
 
 .header {
-	padding: 16px 16px 12px;
+	padding: 42px 16px 36px;
 	&__top {
 		display: flex;
 		justify-content: space-between;
@@ -10,10 +10,19 @@
 	&__name {
         display: flex;
 		justify-content: center;
+		font-family: 'Roboto', Arial, sans-serif;
+		font-size: 20px;
+		color: #404040;
+		letter-spacing: 0;
 	}
 	&__price {
         display: flex;
         justify-content: center;
+		font-family: 'Roboto', Arial, sans-serif;
+		font-size: 42px;
+		font-weight: 400;
+		color: @headerPriceColor;
+		letter-spacing: 0;
 	}
 	&__logo {
 	}

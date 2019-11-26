@@ -1,4 +1,4 @@
-mixin field(className, label, placeholder, icon, value, disabled, error, status)
+mixin field(className, placeholder, icon, value, disabled, error, status)
   .field(class!=className)
     if (label)
       .field__label= label
@@ -14,7 +14,7 @@ mixin field(className, label, placeholder, icon, value, disabled, error, status)
 
 mixin field-cvv(className, placeholder, inverse)
   .field(class!=className)
-    .field__label CVC
+    //.field__label CVC
     label.field__body
       input.field__input(type='text', placeholder!=placeholder)
       .field__icon.tooltip
@@ -29,7 +29,7 @@ mixin field-card(label, value, icon)
     if (label)
       .field__label= label
     label.field__body
-      input.field__input(type='text', placeholder='0000   0000   0000   0000', value!=value)
+      input.field__input(type='text', placeholder='Введите номер карты', value!=value)
       .field__icon
         img(src='./img/card.png', width='16')
       if (icon)
@@ -40,9 +40,9 @@ mixin field-card(label, value, icon)
 mixin field-validity(value)
   .card-form__row
     .field.card-form__validity
-      .field__label Месяц / год
+      //.field__label Месяц / год
       label.field__body
-        input.field__input(type='text', placeholder='00      00', value!=value)
+        input.field__input(type='text', placeholder='12      24', value!=value)
         .field__icon
           img(src='./img/calendar.png')
         if (icon)
@@ -118,5 +118,18 @@ mixin field-date
       if (attributes.icon)
         .field__icon
           img(src!=attributes.icon)
+      if attributes.error
+        .field__error= attributes.error
+
+mixin field-cardholder(value, icon)
+  field.card-form__number._required
+    //if (label)
+    //  .field__label= label
+    label.field__body
+      input.field__input(type='text', placeholder='IVAN IVANOV', value!=value)
+      .field__icon
+        img(src='./img/card.png', width='16')
+      if (icon)
+        .field__type-icon(class!=icon)
       if attributes.error
         .field__error= attributes.error

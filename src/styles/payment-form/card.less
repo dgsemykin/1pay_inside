@@ -7,13 +7,13 @@
 	text-align: left;
 	width: 464px;
 	margin: 100px auto 0;
-	border-radius: 3px;
+	border-radius: 30px;
 	background-color: #ffffff;
 	box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
 	&__body {
 		position: relative;
-		padding-right: @padding;
-		padding-left: @padding;
+		//padding-right: @padding;
+		//padding-left: @padding;
 		.screen-1 {
 			background: #ffffff;
 			z-index: 11;
@@ -43,6 +43,11 @@
 				border-top: 0;
 				background: #ffffff;
 			}
+		}
+		.screen-3 {
+			display: flex;
+			background-color: @paymentFormBackground;
+			justify-content: center;
 		}
 		&._shadowed {
 			.card__mouse {
