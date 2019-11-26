@@ -1,0 +1,9 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/outcard
+
+block content
+  .card
+    +header-v04('Оплата invoice_548926', '1500.00 ', 'RUB')
+    .card__body

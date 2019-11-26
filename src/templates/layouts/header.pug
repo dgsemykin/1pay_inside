@@ -27,6 +27,11 @@ mixin header-v03(logo, title, caption)
       .header__logo: img(src!=logo)
     .header__caption= caption
 
+mixin header-v04(name, price, currency)
+  .header
+    .header__name= name
+    .header__price= price + currency
+
 mixin header-bill(logo, bill)
   .header._bill
     .header__top
