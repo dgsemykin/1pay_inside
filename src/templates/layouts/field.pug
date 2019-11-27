@@ -18,7 +18,7 @@ mixin field-cvv(className, placeholder, inverse)
     label.field__body
       .field__icon
         img(src='./img/lock.png')
-      input.field__input(type='text', placeholder!=placeholder)
+      input.field__input(type='text', inputmode='numeric', placeholder!=placeholder)
       .field__icon.field__icon._cvv.tooltip
         img(src='./img/cvc.png')
         if (!inverse)
@@ -26,12 +26,12 @@ mixin field-cvv(className, placeholder, inverse)
         else
           .tooltip__text._inverse CVC код располагается на обратной стороне карты.
 
-mixin field-card(label, value, icon)
+mixin field-card(value, icon)
   .field.card-form__number._required
-    if (label)
-      .field__label= label
+    //if (label)
+    //  .field__label= label
     label.field__body
-      input.field__input(type='text', placeholder='Введите номер карты', value!=value)
+      input.field__input(type='text', inputmode='numeric', placeholder='Введите номер карты', value!=value)
       .field__icon
         img(src='./img/card.png', width='16')
       if (icon)
@@ -44,7 +44,7 @@ mixin field-validity(value)
     .field.card-form__validity
       //.field__label Месяц / год
       label.field__body
-        input.field__input(type='text', placeholder='12      24', value!=value)
+        input.field__input(type='text', inputmode='numeric', placeholder='12      24', value!=value)
         .field__icon
           img(src='./img/calendar.png')
         if (icon)
