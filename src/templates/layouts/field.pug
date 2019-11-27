@@ -124,11 +124,11 @@ mixin field-date
         .field__error= attributes.error
 
 mixin field-cardholder(value, icon)
-  field.card-form__number._required
+  field.card-form__cardholder._required
     //if (label)
     //  .field__label= label
     label.field__body
-      input.field__input(type='text', placeholder='IVAN IVANOV', value!=value)
+      input.field__input._transliteration(type='text', placeholder='IVAN IVANOV', value!=value)
       .field__icon
         img(src='./img/person.png', width='16')
       if (icon)
