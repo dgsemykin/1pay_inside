@@ -4,6 +4,7 @@ include ./layouts/header
 include ./layouts/payment-info-row
 include ./layouts/field
 include ./layouts/outcard
+include ./layouts/footer
 
 block content
   .card
@@ -18,3 +19,5 @@ block content
             +field-cvv('card-form__cvc', '123', true)
           .card-form__row
             +field-cardholder
+    +footer-v04
+    +outcard-v01
