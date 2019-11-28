@@ -18,8 +18,8 @@ mixin field-cvv(className, placeholder, inverse)
     label.field__body
       .field__icon
         img(src='./img/lock.png')
-      input.field__input(type='text', inputmode='numeric', placeholder!=placeholder)
-      .field__icon.field__icon._cvv.tooltip
+      input.field__input(type='password', inputmode='numeric', placeholder!=placeholder)
+      .field__icon.field__icon._cvc.tooltip
         img(src='./img/cvc.png')
         if (!inverse)
           .tooltip__text CVC код располагается на обратной стороне карты.
@@ -34,10 +34,11 @@ mixin field-card(value, icon)
       input.field__input(type='text', inputmode='numeric', placeholder='Введите номер карты', value!=value)
       .field__icon
         img(src='./img/card.png', width='16')
-      if (icon)
-        .field__type-icon(class!=icon)
-      if attributes.error
-        .field__error= attributes.error
+      .field__type-icon._mastercard
+      //if (icon)
+      //  .field__type-icon(class!=icon)
+      //if attributes.error
+      //  .field__error= attributes.error
 
 mixin field-validity(value)
   .card-form__row
