@@ -26,15 +26,17 @@ mixin field-cvv(className, placeholder, inverse)
         else
           .tooltip__text._inverse CVC код располагается на обратной стороне карты.
 
-mixin field-card(value, icon)
+mixin field-card(value, icon, error)
   .field.card-form__number._required
     //if (label)
     //  .field__label= label
-    label.field__body
+    .field__body
+      if error
+        .field__error= error
       input.field__input(type='text', inputmode='numeric', placeholder='Введите номер карты', value!=value)
       .field__icon
         img(src='./img/card.png', width='16')
-      .field__type-icon._mastercard
+      .field__type-icon
       //if (icon)
       //  .field__type-icon(class!=icon)
       //if attributes.error
