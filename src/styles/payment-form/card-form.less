@@ -11,9 +11,15 @@
 	&__number {
 		width: 400px;
 		.field__icon {
-			img {
+			.field__icon-pic {
+                background-image: data-uri('../../img/card.png');
 				width: 22px;
 				height: 20px;
+
+				//.error & {
+				//	background-image: data-uri('../../img/question.png') !important;
+				//	width: 20px !important;
+				//}
 			}
 		}
 	}
@@ -21,7 +27,8 @@
 		width: 192px;
 		margin-right: 16px;
 		.field__icon {
-			img {
+			.field__icon-pic {
+                background-image: data-uri('../../img/calendar.png');
 				width: 22px;
 				height: 24px;
 			}
@@ -40,7 +47,8 @@
       width: 400px;
       margin-right: 16px;
       .field__icon {
-        img {
+        .field__icon-pic {
+          background-image: data-uri('../../img/person.png');
           width: 22px;
           height: 22px;
         }
@@ -49,9 +57,18 @@
 	&__cvc {
 		width: 192px;
 		.field__icon {
+			.field__icon-pic {
+                background-image: data-uri('../../img/lock.png');
+				width: 22px;
+				height: 23px;
+			}
 			img {
 				width: 20px;
 				height: 20px;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto;
 			}
 		}
 	}

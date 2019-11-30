@@ -39,13 +39,39 @@
 				display: none;
 			}
 		}
-		img {
+		&-pic{
 			position: absolute;
 			top: 0;
 			right: 0;
 			bottom: 0;
 			left: 0;
 			margin: auto;
+			&._card {
+				.error & {
+					background: data-uri('../../img/question.png') !important;
+					width: 20px !important;
+				}
+				.success & {
+					background: data-uri('../../img/card-focuses.png') !important;
+				}
+			}
+			&._calendar {
+				.success & {
+					background: data-uri('../../img/calendar-focuses.png') !important;
+				}
+			}
+			&._lock {
+				.success & {
+					background: data-uri('../../img/lock-focuses.png') !important;
+					height: 23px !important;
+					background-repeat: no-repeat;
+				}
+			}
+			&._person {
+				.success & {
+					background: data-uri('../../img/person-focuses.png') !important;
+				}
+			}
 		}
 		.icons-bg-clean & {
 			background-color: transparent;
@@ -124,6 +150,9 @@
 		.error & {
 			border-color: @red;
 		}
+		.success & {
+			border: 1px solid @paymentSuccessField;
+		}
 	}
 	&__input {
 		height: 64px;
@@ -135,8 +164,19 @@
 		letter-spacing: 0;
 		line-height: 30px;
         color: #404040;
-		&._success {
-			border: 1px solid @paymentSuccessField;
+		&:focus + .field__icon {
+			& ._card {
+				background: data-uri('../../img/card-focuses.png');
+			}
+			& ._calendar {
+				background: data-uri('../../img/calendar-focuses.png');
+			}
+            & ._lock {
+              background: data-uri('../../img/lock-focuses.png');
+            }
+			& ._person {
+				background: data-uri('../../img/person-focuses.png');
+			}
 		}
 		&::-ms-clear {
 			display: none;
@@ -197,28 +237,31 @@
 		}
 	}
 	&__error {
-		display: block;
+		display: none;
 
 		position: absolute;
 		//left: 100%;
 		//top: 10%;
-		transform: translateY(-50%);
+		//transform: translateY(-50%);
 
 		width: 316px;
         height: 55px;
 		
-		margin-left: 10px;
+		//margin-left: 10px;
 		padding: 16px 0 16px 16px;
 		
 		background-color: #FFFFFF;
 		//border-radius: 4px;
-		box-shadow: 0 10px 10px 0 fade(black, 20%);
+		//box-shadow: 0 10px 10px 0 fade(black, 20%);
 		color: #f20f0f;
         font-size: 18px;
-        font-weight: 400;
+        //font-weight: 400;
+		bottom: 55px;
         line-height: 24px;
 		font-family: inherit;
         border-radius: 8px;
+		//background: #FFFFFF;
+		box-shadow: 0 0 40px -10px rgba(0,0,0,0.15);
 		z-index: 2;
 		.error & {
 			display: block;
@@ -226,23 +269,21 @@
 		&:before {
 			content: '';
 			position: absolute;
-			right: 100%;
-			top: 50%;
-			transform: translateY(-50%);
+			//right: 100%;
+			left: 13px;
+			top: 100%;
+			//transform: translateY(-50%);
 
 			// triangle
 			@size: 10px;
 			width: 0;
 			height: 0;
-			border-top: @size solid transparent;
-			border-bottom: @size solid transparent;
+			border-left: @size solid transparent;
+			border-right: @size solid transparent;
 
-			border-right: @size solid @red;
+			border-top: @size solid #FFFFFF;
 		}
 	}
-    &__error + input {
-        border: 1px @paymentErrorField solid;
-    }
 	&__resend {
 		position: absolute;
 		width: 16px;
