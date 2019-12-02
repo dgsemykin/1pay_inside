@@ -219,10 +219,26 @@
     input.onblur = function() {
       if (field.classList.contains('_required')) {
         if (this.value) {
-          field.classList.remove('error');
+          for (var val of this.value) {
+            if (val === '_') {
+              field.classList.remove('success');
+              field.classList.add('error');
+            } else {
+              field.classList.remove('error');
+              field.classList.add('success');
+            }
+          };
         } else {
+          field.classList.remove('success');
           field.classList.add('error');
         }
+      }
+      var successFields = document.querySelectorAll('.success');
+      var footerButton = document.querySelector('.footer')
+      if (successFields.length === 4) {
+        footerButton.classList.add('success')
+      } else {
+        footerButton.classList.remove('success')
       }
     };
   });

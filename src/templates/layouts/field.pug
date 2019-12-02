@@ -13,7 +13,7 @@ mixin field(className, placeholder, icon, value, disabled, error, status)
         .field__error= error
 
 mixin field-cvv(className, placeholder, inverse)
-  .field(class!=className)
+  .field(class!=className)._required
     //.field__label CVC
     label.field__body
       input.field__input(type='password', inputmode='numeric', placeholder!=placeholder)
@@ -47,7 +47,7 @@ mixin field-card(value, icon)
 
 mixin field-validity(value)
   .card-form__row
-    .field.card-form__validity
+    .field.card-form__validity._required
       //.field__label Месяц / год
       label.field__body
         input.field__input(type='text', inputmode='numeric', placeholder='12      24', value!=value)
@@ -131,7 +131,7 @@ mixin field-date
         .field__error= attributes.error
 
 mixin field-cardholder(value, icon)
-  field.card-form__cardholder._required
+  .field.card-form__cardholder._required
     //if (label)
     //  .field__label= label
     label.field__body
