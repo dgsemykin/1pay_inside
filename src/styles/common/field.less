@@ -39,6 +39,10 @@
 				display: none;
 			}
 		}
+        &._cvc {
+          right: 1px;
+          left: auto;
+        }
 		&-pic{
 			position: absolute;
 			top: 0;
@@ -72,6 +76,14 @@
 					background: data-uri('../../img/person-focuses.png') !important;
 				}
 			}
+            &._help {
+              	background: data-uri('../../img/help.png') !important;
+				width: 20px !important;
+				height: 20px !important;
+				&:hover {
+					background: data-uri('../../img/help-hover.png') !important;
+				}
+            }
 		}
 		.icons-bg-clean & {
 			background-color: transparent;

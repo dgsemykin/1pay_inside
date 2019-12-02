@@ -20,11 +20,14 @@ mixin field-cvv(className, placeholder, inverse)
       .field__icon
         .field__icon-pic._lock
       .field__icon._cvc.tooltip
-        img(src='./img/cvc.png')
+        .field__icon-pic._help
+        //img(src='./img/cvc.png')
         if (!inverse)
-          .tooltip__text CVC код располагается на обратной стороне карты.
+          .tooltip__text Трехзначный номер на&nbsp;обратной&nbsp;стороне вашей карты
+            img.tooltip__cvc(src='../img/cvc.jpeg')
         else
-          .tooltip__text._inverse CVC код располагается на обратной стороне карты.
+          .tooltip__text._inverse Трехзначный номер на&nbsp;обратной&nbsp;стороне вашей карты
+            img.tooltip__cvc(src='../img/cvc.jpeg')
 
 mixin field-card(value, icon)
   .field.card-form__number._required
