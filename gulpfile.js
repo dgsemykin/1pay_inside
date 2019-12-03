@@ -15,6 +15,7 @@ var gulpIf = require('gulp-if');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 var htmlmin = require('gulp-htmlmin');
+var importCSS = require('gulp-import-css');
 
 // var $ = gulpLoadPlugins();
 var filter = require('gulp-filter');
@@ -38,6 +39,7 @@ gulp.task('css', function() {
 
     return gulp.src(cssFiles)
         .pipe(less())
+        .pipe(importCSS())
         .pipe(autoprefixer({
             browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'],
         }))

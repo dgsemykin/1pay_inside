@@ -1,0 +1,18 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/outcard
+
+block content
+  .card
+    .card__body
+      .screen-4
+        .sk-chase.sk-center
+          .sk-chase-dot
+          .sk-chase-dot
+          .sk-chase-dot
+          .sk-chase-dot
+          .sk-chase-dot
+          .sk-chase-dot
+        .card__text  Пожалуйста, подождите
+    +outcard-v01
