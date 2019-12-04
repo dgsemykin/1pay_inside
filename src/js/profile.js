@@ -219,7 +219,8 @@
     input.onblur = function() {
       if (field.classList.contains('_required')) {
         if (this.value) {
-          for (var val of this.value) {
+          var values = Array.from(this.value);
+         values.forEach(function (val) {
             if (val === '_') {
               field.classList.remove('success');
               field.classList.add('error');
@@ -227,7 +228,7 @@
               field.classList.remove('error');
               field.classList.add('success');
             }
-          };
+          });
         } else {
           field.classList.remove('success');
           field.classList.add('error');
