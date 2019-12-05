@@ -16,7 +16,7 @@ mixin field-cvv(className, placeholder, inverse)
   .field(class!=className)._required
     //.field__label CVC
     label.field__body
-      input.field__input(type='password', inputmode='numeric', placeholder!=placeholder)
+      input.field__input(type='password', tabindex='3', inputmode='numeric', placeholder!=placeholder)
       .field__icon
         .field__icon-pic._lock
       .field__icon._cvc.tooltip
@@ -24,10 +24,10 @@ mixin field-cvv(className, placeholder, inverse)
         //img(src='./img/cvc.png')
         if (!inverse)
           .tooltip__text Трехзначный номер на&nbsp;обратной&nbsp;стороне вашей карты
-            img.tooltip__cvc(src='../img/cvc.jpeg')
+            img.tooltip__cvc(src='./img/cvc.jpeg')
         else
           .tooltip__text._inverse Трехзначный номер на&nbsp;обратной&nbsp;стороне вашей карты
-            img.tooltip__cvc(src='../img/cvc.jpeg')
+            img.tooltip__cvc(src='./img/cvc.jpeg')
 
 mixin field-card(value, icon)
   .field.card-form__number._required
@@ -35,7 +35,7 @@ mixin field-card(value, icon)
     //  .field__label= label
     .field__body
       .field__error Введите корректный номер карты
-      input.field__input(type='text', inputmode='numeric', placeholder='Введите номер карты', value!=value)
+      input.field__input(type='text', tabindex='1', inputmode='numeric', placeholder='Введите номер карты', value!=value)
       .field__icon
         .field__icon-pic._card
         //img(src='./img/card.png', width='16')
@@ -50,7 +50,7 @@ mixin field-validity(value)
     .field.card-form__validity._required
       //.field__label Месяц / год
       label.field__body
-        input.field__input(type='text', inputmode='numeric', placeholder='12      24', value!=value)
+        input.field__input(type='text', tabindex='2', inputmode='numeric', placeholder='12      24', value!=value)
         .field__icon
           .field__icon-pic._calendar
           //img(src='./img/calendar.png')
@@ -135,7 +135,7 @@ mixin field-cardholder(value, icon)
     //if (label)
     //  .field__label= label
     label.field__body
-      input.field__input._transliteration(type='text', placeholder='IVAN IVANOV', value!=value)
+      input.field__input._transliteration(type='text', tabindex='4', placeholder='IVAN IVANOV', value!=value)
       .field__icon
         .field__icon-pic._person
         //img(src='./img/person.png', width='16')
