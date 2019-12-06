@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-        <path d="M11.5,11.6180533 C11.7653782,11.8555732 12.1158228,12 12.5,12 C13.3284271,12 14,11.3284271 14,10.5 C14,9.67157288 13.3284271,9 12.5,9 C12.1158228,9 11.7653782,9.14442678 11.5,9.38194675 C11.2346218,9.14442678 10.8841772,9 10.5,9 C9.67157288,9 9,9.67157288 9,10.5 C9,11.3284271 9.67157288,12 10.5,12 C10.8841772,12 11.2346218,11.8555732 11.5,11.6180533 Z M16,4 L0,4 L0,2.68985507 C-4.66586066e-17,2.30885864 0.308858636,2 0.689855072,2 L15.3101449,2 C15.6911414,2 16,2.30885864 16,2.68985507 L16,4 Z M16,6 L16,13.3101449 C16,13.6911414 15.6911414,14 15.3101449,14 L0.689855072,14 C0.308858636,14 -6.43636959e-17,13.6911414 -1.11022302e-16,13.3101449 L-3.4603567e-17,6 L16,6 Z" id="path-1"></path>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="style-3" transform="translate(-2313.000000, -584.000000)">
-            <g id="Group-12-Copy-11" transform="translate(2282.000000, 379.000000)">
-                <g id="Group-Copy">
-                    <g id="Group-12-Copy">
-                        <g id="Group-6" transform="translate(16.000000, 191.000000)">
-                            <g id="credit-card" transform="translate(15.000000, 12.000000)">
-                                <g id="Group-8" stroke-width="1" fill-rule="evenodd"></g>
-                                <mask id="mask-2" fill="white">
-                                    <use xlink:href="#path-1"></use>
-                                </mask>
-                                <use id="Combined-Shape" fill="#272424" fill-rule="evenodd" xlink:href="#path-1"></use>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
+<svg width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>card_rest@svg</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Платежная-страница-v2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-38.000000, -418.000000)" fill="#B5B5B5" fill-rule="nonzero">
+            <path d="M41,418 L57,418 C58.6568542,418 60,419.343146 60,421 L60,424 L38,424 L38,421 C38,419.343146 39.3431458,418 41,418 Z M58,422 L58,421 C58,420.447715 57.5522847,420 57,420 L41,420 C40.4477153,420 40,420.447715 40,421 L40,422 L58,422 Z M38,426 L60,426 L60,435 C60,436.656854 58.6568542,438 57,438 L41,438 C39.3431458,438 38,436.656854 38,435 L38,426 Z M40,428 L40,435 C40,435.552285 40.4477153,436 41,436 L57,436 C57.5522847,436 58,435.552285 58,435 L58,428 L40,428 Z" id="card_rest"></path>
         </g>
     </g>
 </svg>

@@ -220,7 +220,7 @@
       if (field.classList.contains('_required')) {
         if (this.value) {
           var values = Array.from(this.value);
-         values.forEach(function (val) {
+          values.forEach(function (val) {
             if (val === '_') {
               field.classList.remove('success');
               field.classList.add('error');
@@ -235,8 +235,8 @@
         }
       }
       var successFields = document.querySelectorAll('.success');
-      var footerButton = document.querySelector('.footer')
-      if (successFields.length === 4) {
+      var footerButton = document.querySelector('.footer');
+      if (successFields.length >= 4) {
         footerButton.classList.add('success')
       } else {
         footerButton.classList.remove('success')

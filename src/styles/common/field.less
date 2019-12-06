@@ -11,6 +11,11 @@
 	&__body {
 		position: relative;
 		display: block;
+		&:before {
+			.success & {
+				color: #404040 !important;
+			}
+		}
 	}
 	&__icon {
 		position: absolute;
@@ -19,6 +24,9 @@
 		width: 43px;
 		height: 62px;
 		border-radius: 2px 0 0 2px;
+		&-pic {
+			background-size: contain;
+		}
 		&_eye {
 			left: initial;
 			right: 1px;
@@ -50,38 +58,53 @@
 			bottom: 0;
 			left: 0;
 			margin: auto;
+			//background-size: contain;
+			.error & {
+				//background-size: contain !important;
+			}
+			.success & {
+				//background-size: contain !important;
+			}
 			&._card {
+				background-size: contain !important;
 				.error & {
-					background: data-uri('../../img/question.png') !important;
+					background: data-uri('../../img/question.svg') !important;
 					width: 20px !important;
+					//background-size: contain !important;
 				}
 				.success & {
-					background: data-uri('../../img/card-focuses.png') !important;
+					background: data-uri('../../img/card-focuses.svg') !important;
+					//background-size: contain !important;
 				}
 			}
 			&._calendar {
 				.success & {
-					background: data-uri('../../img/calendar-focuses.png') !important;
+					background: data-uri('../../img/calendar-focuses.svg') !important;
+					background-size: contain !important;
 				}
 			}
 			&._lock {
 				.success & {
-					background: data-uri('../../img/lock-focuses.png') !important;
+					background: data-uri('../../img/lock-focuses.svg') !important;
 					height: 23px !important;
-					background-repeat: no-repeat;
+					//background-repeat: no-repeat;
+					background-size: contain !important;
 				}
 			}
 			&._person {
 				.success & {
-					background: data-uri('../../img/person-focuses.png') !important;
+					background: data-uri('../../img/person-focuses.svg') !important;
+					background-size: contain !important;
 				}
 			}
             &._help {
-              	background: data-uri('../../img/help.png') !important;
+              	background: data-uri('../../img/cvc.svg') !important;
 				width: 20px !important;
 				height: 20px !important;
+				background-size: contain !important;
 				&:hover {
-					background: data-uri('../../img/help-hover.png') !important;
+					background: data-uri('../../img/help-hover.svg') !important;
+					//background-size: contain !important;
 				}
             }
 		}
@@ -179,15 +202,19 @@
 		&:focus + .field__icon {
 			& ._card {
 				background: data-uri('../../img/card-focuses.png');
+				background-size: contain;
 			}
 			& ._calendar {
 				background: data-uri('../../img/calendar-focuses.png');
+				background-size: contain;
 			}
             & ._lock {
               background: data-uri('../../img/lock-focuses.png');
+				background-size: contain;
             }
 			& ._person {
 				background: data-uri('../../img/person-focuses.png');
+				background-size: contain;
 			}
 		}
 		&::-ms-clear {
