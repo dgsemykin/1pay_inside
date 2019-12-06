@@ -1,0 +1,22 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/footer
+include ./layouts/outcard
+
+block content
+  .card
+    +header-v05('success')
+    .card__body
+      .screen-5
+        .card__text-block
+          .card__subheader ОПЛАТА
+          .card__text invoice_548926
+        .card__text-block
+          .card__subheader СУММА
+          .card__text 1 500.00 RUB
+        .card__text-block
+          .card__subheader ДАТА И ВРЕМЯ
+          .card__text 28.11.2019 13:45
+    +footer-v05
+    +outcard-v01

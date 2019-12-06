@@ -1,0 +1,12 @@
+extends layouts/payment-form/index
+
+include ./layouts/outcard
+
+block content
+  .card
+    .card__body
+      .screen-4
+        img.card__pic(src='./img/not-found.svg')
+        img.card__pic-text(src='./img/not-found-text.svg')
+        .card__text._not-found Попробуйте повторить платеж
+    +outcard-v01

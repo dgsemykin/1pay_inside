@@ -3,7 +3,8 @@
 .footer {
 	display: flex;
 	//padding: @padding;
-	border-top: 1px solid #d8d8d8;
+	//border-top: 1px solid #d8d8d8;
+	justify-content: center;
 	&._hidden {
 		display: none;
 	}
@@ -31,6 +32,24 @@
 				background-image: linear-gradient(270deg, #00A698 0%, #006EA6 100%);
 				//border-radius: 0 0 30px 30px;
 			}
+		}
+	}
+	&__link {
+		//background: linear-gradient(270deg, #00B2A4, #00B23C);
+		//color: transparent;
+		//font-family: 'PT Root UI', Arial, sans-serif;
+		//font-size: 32px;
+		//font-weight: 500;
+		//line-height: 40px;
+		text-align: center;
+		margin: 19px 0 21px 0;
+		//-webkit-background-clip: text;
+		//background-clip: text;
+		&:hover {
+			outline: 1px red solid;
+		}
+		&:active {
+			outline: 1px green solid;
 		}
 	}
 	&__info {

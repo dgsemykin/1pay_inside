@@ -56,6 +56,9 @@
 			height: 522px;
 			border-radius: 30px;
 		}
+		.screen-5 {
+			text-align: center;
+		}
 		&._shadowed {
 			.card__mouse {
 				display: block;
@@ -93,14 +96,64 @@
 			}
 		}
 	}
+	&__pic {
+		margin: 0 auto;
+		width: 117px;
+		height: 95px;
+		&-text {
+			margin: 0 auto;
+			margin-top: 36px;
+			width: 333px;
+			height: 66px;
+		}
+	}
+	&__header {
+		color: #404040;
+		font-family: 'PT Root UI', Arial, sans-serif;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 26px;
+		width: 300px;
+		margin: auto;
+	}
 	&__text {
-		font-family: 'PT Root UI', Arial, sans-serif;;
+		padding: 0 42px;
+		text-align: center;
+		font-family: 'PT Root UI', Arial, sans-serif;
 		font-size: 20px;
 		color: #404040;
 		letter-spacing: 0;
-		line-height: 30px;
-		margin-top: 32px;
+		//line-height: 30px;
+		//margin-top: 32px;
 		align-self: center;
+		&._not-found {
+			margin-top: 12px;
+		}
+		&._error {
+			margin-top: 12px;
+		}
+		&._wait {
+			margin-top: 32px;
+		}
+		&-block {
+			margin: 24px 0 24px 0;
+			&:first-child {
+				margin: 42px 0 24px 0;
+			}
+			&:last-child {
+				margin: 24px 0 42px 0;
+			}
+			&._error {
+				margin: 60px 0 79px 0;
+			}
+		}
+	}
+	&__subheader {
+		color: #b5b5b5;
+		font-family: 'PT Root UI', Arial, sans-serif;
+		font-size: 14px;
+		font-weight: 700;
+		//line-height: 30px;
 	}
 	&__mouse {
 		display: none;

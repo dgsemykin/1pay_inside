@@ -1,0 +1,17 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/footer
+include ./layouts/outcard
+
+block content
+  .card
+    +header-v05('error')
+    .card__body
+      .screen-5
+        .card__text-block._error
+          .card__header Банк отказал в проведении платежа
+          .card__text._error Пожалуйста, проверьте достаточность средств на карте и убедитесь, что она предназначена для
+            |  оплаты покупок через Интернет.
+    +footer-v05
+    +outcard-v01

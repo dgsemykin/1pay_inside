@@ -7,6 +7,13 @@
 		justify-content: space-between;
 		align-content: center;
 	}
+    &__text {
+      color: #ffffff;
+      font-family: 'PT Root UI', Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 33px;
+    }
 	&__name {
         display: flex;
 		justify-content: center;
@@ -25,7 +32,9 @@
 		color: @headerPriceColor;
 		letter-spacing: 0;
 	}
-	&__logo {
+	&__icon {
+      float: left;
+      margin-right: 29px;
 	}
 	&__info {
 		display: flex;
@@ -51,6 +60,16 @@
 	&._bill {
 		padding-bottom: 0;
 	}
+    &._success {
+		background: linear-gradient(270deg, #00B2A4, #00B23C);
+		border-radius: 30px 30px 0 0;
+		padding: 45px 32px 45px;
+    }
+    &._error {
+		background: linear-gradient(270deg, #EF0E0E, #EF980E);
+		border-radius: 30px 30px 0 0;
+		padding: 45px 32px 45px;
+    }
 	&._with-bg {
 		height: 139px;
 		background: center no-repeat;
