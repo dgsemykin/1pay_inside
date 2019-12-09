@@ -1,8 +1,24 @@
 
 var card = document.querySelector('.card-form__number input');
 var icon = document.querySelector('.field__type-icon');
+var cardIcon = document.querySelector('._card');
+var error = document.querySelector('.field__error');
 
 if (card) {
+  cardIcon.onmouseover = function () {
+    var cardForm = document.querySelector('.card-form__number');
+    if (cardForm.classList.contains('error')) {
+      error.classList.add('_active');
+    }
+  };
+
+  cardIcon.onmouseleave = function () {
+    var cardForm = document.querySelector('.card-form__number');
+    if (cardForm.classList.contains('error')) {
+      error.classList.remove('_active');
+    }
+  };
+
   card.onkeydown = function (){
     if (card.value === '4___   ____   ____   ____') {
       icon.classList.add('_visa');

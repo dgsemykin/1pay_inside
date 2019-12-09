@@ -303,13 +303,13 @@
         border-radius: 8px;
 		box-shadow: 0 0 40px -10px rgba(0,0,0,0.15);
 		z-index: 2;
-		.error & {
-			display: block;
-		}
+		//.error & {
+		//	display: block;
+		//}
 		&:before {
 			content: '';
 			position: absolute;
-			left: 13px;
+			left: 17px;
 			top: 100%;
 
 			// triangle
@@ -320,6 +320,9 @@
 			border-right: @size solid transparent;
 
 			border-top: @size solid #FFFFFF;
+		}
+		&._active {
+			display: block;
 		}
 	}
 	&__resend {

@@ -231,7 +231,7 @@
           });
         } else {
           field.classList.remove('success');
-          field.classList.add('error');
+          field.classList.remove('error');
         }
       }
       var successFields = document.querySelectorAll('.success');
