@@ -1,8 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="76px" height="65px" viewBox="0 0 76 65" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <desc>Created with Lunacy</desc>
-  <g id="Group-30-Copy" transform="translate(0.5 0.5)">
-    <path d="M3.999 0L10.7198 0C16.2984 0 23.4724 3.63989 27.4952 7.50487C29.2929 9.23197 31.2806 11.4926 33.6116 15.6398C39.1172 25.435 41.6 36.9687 41.6 36.9687C41.6 36.9687 37.1977 41.6 37.1977 41.6L24.799 41.6C22.5904 41.6 19.9068 40.0211 19.318 37.8924C18.0895 33.4508 19.9881 31.9763 15.1519 22.3038C9.89354 11.7871 6.51284 11.258 1.90888 3.513C0.780328 1.61452 1.79041 0 3.999 0Z" transform="translate(0 22.3999)" id="Path-11" fill="#FFFFFF" fill-opacity="0.8" stroke="none" />
-    <path d="M38.5866 0L50.201 0C52.4096 0 53.2643 1.52699 52.1828 3.45269L23.9761 60.5295C22.9209 62.4697 20.1997 64 17.9911 64L1.999 64C0.894983 64 0.453417 63.2283 0.992386 62.2648L29.7133 5.26499C31.2495 2.32952 35.2734 0 38.5866 0Z" transform="translate(20.7998 0)" id="Path-12" fill="#FFFFFF" stroke="none" />
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="46px" viewBox="0 0 52 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>OK@svg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="-2.48949813e-15%" id="linearGradient-1">
+            <stop stop-color="#00BFAF" offset="0%"></stop>
+            <stop stop-color="#007FBF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="-2.22044605e-14%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#00B3A4" offset="0%"></stop>
+            <stop stop-color="#00B33C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Платежная-страница-v2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-695.000000, -464.000000)">
+            <g id="OK" transform="translate(693.000000, 464.000000)">
+                <path d="M5.37851297,14.9333333 L10.8807285,14.9333333 C13.1106388,14.9333333 15.1845347,16.0776665 16.3735247,17.9641455 L31.3275362,41.6905252 L27.7546598,45.4492754 L18.0290218,45.4492754 C16.8239649,45.4492754 15.7180599,44.7817704 15.1565753,43.7155167 L2.50606647,19.6923282 C1.67067056,18.1059199 2.27948647,16.1426596 3.86589487,15.3072636 C4.33226858,15.0616732 4.85142749,14.9333333 5.37851297,14.9333333 Z" id="Path-11" fill="url(#linearGradient-1)"></path>
+                <path d="M42.3723316,0 L50.6452089,0 C52.4381333,-1.6616225e-15 53.8915857,1.45345241 53.8915857,3.24637681 C53.8915857,3.76916331 53.76533,4.28421731 53.5235555,4.74773735 L33.2036311,43.7042591 C32.6442134,44.7767516 31.5349077,45.4492754 30.3252845,45.4492754 L17.1398089,45.4492754 C16.2433467,45.4492754 15.5166205,44.7225492 15.5166205,43.826087 C15.5166205,43.5617907 15.5811577,43.3014921 15.7046249,43.0678077 L36.6315955,3.45963665 C37.7559954,1.33150141 39.9654177,2.21849976e-15 42.3723316,0 Z" id="Path-12" fill="url(#linearGradient-2)"></path>
+            </g>
+        </g>
+    </g>
 </svg>

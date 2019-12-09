@@ -47,7 +47,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
         {
             name: 'validity',
             inputs: document.querySelectorAll('.card-form__validity input'),
-            mask: [/[0, 1]/, /\d/, ' ', ' ', ' ', ' ', ' ', ' ', /\d/, /\d/]
+            mask: [/[0, 1]/, /\d/, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', /\d/, /\d/]
         },
         {
             name: 'cvc',

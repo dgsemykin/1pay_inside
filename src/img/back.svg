@@ -3,8 +3,8 @@
   <desc>Created with Lunacy</desc>
   <defs>
     <linearGradient x1="1" y1="0.5" x2="-2.220446E-16" y2="0.5" id="gradient_1">
-      <stop offset="0" stop-color="#00B2A4" />
-      <stop offset="1" stop-color="#00B23C" />
+      <stop id="stop" offset="0" stop-color="#00B2A4" />
+      <stop id="start" offset="1" stop-color="#00B23C" />
     </linearGradient>
   </defs>
   <g fill="url(#gradient_1)" stroke="none" id="Вернуться-в-магазин">

@@ -24,10 +24,10 @@ mixin field-cvv(className, placeholder, inverse)
         //img(src='./img/cvc.png')
         if (!inverse)
           .tooltip__text Трехзначный номер на&nbsp;обратной&nbsp;стороне вашей карты
-            img.tooltip__cvc(src='./img/cvc.jpeg')
+            img.tooltip__cvc(src='./img/cvc-code.svg')
         else
           .tooltip__text._inverse Трехзначный номер на&nbsp;обратной&nbsp;стороне вашей карты
-            img.tooltip__cvc(src='./img/cvc.jpeg')
+            img.tooltip__cvc(src='./img/cvc-code.svg')
 
 mixin field-card(value, icon)
   .field.card-form__number._required
@@ -50,7 +50,7 @@ mixin field-validity(value)
     .field.card-form__validity._required
       //.field__label Месяц / год
       label.field__body
-        input.field__input(type='text', tabindex='2', inputmode='numeric', placeholder='12      24', value!=value)
+        input.field__input(type='text', tabindex='2', inputmode='numeric', placeholder='12        24', value!=value)
         .field__icon
           .field__icon-pic._calendar
           //img(src='./img/calendar.png')

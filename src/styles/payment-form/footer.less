@@ -42,14 +42,29 @@
 		//font-weight: 500;
 		//line-height: 40px;
 		text-align: center;
-		margin: 19px 0 21px 0;
+		margin: 22px 0 18px;
 		//-webkit-background-clip: text;
 		//background-clip: text;
-		&:hover {
-			outline: 1px red solid;
+		//background-image: data-uri('../../img/back.svg');
+		//width: 308px;
+		//height: 41px;
+		&:hover #start {
+			stop-color: #00CC44;
+			//width: 308px;
+			//height: 41px;
+			//background-image: data-uri('../../img/back-hover.svg');
 		}
-		&:active {
-			outline: 1px green solid;
+		&:hover #stop {
+			stop-color: #00CCBB;
+			//width: 308px;
+			//height: 41px;
+			//background-image: data-uri('../../img/back-hover.svg');
+		}
+		&:active #start{
+			stop-color: #009933;
+		}
+		&:active #stop{
+			stop-color: #00998C;
 		}
 	}
 	&__info {
