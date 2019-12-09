@@ -5,7 +5,7 @@
       width: auto;
     }
     &__validity {
-      max-width: 151px;
+      width: 151px;
       margin-right: 16px;
       .field__body:before {
         left: 78px;
@@ -15,14 +15,37 @@
       }
     }
     &__number {
-        max-width: 318px;
-      width: 100%;
+      width: 318px;
     }
     &__cvc {
-        max-width: 151px;
+      width: 151px;
     }
     &__cardholder {
-        max-width: 318px;
+      width: 318px;
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .card-form {
+    &__row {
+      flex-direction: column;
+      & + & {
+        margin-top: 8px;
+      }
+    }
+    &__cvc {
+      width: 268px;
+      margin-top: 8px;
+    }
+    &__number {
+      width: 268px;
+    }
+    &__cardholder {
+      max-width: 268px;
+    }
+    &__validity {
+      width: 268px;
     }
   }
 }
