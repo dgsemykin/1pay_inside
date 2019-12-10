@@ -221,7 +221,7 @@
         if (this.value) {
           var values = Array.from(this.value);
           values.forEach(function (val) {
-            if (val === '_') {
+            if (val === '\u2000') {
               field.classList.remove('success');
               field.classList.add('error');
             } else {

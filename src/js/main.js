@@ -42,7 +42,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     var controls = [{
             name: 'card',
             inputs: document.querySelectorAll('.card-form__number input'),
-            mask: [/\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/]
+            mask: [/\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/],
         },
         {
             name: 'validity',
@@ -75,7 +75,8 @@ if (window.NodeList && !NodeList.prototype.forEach) {
             control.inputs.forEach(function(input) {
                 control.maskController = vanillaTextMask.maskInput({
                     inputElement: input,
-                    mask: control.mask
+                    mask: control.mask,
+                    placeholderChar: '\u2000',
                 });
             });
         }

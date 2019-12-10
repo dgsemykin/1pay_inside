@@ -11,3 +11,27 @@
     }
   }
 }
+
+@media screen and (max-width: 330px) {
+  .card {
+    &__header {
+      font-size: 20px;
+      padding: 0 16px;
+      width: 268px;
+    }
+    &__text {
+      font-size: 18px;
+      &._error {
+        padding: 0 16px;
+      }
+    }
+    &__pic {
+        width: 100px;
+        height: 82px;
+      &-text {
+          width: 268px;
+          height: 56px;
+      }
+    }
+  }
+}

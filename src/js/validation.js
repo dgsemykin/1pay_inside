@@ -20,11 +20,11 @@ if (card) {
   };
 
   card.onkeydown = function (){
-    if (card.value === '4___   ____   ____   ____') {
+    if (card.value === '4\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000') {
       icon.classList.add('_visa');
-    } else if (card.value === '5___   ____   ____   ____') {
+    } else if (card.value === '5\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000') {
       icon.classList.add('_mastercard');
-    } else if (card.value === '6___   ____   ____   ____') {
+    } else if (card.value === '6\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000') {
       icon.classList.add('_maestro');
     } else if (card.value === '') {
       icon.classList.remove('_visa', '_mastercard', '_maestro');

@@ -17,5 +17,23 @@
     &__name {
       font-size: 18px;
     }
+    &__text {
+      ._success & {
+        //width: 165px;
+        font-size: 24px;
+      }
+      ._error & {
+        font-size: 24px;
+      }
+    }
+    &._success {
+      padding: 35px 24px 32px 24px;
+    }
+    &._error {
+      padding: 35px 18px 32px 19px;
+    }
+    &__icon {
+      margin-right: 16px;
+    }
   }
 }
