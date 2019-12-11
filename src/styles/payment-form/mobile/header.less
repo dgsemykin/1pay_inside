@@ -4,13 +4,22 @@
       display: none;
     }
     &._error {
-      padding: 42px 25px 22px 42px;
+      padding: 41px 21px 32px 42px;
+    }
+    &._success {
+      padding: 42px 44px 32px;
+    }
+    &__icon {
+      &._error {
+        margin: -2px 35px 0 1px;
+      }
     }
   }
 }
 
 @media screen and (max-width: 330px) {
   .header {
+    padding: 32px 16px 24px;
     &__price {
       font-size: 36px;
     }
@@ -19,21 +28,27 @@
     }
     &__text {
       ._success & {
-        //width: 165px;
         font-size: 24px;
+        line-height: 26px;
+        margin: -3px 0 0 0;
       }
       ._error & {
         font-size: 24px;
+        line-height: 26px;
+        margin-top: -3px;
       }
     }
     &._success {
-      padding: 35px 24px 32px 24px;
+      padding: 35px 26px 32px;
     }
     &._error {
-      padding: 35px 18px 32px 19px;
+      padding: 35px 15px 32px 19px;
     }
     &__icon {
       margin-right: 16px;
+      &._error {
+        margin: -3px 22px 0 6px;
+      }
     }
   }
 }

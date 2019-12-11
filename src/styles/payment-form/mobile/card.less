@@ -9,18 +9,59 @@
     &._chat {
       min-width: 280px;
     }
+    &__text-block {
+      &:last-child {
+        margin: 31px 0 57px;
+      }
+      &._error {
+        margin: 60px auto;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 330px) {
   .card {
+    margin: 0 10px;
+    &__body .screen-3 {
+      padding: 0;
+    }
+    &__body .screen-4 {
+      height: 463px;
+    }
     &__header {
       font-size: 20px;
       padding: 0 16px;
       width: 268px;
+      line-height: 25px;
+    }
+    &__subheader {
+      font-size: 13px;
+      margin-left: -7px;
     }
     &__text {
       font-size: 18px;
+      margin-top: 2px;
+      &._not-found {
+        padding: 0;
+        margin-top: 15px;
+        margin-left: -15px;
+      }
+      &._error {
+        margin-top: 9px;
+        line-height: 22px;
+      }
+      &-block {
+        &:first-child {
+          margin: 45px 0 33px;
+        }
+        &:last-child {
+          margin: 33px 0 36px;
+          &._error {
+            margin: 55px 0;
+          }
+        }
+      }
       &._error {
         padding: 0 16px;
       }
@@ -29,8 +70,8 @@
         width: 100px;
         height: 82px;
       &-text {
-          width: 268px;
-          height: 56px;
+        width: 268px;
+        height: 56px;
       }
     }
   }

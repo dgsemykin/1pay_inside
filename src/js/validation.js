@@ -3,8 +3,19 @@ var card = document.querySelector('.card-form__number input');
 var icon = document.querySelector('.field__type-icon');
 var cardIcon = document.querySelector('._card');
 var error = document.querySelector('.field__error');
+var validity = document.querySelector('.card-form__validity input');
+var validitySeparator = document.querySelector('.card-form__validity .field__body');
 
 if (card) {
+  validity.onfocus = function () {
+    validitySeparator.classList.add('_active');
+  };
+
+  validity.onblur = function () {
+    console.log('!!!')
+    validitySeparator.classList.remove('_active');
+  };
+
   cardIcon.onmouseover = function () {
     var cardForm = document.querySelector('.card-form__number');
     if (cardForm.classList.contains('error')) {

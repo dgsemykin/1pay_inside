@@ -211,12 +211,14 @@
 
 (function checkFieldError() {
   var fields = document.querySelectorAll('.field');
+  var validitySeparator = document.querySelector('.card-form__validity .field__body');
   if (!fields) { return; }
   fields.forEach(function(field) {
     var input = field.querySelector('.field__input');
     if (!input) { return; }
 
     input.onblur = function() {
+      validitySeparator.classList.remove('_active');
       if (field.classList.contains('_required')) {
         if (this.value) {
           var values = Array.from(this.value);

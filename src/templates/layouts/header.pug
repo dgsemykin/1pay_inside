@@ -35,10 +35,10 @@ mixin header-v04(name, price, currency)
 mixin header-v05(status)
   .header(class='_'+status)
     if (status === 'success')
-      img.header__icon(class='_'+status src='./img/success-icon.svg')
+      img.header__icon(src='./img/success-icon.svg')
       .header__text Заказ успешно оплачен!
     if (status === 'error')
-      img.header__icon(src='./img/error-icon.svg')
+      img.header__icon(class='_'+status src='./img/error-icon.svg')
       .header__text Неудачная попытка&nbsp;оплаты!
 
 
