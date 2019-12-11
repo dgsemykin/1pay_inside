@@ -4,11 +4,16 @@ var icon = document.querySelector('.field__type-icon');
 var cardIcon = document.querySelector('._card');
 var error = document.querySelector('.field__error');
 var validity = document.querySelector('.card-form__validity input');
+var cvc = document.querySelector('.card-form__cvc input');
 var validitySeparator = document.querySelector('.card-form__validity .field__body');
 
 if (card) {
   validity.onfocus = function () {
     validitySeparator.classList.add('_active');
+  };
+
+  cvc.onfocus = function () {
+    cvc.placeholder = '';
   };
 
   cardIcon.onmouseover = function () {

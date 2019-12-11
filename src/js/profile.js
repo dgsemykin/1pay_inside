@@ -212,6 +212,7 @@
 (function checkFieldError() {
   var fields = document.querySelectorAll('.field');
   var validitySeparator = document.querySelector('.card-form__validity .field__body');
+  var cvc = document.querySelector('.card-form__cvc input');
   if (!fields) { return; }
   fields.forEach(function(field) {
     var input = field.querySelector('.field__input');
@@ -219,6 +220,7 @@
 
     input.onblur = function() {
       validitySeparator.classList.remove('_active');
+      cvc.placeholder = '123';
       if (field.classList.contains('_required')) {
         if (this.value) {
           var values = Array.from(this.value);
