@@ -49,11 +49,11 @@ if (window.NodeList && !NodeList.prototype.forEach) {
             inputs: document.querySelectorAll('.card-form__validity input'),
             mask: [/[0, 1]/, /\d/, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', /\d/, /\d/]
         },
-        // {
-        //     name: 'cvc',
-        //     inputs: document.querySelectorAll('.card-form__cvc input'),
-        //     mask: [/\d/, /\d/, /\d/]
-        // },
+        {
+            name: 'cvc',
+            inputs: document.querySelectorAll('.card-form__cvc input'),
+            mask: [/\d/, /\d/, /\d/]
+        },
         {
             name: 'alfaLogin',
             inputs: document.querySelectorAll('.card-form__alpha-login input'),
