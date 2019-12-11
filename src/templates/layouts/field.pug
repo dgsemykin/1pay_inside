@@ -16,7 +16,7 @@ mixin field-cvv(className, placeholder, inverse)
   .field(class!=className)._required
     //.field__label CVC
     label.field__body
-      input.field__input(type='password', tabindex='3', inputmode='numeric', placeholder!=placeholder)
+      input.field__input(type='password', tabindex='3', maxlength='3', inputmode='numeric', placeholder!=placeholder)
       .field__icon
         .field__icon-pic._lock
       .field__icon._cvc.tooltip
