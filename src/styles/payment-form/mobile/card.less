@@ -1,11 +1,13 @@
 @media screen and (max-width: 430px) {
   .card {
-    min-width: 374px;
     display: block;
     position: relative;
     overflow: visible;
     width: auto;
     margin: 0 16px;
+    &._payment {
+      min-width: 374px;
+    }
     &._chat {
       min-width: 280px;
     }
@@ -22,8 +24,10 @@
 
 @media screen and (max-width: 330px) {
   .card {
-    min-width: auto;
     margin: 0 10px;
+    &._payment {
+      min-width: auto;
+    }
     &__body .screen-3 {
       padding: 0;
     }
