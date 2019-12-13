@@ -2,8 +2,6 @@
 
 .footer {
 	display: flex;
-	//padding: @padding;
-	//border-top: 1px solid #d8d8d8;
 	justify-content: center;
 	&._hidden {
 		display: none;
@@ -20,17 +18,14 @@
 		line-height: 43px;
 		text-align: center;
 		border-radius: 0 0 30px 30px;
-		.success & {
+		._success & {
 			background-image: linear-gradient(270deg, #00BFAF 0%, #007FBF 100%);
-			//border-radius: 0 0 30px 30px;
-			//background-color: red;
 			color: #FFFFFF;
 			&:hover {
 				background-image: linear-gradient(270deg, #00D9C7 0%, #0090D9 100%);
 			}
 			&:active {
 				background-image: linear-gradient(270deg, #00A698 0%, #006EA6 100%);
-				//border-radius: 0 0 30px 30px;
 			}
 		}
 	}

@@ -240,10 +240,10 @@
       }
       var successFields = document.querySelectorAll('.success');
       var footerButton = document.querySelector('.footer');
-      if (successFields.length >= 4) {
-        footerButton.classList.add('success')
+      if (successFields.length === 4) {
+        footerButton.classList.add('_success')
       } else {
-        footerButton.classList.remove('success')
+        footerButton.classList.remove('_success')
       }
     };
   });

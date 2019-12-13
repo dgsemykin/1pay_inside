@@ -14,14 +14,12 @@ mixin field(className, placeholder, icon, value, disabled, error, status)
 
 mixin field-cvv(className, placeholder, inverse)
   .field(class!=className)._required
-    //.field__label CVC
     label.field__body
       input.field__input(type='text', tabindex='3', inputmode='numeric', placeholder!=placeholder)
       .field__icon
         .field__icon-pic._lock
       .field__icon._cvc.tooltip
         .field__icon-pic._help
-        //img(src='./img/cvc.png')
         if (!inverse)
           .tooltip__text Трехзначный номер на&nbsp;обратной&nbsp;стороне вашей карты
             img.tooltip__cvc(src='./img/cvc-code.svg')
