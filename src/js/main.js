@@ -63,7 +63,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
             name: 'phone',
             inputs: document.querySelectorAll('.card-form__phone input'),
             mask: [/[1-9]/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/]
-        },
+        }
     ];
     controls.forEach(function(control) {
         if (control.inputs.length) {
