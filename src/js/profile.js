@@ -212,7 +212,11 @@
 (function checkFieldError() {
   var fields = document.querySelectorAll('.field');
   var validitySeparator = document.querySelector('.card-form__validity .field__body');
+  var cardholderInput = document.querySelector('.card-form__cardholder input');
+  var cardholderField = document.querySelector('.card-form__cardholder');
   var cvc = document.querySelector('.card-form__cvc input');
+  var successFields = document.querySelectorAll('.success');
+  var footerButton = document.querySelector('.footer');
   if (!fields) { return; }
   fields.forEach(function(field) {
     var input = field.querySelector('.field__input');
@@ -238,14 +242,33 @@
           field.classList.remove('error');
         }
       }
-      var successFields = document.querySelectorAll('.success');
-      var footerButton = document.querySelector('.footer');
+      successFields = document.querySelectorAll('.success');
       if (successFields.length === 4) {
         footerButton.classList.add('_success')
       } else {
         footerButton.classList.remove('_success')
       }
     };
+
+  cardholderInput.onkeydown = function () {
+    if (cardholderInput.value.length >= 0) {
+      cardholderField.classList.add('success');
+
+      successFields = document.querySelectorAll('.success');
+      if (successFields.length === 4) {
+        footerButton.classList.add('_success')
+      } else {
+        footerButton.classList.remove('_success')
+      }
+    }
+  };
+
+  cardholderInput.onkeyup = function () {
+    if (!cardholderInput.value) {
+      cardholderField.classList.remove('success');
+      footerButton.classList.remove('_success')
+    }
+  }
   });
 })();
 
