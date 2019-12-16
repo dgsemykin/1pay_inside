@@ -213,6 +213,8 @@
   var fields = document.querySelectorAll('.field');
   var validitySeparator = document.querySelector('.card-form__validity .field__body');
   var cardholderInput = document.querySelector('.card-form__cardholder input');
+  var cardNumberInput = document.querySelector('.card-form__number input');
+  var cardValidityInput = document.querySelector('.card-form__validity input');
   var cardholderField = document.querySelector('.card-form__cardholder');
   var cvc = document.querySelector('.card-form__cvc input');
   var successFields = document.querySelectorAll('.success');
@@ -247,6 +249,27 @@
         footerButton.classList.add('_success')
       } else {
         footerButton.classList.remove('_success')
+      }
+    };
+
+  cardNumberInput.onkeyup = function () {
+    values = Array.from(this.value);
+      if (!values.includes('\u2000')) {
+        cardValidityInput.focus();
+      }
+  };
+
+    cardValidityInput.onkeyup = function () {
+      values = Array.from(this.value);
+      if (!values.includes('\u2000')) {
+        cvc.focus();
+      }
+    };
+
+    cvc.onkeyup = function () {
+      values = Array.from(this.value);
+      if (!values.includes('\u2000')) {
+        cardholderInput.focus();
       }
     };
 

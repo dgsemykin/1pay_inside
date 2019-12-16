@@ -29,29 +29,20 @@ mixin field-cvv(className, placeholder, inverse)
 
 mixin field-card(value, icon)
   .field.card-form__number._required
-    //if (label)
-    //  .field__label= label
     .field__body
       .field__error Введите корректный номер карты
-      input.field__input(type='text', tabindex='1', autofocus, inputmode='numeric', placeholder='Введите номер карты', value!=value)
+      input.field__input(type='text', tabindex='1', autofocus, length='25', inputmode='numeric', placeholder='Введите номер карты', value!=value)
       .field__icon
         .field__icon-pic._card
-        //img(src='./img/card.png', width='16')
       .field__type-icon
-      //if (icon)
-      //  .field__type-icon(class!=icon)
-      //if attributes.error
-      //  .field__error= attributes.error
 
 mixin field-validity(value)
   .card-form__row
     .field.card-form__validity._required
-      //.field__label Месяц / год
       label.field__body
         input.field__input(type='text', tabindex='2', inputmode='numeric', placeholder='12        24', value!=value)
         .field__icon
           .field__icon-pic._calendar
-          //img(src='./img/calendar.png')
         if (icon)
           .field__type-icon(class!=icon)
 
@@ -130,13 +121,10 @@ mixin field-date
 
 mixin field-cardholder(value, icon)
   .field.card-form__cardholder._required
-    //if (label)
-    //  .field__label= label
     label.field__body
       input.field__input._transliteration(type='text', tabindex='4', placeholder='IVAN IVANOV', value!=value)
       .field__icon
         .field__icon-pic._person
-        //img(src='./img/person.png', width='16')
       if (icon)
         .field__type-icon(class!=icon)
       if attributes.error
