@@ -39,7 +39,7 @@ mixin header-v05(status)
       .header__text Заказ успешно оплачен!
     if (status === 'error')
       img.header__icon(class='_'+status src='./img/error-icon.svg')
-      .header__text Неудачная попытка&nbsp;оплаты!
+      .header__text Оплата не&nbsp;прошла!
 
 
 mixin header-bill(logo, bill)
