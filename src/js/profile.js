@@ -259,13 +259,6 @@
     } else if (!values.includes('\u2000')) {
       cardValidityInput.focus();
     }
-
-      // if (!values.includes('\u2000')) {
-      //   cardValidityInput.focus();
-      // } else if (values.length === 0) {
-      //   console.log('hi!');
-      //   cardNumberInput.focus();
-      // }
   };
 
     cardValidityInput.onkeyup = function () {
@@ -287,7 +280,7 @@
     };
 
   cardholderInput.onkeydown = function () {
-    if (cardholderInput.value.length >= 0) {
+    if (cardholderInput.value.length > 0) {
       cardholderField.classList.add('success');
 
       successFields = document.querySelectorAll('.success');
@@ -301,6 +294,7 @@
 
   cardholderInput.onkeyup = function () {
     if (!cardholderInput.value) {
+      console.log(cardholderInput.value);
       cardholderField.classList.remove('success');
       footerButton.classList.remove('_success')
     }
