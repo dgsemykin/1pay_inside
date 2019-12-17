@@ -254,21 +254,34 @@
 
   cardNumberInput.onkeyup = function () {
     values = Array.from(this.value);
-      if (!values.includes('\u2000')) {
-        cardValidityInput.focus();
-      }
+    if (values.length === 0) {
+      cardNumberInput.focus();
+    } else if (!values.includes('\u2000')) {
+      cardValidityInput.focus();
+    }
+
+      // if (!values.includes('\u2000')) {
+      //   cardValidityInput.focus();
+      // } else if (values.length === 0) {
+      //   console.log('hi!');
+      //   cardNumberInput.focus();
+      // }
   };
 
     cardValidityInput.onkeyup = function () {
       values = Array.from(this.value);
-      if (!values.includes('\u2000')) {
+      if (values.length === 0) {
+        cardValidityInput.focus();
+      } else if (!values.includes('\u2000')) {
         cvc.focus();
       }
     };
 
     cvc.onkeyup = function () {
       values = Array.from(this.value);
-      if (!values.includes('\u2000')) {
+      if (values.length === 0) {
+        cvc.focus();
+      } else if (!values.includes('\u2000')) {
         cardholderInput.focus();
       }
     };
