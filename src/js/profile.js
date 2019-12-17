@@ -279,10 +279,9 @@
       }
     };
 
-  cardholderInput.onkeydown = function () {
-    if (cardholderInput.value.length > 0) {
+  cardholderInput.onkeypress = function () {
+    if (cardholderInput.value.length >= 0) {
       cardholderField.classList.add('success');
-
       successFields = document.querySelectorAll('.success');
       if (successFields.length === 4) {
         footerButton.classList.add('_success')
@@ -294,7 +293,6 @@
 
   cardholderInput.onkeyup = function () {
     if (!cardholderInput.value) {
-      console.log(cardholderInput.value);
       cardholderField.classList.remove('success');
       footerButton.classList.remove('_success')
     }
