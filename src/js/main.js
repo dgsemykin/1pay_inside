@@ -38,46 +38,6 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     }
 })();
 
-(function setMask() {
-    var controls = [{
-            name: 'card',
-            inputs: document.querySelectorAll('.card-form__number input'),
-            mask: [/\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/],
-        },
-        {
-            name: 'validity',
-            inputs: document.querySelectorAll('.card-form__validity input'),
-            mask: [/[0, 1]/, /\d/, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', /\d/, /\d/]
-        },
-        {
-            name: 'cvc',
-            inputs: document.querySelectorAll('.card-form__cvc input'),
-            mask: [/\d/, /\d/, /\d/]
-        },
-        {
-            name: 'alfaLogin',
-            inputs: document.querySelectorAll('.card-form__alpha-login input'),
-            mask: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
-        },
-        {
-            name: 'phone',
-            inputs: document.querySelectorAll('.card-form__phone input'),
-            mask: [/[1-9]/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/]
-        }
-    ];
-    controls.forEach(function(control) {
-        if (control.inputs.length) {
-            control.inputs.forEach(function(input) {
-                control.maskController = vanillaTextMask.maskInput({
-                    inputElement: input,
-                    mask: control.mask,
-                    placeholderChar: '\u2000',
-                });
-            });
-        }
-    });
-})();
-
 var cardBodyHeight = 0;
 var cardOffset = 0;
 var heightForList = 0;
