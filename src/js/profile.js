@@ -252,14 +252,14 @@
       }
     };
 
-  // cardNumberInput.onkeyup = function () {
-  //   values = Array.from(this.value);
-  //   if (values.length === 0) {
-  //     cardNumberInput.focus();
-  //   } else if (!values.includes('\u2000')) {
-  //     cardValidityInput.focus();
-  //   }
-  // };
+  cardNumberInput.onkeyup = function () {
+    values = Array.from(this.value);
+    if (values.length === 0) {
+      cardNumberInput.focus();
+    } else if (!values.includes('\u2000')) {
+      cardValidityInput.focus();
+    }
+  };
 
     cardValidityInput.onkeyup = function () {
       values = Array.from(this.value);
