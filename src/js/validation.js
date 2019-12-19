@@ -6,14 +6,16 @@ var error = document.querySelector('.field__error');
 var validity = document.querySelector('.card-form__validity input');
 var cvc = document.querySelector('.card-form__cvc input');
 var validitySeparator = document.querySelector('.card-form__validity .field__body');
-var sixteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/,];
-var thirteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/,];
-var nineteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/,];
+var sixteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,];
+var thirteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/,];
+var fifteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/,];
+var nineteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/,];
+var nineteenDigitsMaskUnionPay = [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/,];
 
   var controls = [{
     name: 'card',
     inputs: document.querySelectorAll('.card-form__number input'),
-    mask: [/\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/, ' ', ' ', ' ', /\d/, /\d/, /\d/, /\d/,],
+    mask: [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,],
   },
     {
       name: 'validity',
@@ -71,8 +73,8 @@ if (card) {
     }
   };
 
-  card.onkeydown = function (){
-    if (card.value === '4\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000') {
+  card.onkeyup = function (){
+    if (card.value === '4\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000') {
       icon.classList.add('_visa');
       controls[0].maskController.destroy();
       card.maskController = vanillaTextMask.maskInput({
@@ -80,47 +82,102 @@ if (card) {
         mask: sixteenDigitsMask,
         placeholderChar: '\u2000',
       })
-    } else if (card.value === '45\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000') {
-      icon.classList.add('_visa');
+      // card.onkeypress = function () {
+      //   values = Array.from(this.value);
+      //   if (values.length === 0) {
+      //     card.focus();
+      //   } else if (!values.includes('\u2000')) {
+      //     card.maskController.destroy();
+      //     card.maskController = vanillaTextMask.maskInput({
+      //       inputElement: card,
+      //       mask: nineteenDigitsMaskUnionPay,
+      //       placeholderChar: '\u2000',
+      //     })
+      //     // cardValidityInput.focus();
+      //   }
+      // };
+    }
+    // else if (card.value === '45\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000') {
+    //   icon.classList.add('_visa');
+    //   controls[0].maskController.destroy();
+    //   card.maskController = vanillaTextMask.maskInput({
+    //     inputElement: card,
+    //     mask: thirteenDigitsMask,
+    //     placeholderChar: '\u2000',
+    //   })
+    // }
+    else if (card.value === '5\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000') {
+      icon.classList.add('_mastercard');
+      controls[0].maskController.destroy();
+      card.maskController = vanillaTextMask.maskInput({
+        inputElement: card,
+        mask: sixteenDigitsMask,
+        placeholderChar: '\u2000',
+      })
+    }
+    // else if (card.value === '54\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000') {
+    //   icon.classList.add('_mastercard');
+    //   card.maskController.destroy();
+    //   card.maskController = vanillaTextMask.maskInput({
+    //     inputElement: card,
+    //     mask: nineteenDigitsMask,
+    //     placeholderChar: '\u2000',
+    //   })
+    // }
+    else if (card.value === '6\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000') {
+      icon.classList.add('_maestro');
       controls[0].maskController.destroy();
       card.maskController = vanillaTextMask.maskInput({
         inputElement: card,
         mask: thirteenDigitsMask,
         placeholderChar: '\u2000',
       })
-    } else if (card.value === '5\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000') {
-      icon.classList.add('_mastercard');
-      controls[0].maskController.destroy();
-      card.maskController = vanillaTextMask.maskInput({
-        inputElement: card,
-        mask: sixteenDigitsMask,
-        placeholderChar: '\u2000',
-      })
-    } else if (card.value === '54\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000') {
-      icon.classList.add('_mastercard');
-      card.maskController.destroy();
-      card.maskController = vanillaTextMask.maskInput({
-        inputElement: card,
-        mask: nineteenDigitsMask,
-        placeholderChar: '\u2000',
-      })
-    } else if (card.value === '6\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000') {
-      icon.classList.add('_maestro');
-      controls[0].maskController.destroy();
-      card.maskController = vanillaTextMask.maskInput({
-        inputElement: card,
-        mask: sixteenDigitsMask,
-        placeholderChar: '\u2000',
-      })
-    } else if (card.value === '63\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000   \u2000\u2000\u2000\u2000') {
-      icon.classList.add('_maestro');
-      card.maskController.destroy();
-      card.maskController = vanillaTextMask.maskInput({
-        inputElement: card,
-        mask: nineteenDigitsMask,
-        placeholderChar: '\u2000',
-      })
-    } else if (card.value === '') {
+      card.onkeypress = function () {
+        values = Array.from(this.value);
+        if (values.length === 0) {
+          card.focus();
+        } else if (!values.includes('\u2000')) {
+          card.maskController.destroy();
+          card.maskController = vanillaTextMask.maskInput({
+            inputElement: card,
+            mask: fifteenDigitsMask,
+            placeholderChar: '\u2000',
+          })
+        }
+        values = Array.from(this.value);
+        if (values.length === 0) {
+          card.focus();
+        } else if (!values.includes('\u2000')) {
+          card.maskController.destroy();
+          card.maskController = vanillaTextMask.maskInput({
+            inputElement: card,
+            mask: sixteenDigitsMask,
+            placeholderChar: '\u2000',
+          })
+        }
+        // values = Array.from(this.value);
+        if (values.length === 0) {
+          card.focus();
+        } else if (!values.includes('\u2000')) {
+          card.maskController.destroy();
+          card.maskController = vanillaTextMask.maskInput({
+            inputElement: card,
+            mask: nineteenDigitsMask,
+            placeholderChar: '\u2000',
+          })
+        }
+      };
+    }
+    // else if (card.value === '63\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000') {
+    //   icon.classList.add('_maestro');
+    //   card.maskController.destroy();
+    //   card.maskController = vanillaTextMask.maskInput({
+    //     inputElement: card,
+    //     mask: nineteenDigitsMask,
+    //     placeholderChar: '\u2000',
+    //   })
+    // }
+    else if (card.value === '') {
       icon.classList.remove('_visa', '_mastercard', '_maestro');
     }
   };
