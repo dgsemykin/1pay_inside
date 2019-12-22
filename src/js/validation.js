@@ -139,15 +139,15 @@ if (card) {
     //Diners Club International
     else if (card.value === '300\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
              card.value === '301\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '302\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '303\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '304\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '305\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '309\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '36\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '36\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '38\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '39\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000'
+             card.value === '302\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
+             card.value === '303\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
+             card.value === '304\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
+             card.value === '305\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
+             card.value === '309\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
+             card.value === '36\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
+             card.value === '36\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
+             card.value === '38\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
+             card.value === '39\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000'
     ) {
       icon.classList.add('_dinersclub');
       controls[0].maskController.destroy();
@@ -257,7 +257,14 @@ if (card) {
     }
 
     else if (card.value === '') {
-      icon.classList.remove('_visa', '_mastercard', '_maestro', '_mir' ,'_unionpay', '_jcb', '_dinersclub', '_amex');
+      icon.classList.remove('_visa');
+      icon.classList.remove('_mastercard');
+      icon.classList.remove('_maestro');
+      icon.classList.remove('_mir');
+      icon.classList.remove('_unionpay');
+      icon.classList.remove('_jcb');
+      icon.classList.remove('_dinersclub');
+      icon.classList.remove('_amex');
       if (card.maskController) {
         card.maskController.destroy();
       }
