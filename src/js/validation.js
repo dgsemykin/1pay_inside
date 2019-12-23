@@ -227,21 +227,64 @@ if (card) {
       if (card.maskController) {
         card.maskController.destroy();
       }
-      card.maskController = vanillaTextMask.maskInput({
-        inputElement: card,
-        mask: thirteenDigitsMask,
-        placeholderChar: '_',
-      })
+      setTimeout(set13Mask, 5);
+
+      function set13Mask () {
+        card.maskController = vanillaTextMask.maskInput({
+          inputElement: card,
+          mask: thirteenDigitsMask,
+          placeholderChar: '\u2000',
+        })
+      }
+      
+      function set15Masks () {
+        card.maskController = vanillaTextMask.maskInput({
+          inputElement: card,
+          mask: fifteenDigitsMask,
+          placeholderChar: '\u2000',
+        })
+      }
+
+      function set16Masks () {
+        card.maskController = vanillaTextMask.maskInput({
+          inputElement: card,
+          mask: sixteenDigitsMask,
+          placeholderChar: '\u2000',
+        })
+      }
+
+      function set18Masks () {
+        card.maskController = vanillaTextMask.maskInput({
+          inputElement: card,
+          mask: eighteenDigitsMask,
+          placeholderChar: '\u2000',
+        })
+      }
+
+      function set19Masks () {
+        card.maskController = vanillaTextMask.maskInput({
+          inputElement: card,
+          mask: nineteenDigitsMask,
+          placeholderChar: '\u2000',
+        })
+      }
+
       card.onkeypress = function () {
         values = Array.from(card.value);
-        if (!values.includes('_')) {
+        if (!values.includes('\u2000')) {
           values = Array.from(card.value);
           card.maskController.destroy();
-          card.maskController = vanillaTextMask.maskInput({
-            inputElement: card,
-            mask: card.value.length === 15 ? fifteenDigitsMask : card.value.length === 17 ? sixteenDigitsMask : card.value.length === 19 ? eighteenDigitsMask : card.value.length === 22 ? nineteenDigitsMask : nineteenDigitsMask,
-            placeholderChar: '_',
-          })
+          if (card.value.length === 15) {
+            setTimeout(set15Masks,0);
+          } else if (card.value.length === 17) {
+            setTimeout(set16Masks,0);
+          } else if (card.value.length === 19) {
+            setTimeout(set18Masks,0);
+          } else if (card.value.length === 22) {
+            setTimeout(set19Masks,0);
+          } else {
+            setTimeout(set19Masks,0);
+          }
         }
       }
     }
