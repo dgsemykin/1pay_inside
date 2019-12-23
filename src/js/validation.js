@@ -15,10 +15,6 @@ var eighteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, '
 var nineteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/,];
 var nineteenDigitsMaskUnionPay = [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/,];
 
-// var mastercardNumbers = /[2][1-7][1-9][1-9]/;
-//
-// console.log(mastercardNumbers === 2345);
-
   var controls = [{
     name: 'card',
     inputs: document.querySelectorAll('.card-form__number input'),
@@ -234,17 +230,17 @@ if (card) {
       card.maskController = vanillaTextMask.maskInput({
         inputElement: card,
         mask: thirteenDigitsMask,
-        placeholderChar: '\u2000',
+        placeholderChar: '_',
       })
       card.onkeypress = function () {
         values = Array.from(card.value);
-        if (!values.includes('\u2000')) {
+        if (!values.includes('_')) {
           values = Array.from(card.value);
           card.maskController.destroy();
           card.maskController = vanillaTextMask.maskInput({
             inputElement: card,
             mask: card.value.length === 15 ? fifteenDigitsMask : card.value.length === 17 ? sixteenDigitsMask : card.value.length === 19 ? eighteenDigitsMask : card.value.length === 22 ? nineteenDigitsMask : nineteenDigitsMask,
-            placeholderChar: '\u2000',
+            placeholderChar: '_',
           })
         }
       }

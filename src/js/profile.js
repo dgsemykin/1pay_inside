@@ -210,6 +210,9 @@
 })();
 
 (function checkFieldError() {
+  var browser;
+  if (navigator.userAgent.search(/Android|iPhone|iPad/) > 0) {browser = 'mobile'};
+
   var fields = document.querySelectorAll('.field');
   var validitySeparator = document.querySelector('.card-form__validity .field__body');
   var cardholderInput = document.querySelector('.card-form__cardholder input');
@@ -272,17 +275,32 @@
       }
     };
 
-  cardholderInput.onkeypress = function () {
-    if (cardholderInput.value.length >= 0) {
-      cardholderField.classList.add('success');
-      successFields = document.querySelectorAll('.success');
-      if (successFields.length === 4) {
-        footerButton.classList.add('_success')
-      } else {
-        footerButton.classList.remove('_success')
-      }
+    if (browser === 'mobile') {
+      cardholderInput.onkeydown = function () {
+        if (cardholderInput.value.length >= 0) {
+          cardholderField.classList.add('success');
+          successFields = document.querySelectorAll('.success');
+          if (successFields.length === 4) {
+            footerButton.classList.add('_success')
+          } else {
+            footerButton.classList.remove('_success')
+          }
+        }
+      };
+    } else {
+      cardholderInput.onkeypress = function () {
+        if (cardholderInput.value.length >= 0) {
+          cardholderField.classList.add('success');
+          successFields = document.querySelectorAll('.success');
+          if (successFields.length === 4) {
+            footerButton.classList.add('_success')
+          } else {
+            footerButton.classList.remove('_success')
+          }
+        }
+      };
     }
-  };
+
 
   cardholderInput.onkeyup = function () {
     if (!cardholderInput.value) {
