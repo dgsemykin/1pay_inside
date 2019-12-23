@@ -9,9 +9,10 @@ var validitySeparator = document.querySelector('.card-form__validity .field__bod
 
 var sixteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,];
 var thirteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/,];
-var fifteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/,];
-var nineteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/,];
 var fourteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,];
+var fifteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/,];
+var eighteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/];
+var nineteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/,];
 var nineteenDigitsMaskUnionPay = [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/,];
 
 // var mastercardNumbers = /[2][1-7][1-9][1-9]/;
@@ -83,14 +84,7 @@ if (card) {
     var values = Array.from(this.value);
 
     // VISA
-    if (card.value === '4026 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '4405 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '4508 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '4844 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '4913 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '4175 00\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
-        card.value === '4917 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000'
-    ) {
+    if (card.value === '4\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000') {
       icon.classList.add('_visa');
       controls[0].maskController.destroy();
       card.maskController = vanillaTextMask.maskInput({
@@ -249,7 +243,7 @@ if (card) {
           card.maskController.destroy();
           card.maskController = vanillaTextMask.maskInput({
             inputElement: card,
-            mask: card.value.length === 15 ? fifteenDigitsMask : card.value.length === 17 ? sixteenDigitsMask : card.value.length === 19 ? nineteenDigitsMask : nineteenDigitsMask,
+            mask: card.value.length === 15 ? fifteenDigitsMask : card.value.length === 17 ? sixteenDigitsMask : card.value.length === 19 ? eighteenDigitsMask : card.value.length === 22 ? nineteenDigitsMask : nineteenDigitsMask,
             placeholderChar: '\u2000',
           })
         }
