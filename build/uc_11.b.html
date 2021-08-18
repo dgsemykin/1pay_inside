@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/payment-form.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/PT ROOT.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/Glyphter.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="header">
+          <div class="header__top">
+            <div class="header__info">
+              <div class="header__title"><a href="/">parkuno.ru</a></div>
+            </div>
+            <div class="header__logo"><img src="./files/logos/park-uno.png"/></div>
+          </div>
+          <div class="header__caption">Счет №154</div>
+        </div>
+        <div class="card__body">
+          <div class="chosen-payway">
+            <div class="chosen-payway__title">Bitcoin</div><img class="chosen-payway__logo" src="./img/payways/bitcoin.png"/>
+            <div class="chosen-payway__change">Другие<br/>способы<br/>оплаты</div>
+          </div>
+          <div class="qr">
+            <div class="qr__description">Переведите точную сумму&nbsp;<b>0,019332 BTC&nbsp;</b>на заданный BTC-адрес 1 транзакцией.<img class="qr__code" src="./files/qr-code.png"></div>
+            <div class="qr__id">36klM563Wky720PRq178</div>
+          </div>
+          <div class="payment-info _qr">
+            <div class="payment-info__row">
+              <div class="payment-info__icon _rub"></div>
+              <div class="payment-info__text">Необходимо перевести в точности указанную сумму для успешной оплаты.</div>
+            </div>
+            <div class="payment-info__row">
+              <div class="payment-info__icon _protected"></div>
+              <div class="payment-info__text">Оплата пройдет как только мы получим 6 подтверждений от Bitcoin-сети.</div>
+            </div>
+            <div class="payment-info__row">
+              <div class="payment-info__icon _wallet"></div>
+              <div class="payment-info__text">Bitcoin-адрес выдан вам системой только для этого пополения, его можно использовать только 1 раз.</div>
+            </div>
+          </div>
+        </div>
+        <div class="qr-footer">
+          <div class="qr-footer__flex">
+            <div class="qr-footer__info">
+              <div class="qr-footer__sum">
+                <div class="qr-footer__integer">4 999</div>
+                <div class="qr-footer__float">00</div>
+                <div class="qr-footer__currency">₽</div>
+              </div>
+              <div class="qr-footer__note">10 000 ₽</div>
+            </div>
+            <div class="qr-footer__btn btn _green">Я оплатил</div>
+          </div>
+        </div>
+        <div class="outcard">
+          <div class="outcard__icon _msg"></div>
+          <div class="outcard__icon _lang">EN</div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/polyfill.js"></script>
+    <script src="./js/libs/text-mask.min.js"></script>
+    <script src="./js/libs/vanilla-js-select.min.js"></script>
+    <script src="./js/libs/сyrillicToTranslit.js"></script>
+    <script src="./js/transliteration.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/payment-form-status.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

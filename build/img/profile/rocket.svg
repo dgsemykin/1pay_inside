@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98" height="148" viewBox="0 0 98 148">
+    <defs>
+        <path id="a" d="M35 97c13.807 0 25-21.714 25-48.5S39.19 0 35 0c-4.19 0-25 21.714-25 48.5S21.193 97 35 97z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M-9 8h140v140H-9z"/>
+        <g transform="rotate(25 60.038 124.15)">
+            <path fill="#FEC069" d="M35.5 131c.975 0 8.5-10.297 8.5-23s-3.806-23-8.5-23S27 95.297 27 108s7.525 23 8.5 23z"/>
+            <path fill="#FFF" d="M35.5 113c.63 0 5.5-6.268 5.5-14s-2.462-14-5.5-14S30 91.268 30 99s4.87 14 5.5 14z"/>
+            <g transform="translate(0 63)">
+                <ellipse cx="1.5" cy="23" fill="#D8201B" rx="1.5" ry="15"/>
+                <ellipse cx="69.5" cy="23" fill="#D8201B" rx="1.5" ry="15"/>
+                <path fill="#F8201B" d="M11.976 34.42l19.166-19.628L16.443 0 2 14.792V34.42zM59.166 34.42L40 14.792 54.699 0l14.443 14.792V34.42z"/>
+            </g>
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <use fill="#EBEBEB" xlink:href="#a"/>
+            <path fill="#F8201B" d="M12 0h48v20H12z" mask="url(#b)"/>
+            <path fill="#D8D8D8" d="M35-2h25V98H35z" mask="url(#b)" style="mix-blend-mode:darken"/>
+            <path fill="#272424" d="M20 87h30c0 5.523-4.477 10-10 10H30c-5.523 0-10-4.477-10-10z"/>
+            <circle cx="35" cy="45" r="10" fill="#F8201B"/>
+            <circle cx="35" cy="45" r="7" fill="#2693FA"/>
+            <circle cx="34" cy="43" r="2" fill="#FFF"/>
+            <path stroke="#E4E7F0" stroke-linecap="round" stroke-width="2" d="M12 104l5.153 35.449M2 113l5.153 35.449M57.153 104L52 139.449M67.153 113L62 148.449"/>
+        </g>
+    </g>
+</svg>

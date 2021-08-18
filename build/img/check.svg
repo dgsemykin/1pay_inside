@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="8px" viewBox="0 0 10 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M6.39644375,11.8428803 L3.14644057,8.356278 C2.95118648,8.14680948 2.95118648,7.80718005 3.14644057,7.59769057 L3.85353111,6.83910314 C4.0487852,6.62961366 4.36538708,6.62961366 4.56064117,6.83910314 L6.74999878,9.18782426 L11.4393588,4.1571014 C11.6346129,3.94763287 11.9512148,3.94763287 12.1464689,4.1571014 L12.8535594,4.91568883 C13.0488135,5.12515735 13.0488135,5.46478678 12.8535594,5.67427626 L7.10355381,11.8429012 C6.90828018,12.0523698 6.59169784,12.0523698 6.39644375,11.8428803 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="style-3" transform="translate(-2301.000000, -749.000000)">
+            <g id="Group-12-Copy-11" transform="translate(2282.000000, 379.000000)">
+                <g id="Group-Copy">
+                    <g id="Group-12-Copy">
+                        <g id="Group-10" transform="translate(16.000000, 338.000000)">
+                            <g id="Group-7" transform="translate(0.000000, 28.000000)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="check" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

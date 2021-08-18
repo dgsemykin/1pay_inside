@@ -26,7 +26,7 @@ var dev = true;
 gulp.task('views', function() {
     return gulp.src('src/templates/*.pug')
         .pipe(pug({ pretty: true }))
-        .pipe(gulp.dest('.tmp'))
+        .pipe(gulp.dest('build'))
         .pipe(reload({ stream: true }));
 });
 
@@ -44,32 +44,32 @@ gulp.task('css', function() {
             browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'],
         }))
         .pipe(minifyCSS())
-        .pipe(gulp.dest('.tmp/css'))
+        .pipe(gulp.dest('build/css'))
         .pipe(reload({ stream: true }));
 });
 
 gulp.task('js', function() {
     return gulp.src('src/js/**/*.js')
-        .pipe(gulp.dest('.tmp/js'))
+        .pipe(gulp.dest('build/js'))
         .pipe(reload({ stream: true }));
 });
 
 gulp.task('fonts', function() {
     return gulp.src('src/fonts/*')
-        .pipe(gulp.dest('.tmp/fonts'));
+        .pipe(gulp.dest('build/fonts'));
 });
 
 gulp.task('img', function() {
     return gulp.src('src/img/**/*', { base: 'src' })
-        .pipe(gulp.dest('.tmp'));
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('files', function() {
     return gulp.src('src/files/**/*', { base: 'src' })
-        .pipe(gulp.dest('.tmp'));
+        .pipe(gulp.dest('build'));
 });
 
-gulp.task('clean', del.bind(null, ['.tmp']));
+gulp.task('clean', del.bind(null, ['build']));
 
 gulp.task('serve', () => {
     runSequence(['clean'], ['views', 'css', 'js', 'fonts', 'img', 'files'], () => {
@@ -78,7 +78,7 @@ gulp.task('serve', () => {
             open: false,
             port: 9000,
             server: {
-                baseDir: ['.tmp', 'src'],
+                baseDir: ['build', 'src'],
                 // routes: {
                 //     '/bower_components': 'bower_components'
                 // }
@@ -88,7 +88,7 @@ gulp.task('serve', () => {
         gulp.watch([
             'src/*.html',
             'src/images/**/*',
-            '.tmp/fonts/**/*'
+            'build/fonts/**/*'
         ]).on('change', reload);
 
         gulp.watch('src/**/*.pug', ['views']);
@@ -102,7 +102,7 @@ gulp.task('serve', () => {
 
 gulp.task('extras', () => {
     return gulp.src([
-        'src/*.*',
+        'src/*/*.*',
         '!src/*.html',
         '!src/*.pug'
     ], {
@@ -110,9 +110,9 @@ gulp.task('extras', () => {
     }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('html', ['clean'], () => {
-    return gulp.src(['app/*.html', '.tmp/*.html'])
-        .pipe(useref({ searchPath: ['.tmp', 'src', '.'] }))
+gulp.task('html', gulp.parallel('clean'), () => {
+    return gulp.src(['app/*.html', 'build/*.html'])
+        .pipe(useref({ searchPath: ['build', 'src', '.'] }))
         .pipe(gulpIf('*.js', uglify()))
         // Minifies only if it's a CSS file
         .pipe(gulpIf('*.css', cssnano()))
@@ -121,4 +121,4 @@ gulp.task('html', ['clean'], () => {
 
 
 
-gulp.task('default', ['views', 'css', 'js', 'fonts', 'img', 'files']);
+gulp.task('default', gulp.series('views', 'css', 'js', 'fonts', 'img', 'files'));

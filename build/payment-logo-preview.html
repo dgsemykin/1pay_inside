@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/payment-form.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/PT ROOT.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/Glyphter.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="header">
+          <div class="header__top">
+            <div class="header__info">
+              <div class="header__title"><a href="/">dating.ru</a></div>
+            </div>
+            <div class="header__logo"><img src="./files/logos/dating.svg"/></div>
+          </div>
+          <div class="header__caption">Форма предпросмотра логотипа проекта</div>
+        </div>
+        <div class="card__body">
+          <div class="screen-1">
+            <div class="chosen-payway">
+              <div class="chosen-payway__title">Webmoney</div><img class="chosen-payway__logo" src="./img/payways/webmoney.png"/>
+              <div class="chosen-payway__change">Другие<br/>способы<br/>оплаты</div>
+            </div>
+            <div class="currency">
+              <div class="currency__caption">Выберите валюту</div>
+              <div class="currency__list"><a class="currency__item _selected">WMR</a><a class="currency__item">WMZ</a><a class="currency__item">WMV</a><a class="currency__item">WME</a><a class="currency__item">WMX</a></div>
+            </div>
+            <div class="payment-info">
+              <div class="payment-info__row">
+                <div class="payment-info__icon _rub"></div>
+                <div class="payment-info__text"><span>Максимальная сумма платежа &#8203;<span class="solid">15 000 ₽.</span></span></div>
+              </div>
+              <div class="payment-info__row">
+                <div class="payment-info__icon _wallet"></div>
+                <div class="payment-info__text">Средства будут списаны с R-кошелька.</div>
+              </div>
+            </div>
+          </div>
+          <div class="screen-2">
+            <div class="payways">
+              <div class="payways__group">
+                <div class="payways__title">Банковские карты</div>
+                <div class="payways__list">
+                  <div class="payway"><img class="payway__logo" src="./img/payways/visa.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/mastercard.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/maestro.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/mir.png"/></div>
+                </div>
+              </div>
+              <div class="payways__group">
+                <div class="payways__title">Мобильные операторы</div>
+                <div class="payways__list">
+                  <div class="payway"><img class="payway__logo" src="./img/payways/mts.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/megafon.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/beeline.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/tele2.png"/></div>
+                </div>
+              </div>
+              <div class="payways__group">
+                <div class="payways__title">Электронные кошельки</div>
+                <div class="payways__list">
+                  <div class="payway"><img class="payway__logo" src="./img/payways/webmoney.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/qiwi.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/yamoney.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/viber.png"/></div>
+                </div>
+              </div>
+              <div class="payways__group">
+                <div class="payways__title">Платежные системы</div>
+                <div class="payways__list">
+                  <div class="payway"><img class="payway__logo" src="./img/payways/applepay.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/samsungpay.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/alfabank.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/promsvyazbank.png"/></div>
+                </div>
+              </div>
+              <div class="payways__group">
+                <div class="payways__title">Криптовалюта</div>
+                <div class="payways__list">
+                  <div class="payway"><img class="payway__logo" src="./img/payways/bitcoin.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/litecoin.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/dash.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/ethereum.png"/></div>
+                  <div class="payway"><img class="payway__logo" src="./img/payways/zcash.png"/></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__mouse">
+            <div class="card__mouse-inner"></div>
+          </div>
+        </div>
+        <div class="footer">
+          <button class="footer__submit btn _green">Оплатить
+            <div class="footer__integer">4 999</div>
+            <div class="footer__float">00</div>
+            <div class="footer__currency">₽</div>
+          </button>
+        </div>
+        <div class="outcard">
+          <div class="outcard__icon _msg"></div>
+          <div class="outcard__icon _lang">EN</div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/polyfill.js"></script>
+    <script src="./js/libs/text-mask.min.js"></script>
+    <script src="./js/libs/vanilla-js-select.min.js"></script>
+    <script src="./js/libs/сyrillicToTranslit.js"></script>
+    <script src="./js/transliteration.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/payment-form-status.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

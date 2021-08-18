@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900&amp;amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="./css/personal.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrap_fixed">
+      <div class="auth">
+        <div class="auth__header auth__header_logo-to-up">
+          <div class="auth__logo"><img src="./files/logos/mpay.png" srcset="./files/logos/mpay.png 1x, ./files/logos/mpay@2x.png 2x, ./files/logos/mpay@3x.png 3x," alt="Mpay"></div>
+          <div class="auth__picture auth__picture_full-width"><img src="./files/race.png" alt="race"></div>
+        </div>
+        <div class="auth__body">
+          <div class="auth__description">Мы знаем как ценно ваше время, поэтому для регистрации нужно ввести только адрес электронной почты.</div>
+          <div class="auth__button">
+            <div class="button">
+              <button class="button__item">Для юр. лиц
+                <div class="button__icon"><img src="./img/businessman.svg"></div>
+              </button>
+              <button class="button__item active">Без юр. лица
+                <div class="button__icon"><img src="./img/approved-wallet.svg"></div>
+              </button>
+            </div>
+          </div>
+          <div class="auth__field">
+            <div class="field email">
+              <label class="field__body">
+                <div class="field__status"></div>
+                <input class="field__input" type="text" placeholder="АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ" value="./img/email.svg"/>
+                <div class="field__icon"><img src="my@company.ru"/></div>
+              </label>
+            </div>
+          </div>
+          <div class="auth__field auth__field_checkbox">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox"/>
+              <div class="checkbox__button"></div>
+              <div class="checkbox__label"><span class="checkbox__text">Я принимаю условия</span>
+              </div>
+            </label>&nbsp;<a href="#">публичной оферты.</a>
+          </div>
+        </div>
+        <div class="auth__footer auth__footer_right">
+          <button class="button__item button__item_green button__item_footer">Подключить</button>
+        </div>
+        <div class="auth__suggestion">Уже партнер MPay?<a href="#">Войти</a></div>
+      </div>
+    </div>
+    <script src="./js/auth.js"></script>
+  </body>
+</html>
