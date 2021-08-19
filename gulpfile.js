@@ -9,7 +9,7 @@ var browserSync = require('browser-sync').create();
 var del = require('del');
 var autoprefixer = require('gulp-autoprefixer');
 var wiredep = require('wiredep').stream;
-var runSequence = require('run-sequence');
+var runSequence = require('gulp4-run-sequence');
 var useref = require('gulp-useref');
 var gulpIf = require('gulp-if');
 var uglify = require('gulp-uglify');
@@ -72,7 +72,7 @@ gulp.task('files', function() {
 gulp.task('clean', del.bind(null, ['build']));
 
 gulp.task('serve', () => {
-    runSequence(['clean'], ['views', 'css', 'js', 'fonts', 'img', 'files'], () => {
+    runSequence(gulp.series('clean'), gulp.series('views', 'css', 'js', 'fonts', 'img', 'files'), () => {
         browserSync.init({
             notify: false,
             open: false,
@@ -91,11 +91,11 @@ gulp.task('serve', () => {
             'build/fonts/**/*'
         ]).on('change', reload);
 
-        gulp.watch('src/**/*.pug', ['views']);
-        gulp.watch('src/styles/**/*.less', ['css']);
+        gulp.watch('src/**/*.pug', gulp.series('views'));
+        gulp.watch('src/styles/**/*.less', gulp.series('css'));
         // gulp.watch('src/scripts/**/*.js', ['scripts']);
-        gulp.watch('src/js/**/*.js', ['js']);
-        gulp.watch('src/fonts/**/*', ['fonts']);
+        gulp.watch('src/js/**/*.js', gulp.series('js'));
+        gulp.watch('src/fonts/**/*', gulp.series('fonts'));
         // gulp.watch('bower.json', ['wiredep', 'fonts']);
     });
 });
