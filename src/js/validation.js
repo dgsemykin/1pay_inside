@@ -6,6 +6,8 @@ var error = document.querySelector('.field__error');
 var validity = document.querySelector('.card-form__validity input');
 var cvc = document.querySelector('.card-form__cvc input');
 var validitySeparator = document.querySelector('.card-form__validity .field__body');
+const sendButton = document.querySelector('.card-form__button');
+const footerButton = document.querySelector('.footer__button')
 
 var sixteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,];
 var thirteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/,];
@@ -312,3 +314,6 @@ if (card) {
   };
 }
 
+footerButton.addEventListener('click', () => {
+  sendButton.click();
+})
