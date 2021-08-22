@@ -8,9 +8,53 @@
 		text-transform: uppercase;
 		font-weight: 700;
 	}
+	&__first-select {
+		display: flex;
+		align-items: center;
+		margin-bottom: 16px;
+		& label {
+			margin-left: 16px;
+		}
+	}
+	&__second-select {
+		// margin-bottom: 16px;
+		display: flex;
+		align-items: center;
+		& label {
+			margin-left: 16px;
+		}
+	}
 	&__body {
 		position: relative;
 		display: block;
+		&_checkbox {
+			width: 100%;
+			color: black;
+			font-weight: 200;
+			// top: 24px;
+			// left: 90px;
+			font-family: 'PT Root UI',Arial,sans-serif;
+			font-size: 20px;
+			letter-spacing: 0;
+			line-height: 30px;
+			// color: #404040;
+			margin-bottom: 8px;
+			font-size: 20px;
+		}
+		&_select {
+			width: 100%;
+			color: black;
+			font-weight: 200;
+			// top: 24px;
+			// left: 90px;
+			font-family: 'PT Root UI',Arial,sans-serif;
+			font-size: 20px;
+			letter-spacing: 0;
+			line-height: 30px;
+			// color: #404040;
+			margin-bottom: 8px;
+			font-size: 20px;
+		}
 		&:before {
 			.success & {
 				color: #404040 !important;
@@ -207,7 +251,34 @@
 		font-size: 20px;
 		letter-spacing: 0;
 		line-height: 30px;
-        color: #404040;
+		color: #404040;
+
+		&_checkbox {
+			width: 24px;
+			height: 24px;
+		}
+
+		&_additional {
+			padding: 0 14px 0 14px;
+			// appearance: none;
+		}
+
+		&_select {
+			// width: 90%;
+			appearance: none;
+			position: relative;
+			background: url(../../img/arrow-down.png) no-repeat right;
+			background-position-x: calc(100% - 8px);
+			// &::before {
+			// 	content: '';
+			// 	width: 10px;
+			// 	height: 8px;
+			// 	background: data-uri('../../img/arrow-down.png');
+			// 	position: absolute;
+			// 	top: 0;
+			// 	right: 0;
+			// }
+		}
 		.card-form__cvc.success & {
 			font-family: Glyphter, Arial, sans-serif;
 			letter-spacing: -6px;
@@ -225,10 +296,10 @@
 				background: data-uri('../../img/calendar-focuses.png');
 				background-size: contain;
 			}
-            & ._lock {
-              	background: data-uri('../../img/lock-focuses.png');
+			& ._lock {
+				background: data-uri('../../img/lock-focuses.png');
 				background-size: contain;
-            }
+			}
 			& ._person {
 				background: data-uri('../../img/person-focuses.png');
 				background-size: contain;

@@ -379,7 +379,7 @@ if (card) {
       errorMessageText.innerText = errorText;
     }
     
-    setTimeout(function() {showError('Hello')}, 2000);
+    // setTimeout(function() {showError('Hello')}, 2000);
 
     function checkValid() { 
       const monthDateForCheckValidity = +(date.getMonth() + 1);

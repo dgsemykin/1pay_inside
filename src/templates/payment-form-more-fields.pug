@@ -1,0 +1,32 @@
+extends layouts/payment-form/index
+
+include ./layouts/header
+include ./layouts/payment-info-row
+include ./layouts/field
+include ./layouts/outcard
+include ./layouts/footer
+include ./layouts/error-message
+
+block content
+  .card._payment
+    +header-v04('Оплата invoice_548926', '1 500.00 ', 'RUB')
+    .card__body
+      +error-message('Допущена ошибка при вводе номера карты')
+      .screen-3
+        form.card-form
+          .card-form__row
+            +field-card('', '')
+          .card-form__row
+            +field-email('card-form__email', true)
+          .card-form__row
+            +field-checkbox('card-form__checkbox', '')
+          .card-form__row
+            +field-select('card-form__select', '')
+          .card-form__row
+            +field-validity
+            +field-cvv('card-form__cvc', '123', true)
+          .card-form__row
+            +field-cardholder
+          button(disabled).card-form__button Send
+    +footer-v04
+    +outcard-v01
