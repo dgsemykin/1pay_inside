@@ -1,10 +1,10 @@
 (function initSelect() {
   var selects = document.querySelectorAll('.select-input');
   selects.forEach(function(e) {
-    console.log(e);
+    // console.log(e);
     new CustomSelect({ elem: e.id });
     e.addEventListener('change', function() {
-      console.log('event');
+      // console.log('event');
     })
   });
 })();
@@ -130,8 +130,8 @@
           context.classList.remove('_opened');
         });
       } else if (contextContainer &&
-                 !(e.target.parentElement.contains(contextContainer) || contextContainer.contains(e.target)) &&
-                 !e.target.closest('.js-call-context')) {
+        !(e.target.parentElement.contains(contextContainer) || contextContainer.contains(e.target)) &&
+        !e.target.closest('.js-call-context')) {
         context.classList.remove('_opened');
       }
     });
@@ -222,7 +222,14 @@
   var cvc = document.querySelector('.card-form__cvc input');
   var successFields = document.querySelectorAll('.success');
   var footerButton = document.querySelector('.footer');
+  const date = new Date;
   if (!fields) { return; }
+
+  function removeFromString(mystring, char) {
+    const regex = new RegExp(char, 'g');
+    return mystring.replace(regex, '');
+  }
+
   fields.forEach(function(field) {
     var input = field.querySelector('.field__input');
     if (!input) { return; }
@@ -230,6 +237,7 @@
     input.onblur = function() {
       validitySeparator.classList.remove('_active');
       cvc.placeholder = '123';
+
       if (field.classList.contains('_required')) {
         if (this.value) {
           var values = Array.from(this.value);
@@ -255,15 +263,57 @@
       }
     };
 
+    const errorMessage = document.querySelector('.error-message');
+    const errorMessageText = document.querySelector('.error-message__text');
 
+    function showError(errorText) {
+      errorMessage.classList.add('error-message_active')
+      errorMessageText.innerText = errorText;
+    }
+    
+    setTimeout(function() {showError('Hello')}, 2000);
+
+    function checkValid() { 
+      const monthDateForCheckValidity = +(date.getMonth() + 1);
+      const yearDateForCheckValidity = +(date.getFullYear().toString().substr(-2));
+      const strValidityValue = removeFromString(validity.value, ' ');
+      const monthFromValue = +(strValidityValue.substr(0,2));
+      const yearFromValue = +(strValidityValue.substr(2));
+
+      if (yearFromValue > yearDateForCheckValidity) {
+        return true
+      } else if (yearFromValue == yearDateForCheckValidity && monthFromValue > monthDateForCheckValidity) {
+        return true
+      } else {
+        return false
+      }
+    }
+
+    // cardValidityInput.onblur = function (){
+    //   const validityField = document.querySelector('.card-form__validity')
+    //   values = Array.from(this.value);
+    //   if (!values.includes('\u2000') && checkValid() === false) {
+    //     validityField.classList.remove('success');
+    //     validityField.classList.remove('error');
+    //     console.log('not includes')
+    //   }
+    // };
 
     cardValidityInput.onkeyup = function () {
       values = Array.from(this.value);
+  
+      const validityField = document.querySelector('.card-form__validity')
       if (values.length === 0) {
         cardValidityInput.focus();
-      } else if (!values.includes('\u2000')) {
-        cvc.focus();
-      }
+        } else if (!values.includes('\u2000') && !(checkValid())) {
+          validityField.classList.remove('success');
+          validityField.classList.add('error');
+          showError('Срок действия карты истек')
+        } else if (!values.includes('\u2000') && checkValid()) {
+          validityField.classList.remove('error');
+          validityField.classList.add('success');
+          cvc.focus();
+        } 
     };
 
     cvc.onkeyup = function () {

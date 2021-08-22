@@ -5,11 +5,13 @@ include ./layouts/payment-info-row
 include ./layouts/field
 include ./layouts/outcard
 include ./layouts/footer
+include ./layouts/error-message
 
 block content
   .card._payment
     +header-v04('Оплата invoice_548926', '1 500.00 ', 'RUB')
     .card__body
+      +error-message('Допущена ошибка при вводе номера карты')
       .screen-3
         form.card-form
           .card-form__row

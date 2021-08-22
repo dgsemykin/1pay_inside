@@ -3,7 +3,7 @@
     buttons.forEach(function(button) {
         var scrollContainer = button.parentElement.parentElement.parentElement.querySelector('.js-scroll');
         if (scrollContainer) {
-          var scroll = new PerfectScrollbar(scrollContainer);
+            var scroll = new PerfectScrollbar(scrollContainer);
         }
         button.addEventListener('click', function(e) {
             var wrapper = this.closest('.cell__wrapper')

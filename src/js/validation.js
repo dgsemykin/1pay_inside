@@ -1,4 +1,3 @@
-
 var card = document.querySelector('.card-form__number input');
 var icon = document.querySelector('.field__type-icon');
 var cardIcon = document.querySelector('._card');
@@ -7,7 +6,7 @@ var validity = document.querySelector('.card-form__validity input');
 var cvc = document.querySelector('.card-form__cvc input');
 var validitySeparator = document.querySelector('.card-form__validity .field__body');
 const sendButton = document.querySelector('.card-form__button');
-const footerButton = document.querySelector('.footer__button')
+const footerButton = document.querySelector('.footer__button');
 
 var sixteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,];
 var thirteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/,];
@@ -22,27 +21,26 @@ var nineteenDigitsMaskUnionPay = [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, ' ', /\d/,
     inputs: document.querySelectorAll('.card-form__number input'),
     mask: [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,],
   },
-    {
-      name: 'validity',
-      inputs: document.querySelectorAll('.card-form__validity input'),
-      mask: [/[0, 1]/, /\d/, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', /\d/, /\d/]
-    },
-    {
-      name: 'cvc',
-      inputs: document.querySelectorAll('.card-form__cvc input'),
-      mask: [/\d/, /\d/, /\d/]
-    },
-    {
-      name: 'alfaLogin',
-      inputs: document.querySelectorAll('.card-form__alpha-login input'),
-      mask: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
-    },
-    {
-      name: 'phone',
-      inputs: document.querySelectorAll('.card-form__phone input'),
-      mask: [/[1-9]/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/]
-    }
-  ];
+  {
+    name: 'validity',
+    inputs: document.querySelectorAll('.card-form__validity input'),
+    mask: [/[0, 1]/, /\d/, ' ', ' ', ' ', ' ', ' ', ' ', ' ', /\d/, /\d/]
+  },
+  {
+    name: 'cvc',
+    inputs: document.querySelectorAll('.card-form__cvc input'),
+    mask: [/\d/, /\d/, /\d/]
+  },
+  {
+    name: 'alfaLogin',
+    inputs: document.querySelectorAll('.card-form__alpha-login input'),
+    mask: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
+  },
+  {
+    name: 'phone',
+    inputs: document.querySelectorAll('.card-form__phone input'),
+    mask: [/[1-9]/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/]
+  }];
   controls.forEach(function(control) {
     if (control.inputs.length) {
       control.inputs.forEach(function(input) {
@@ -206,7 +204,6 @@ if (card) {
         }
       }
     }
-
 
     //MAESTRO
     else if (card.value === '50\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000 \u2000\u2000\u2000\u2000' ||
