@@ -6,7 +6,7 @@ var validity = document.querySelector('.card-form__validity input');
 var cvc = document.querySelector('.card-form__cvc input');
 var validitySeparator = document.querySelector('.card-form__validity .field__body');
 const sendButton = document.querySelector('.card-form__button');
-const footerButton = document.querySelector('.footer__button');
+// const footerButton = document.querySelector('.footer__button');
 
 var sixteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,];
 var thirteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/,];
@@ -311,6 +311,155 @@ if (card) {
   };
 }
 
-footerButton.addEventListener('click', () => {
-  sendButton.click();
-})
+(function checkFieldError() {
+  var browser;
+  if (navigator.userAgent.search(/Android|iPhone|iPad/) > 0) {browser = 'mobile'};
+
+  var fields = document.querySelectorAll('.field');
+  var validitySeparator = document.querySelector('.card-form__validity .field__body');
+  var cardholderInput = document.querySelector('.card-form__cardholder input');
+  var cardNumberInput = document.querySelector('.card-form__number input');
+  var cardValidityInput = document.querySelector('.card-form__validity input');
+  var cardholderField = document.querySelector('.card-form__cardholder');
+  var cvc = document.querySelector('.card-form__cvc input');
+  var successFields = document.querySelectorAll('.success');
+  var footerButton = document.querySelector('.footer');
+
+  const errorMessage = document.querySelector('.error-message');
+  const errorMessageText = document.querySelector('.error-message__text');
+
+  const date = new Date;
+  if (!fields) { return; }
+
+
+  footerButton.addEventListener('click', () => {
+    sendButton.click();
+  })
+
+  function removeFromString(mystring, char) {
+    const regex = new RegExp(char, 'g');
+    return mystring.replace(regex, '');
+  }
+
+  fields.forEach(function(field) {
+    var input = field.querySelector('.field__input');
+    if (!input) { return; }
+
+    input.onblur = function() {
+      validitySeparator.classList.remove('_active');
+      cvc.placeholder = '123';
+
+      if (field.classList.contains('_required')) {
+        if (this.value) {
+          var values = Array.from(this.value);
+          values.forEach(function (val) {
+            if (val === '\u2000') {
+              field.classList.remove('success');
+              field.classList.add('error');
+            } else {
+              field.classList.remove('error');
+              field.classList.add('success');
+            }
+          });
+        } else {
+          field.classList.remove('success');
+          field.classList.remove('error');
+        }
+      }
+      successFields = document.querySelectorAll('.success');
+      if (successFields.length === 4) {
+        footerButton.classList.add('_success')
+      } else {
+        footerButton.classList.remove('_success')
+      }
+    };
+
+    function showError(errorText) {
+      errorMessage.classList.add('error-message_active')
+      errorMessageText.innerText = errorText;
+    }
+    
+    setTimeout(function() {showError('Hello')}, 2000);
+
+    function checkValid() { 
+      const monthDateForCheckValidity = +(date.getMonth() + 1);
+      const yearDateForCheckValidity = +(date.getFullYear().toString().substr(-2));
+      const strValidityValue = removeFromString(validity.value, ' ');
+      const monthFromValue = +(strValidityValue.substr(0,2));
+      const yearFromValue = +(strValidityValue.substr(2));
+
+      if (yearFromValue > yearDateForCheckValidity) {
+        return true
+      } else if (yearFromValue == yearDateForCheckValidity && monthFromValue > monthDateForCheckValidity) {
+        return true
+      } else {
+        return false
+      }
+    }
+
+    cardValidityInput.onkeyup = function () {
+      values = Array.from(this.value);
+  
+      const validityField = document.querySelector('.card-form__validity')
+      if (values.length === 0) {
+        cardValidityInput.focus();
+        } else if (!values.includes('\u2000') && !(checkValid())) {
+          validityField.classList.remove('success');
+          validityField.classList.add('error');
+          showError('Срок действия карты истек')
+        } else if (!values.includes('\u2000') && checkValid()) {
+          validityField.classList.remove('error');
+          validityField.classList.add('success');
+          cvc.focus();
+        } 
+    };
+
+    cvc.onkeyup = function () {
+      values = Array.from(this.value);
+      if (values.length === 0) {
+        cvc.focus();
+      } else if (!values.includes('\u2000')) {
+        cardholderInput.focus();
+      }
+    };
+
+    if (browser === 'mobile') {
+      cardholderInput.onkeydown = function () {
+        if (cardholderInput.value.length >= 0) {
+          cardholderField.classList.add('success');
+          successFields = document.querySelectorAll('.success');
+          if (successFields.length === 4) {
+            sendButton.removeAttribute('disabled')
+            footerButton.classList.add('_success')
+          } else {
+            sendButton.setAttribute('disabled')
+            footerButton.classList.remove('_success')
+          }
+        }
+      };
+    } else {
+      cardholderInput.onkeypress = function () {
+        if (cardholderInput.value.length >= 0) {
+          cardholderField.classList.add('success');
+          successFields = document.querySelectorAll('.success');
+          if (successFields.length === 4) {
+            console.log(sendButton)
+            sendButton.removeAttribute('disabled')
+            footerButton.classList.add('_success')
+          } else {
+            footerButton.classList.remove('_success')
+            sendButton.setAttribute('disabled', true)
+          }
+        }
+      };
+    }
+    
+  cardholderInput.onkeyup = function () {
+    if (!cardholderInput.value) {
+      sendButton.setAttribute('disabled', true)
+      cardholderField.classList.remove('success');
+      footerButton.classList.remove('_success')
+    }
+  }
+  });
+})();
