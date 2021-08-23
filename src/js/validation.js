@@ -5,7 +5,7 @@ var error = document.querySelector('.field__error');
 var validity = document.querySelector('.card-form__validity input');
 var cvc = document.querySelector('.card-form__cvc input');
 var validitySeparator = document.querySelector('.card-form__validity .field__body');
-const sendButton = document.querySelector('.card-form__button');
+// const sendButton = document.querySelector('.card-form__button');
 // const footerButton = document.querySelector('.footer__button');
 
 var sixteenDigitsMask = [/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,];
@@ -324,17 +324,13 @@ if (card) {
   var cvc = document.querySelector('.card-form__cvc input');
   var successFields = document.querySelectorAll('.success');
   var footerButton = document.querySelector('.footer');
+  const footerSend = document.querySelector('.footer__button');
 
   const errorMessage = document.querySelector('.error-message');
   const errorMessageText = document.querySelector('.error-message__text');
 
   const date = new Date;
   if (!fields) { return; }
-
-
-  footerButton.addEventListener('click', () => {
-    sendButton.click();
-  })
 
   function removeFromString(mystring, char) {
     const regex = new RegExp(char, 'g');
@@ -429,10 +425,10 @@ if (card) {
           cardholderField.classList.add('success');
           successFields = document.querySelectorAll('.success');
           if (successFields.length === 4) {
-            sendButton.removeAttribute('disabled')
+            footerSend.removeAttribute('disabled')
             footerButton.classList.add('_success')
           } else {
-            sendButton.setAttribute('disabled')
+            footerSend.setAttribute('disabled')
             footerButton.classList.remove('_success')
           }
         }
@@ -443,12 +439,12 @@ if (card) {
           cardholderField.classList.add('success');
           successFields = document.querySelectorAll('.success');
           if (successFields.length === 4) {
-            console.log(sendButton)
-            sendButton.removeAttribute('disabled')
+            console.log(footerSend)
+            footerSend.removeAttribute('disabled')
             footerButton.classList.add('_success')
           } else {
             footerButton.classList.remove('_success')
-            sendButton.setAttribute('disabled', true)
+            footerSend.setAttribute('disabled', true)
           }
         }
       };
@@ -456,7 +452,7 @@ if (card) {
     
   cardholderInput.onkeyup = function () {
     if (!cardholderInput.value) {
-      sendButton.setAttribute('disabled', true)
+      footerSend.setAttribute('disabled', true)
       cardholderField.classList.remove('success');
       footerButton.classList.remove('_success')
     }

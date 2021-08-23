@@ -8,7 +8,7 @@ include ./layouts/footer
 include ./layouts/error-message
 
 block content
-  .card._payment
+  .card._payment._error
     +header-v04('Оплата invoice_548926', '1 500.00 ', 'RUB')
     .card__body
       +error-message-v2('Оплата по картам МИР временно недоступна')
@@ -21,6 +21,5 @@ block content
             +field-cvv('card-form__cvc', '123', true)
           .card-form__row
             +field-cardholder
-          button(disabled).card-form__button Send
-    +footer-v04
+          +footer-v04
     +outcard-v01

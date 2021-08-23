@@ -22,7 +22,7 @@ mixin footer-v03()
 
 mixin footer-v04()
   .footer(tabindex='5')
-    button.footer__button Оплатить
+    button(disabled='true').footer__button Оплатить
 
 mixin footer-v05()
   .footer
@@ -30,6 +30,6 @@ mixin footer-v05()
       include ../../img/back.svg
 
 mixin footer-v06()
-  .footer
+  .footer.footer_back
     a.footer__link(href='#')
       .footer__text Вернуться в магазин
