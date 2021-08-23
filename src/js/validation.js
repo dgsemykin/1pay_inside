@@ -324,10 +324,12 @@ if (card) {
   var cvc = document.querySelector('.card-form__cvc input');
   var successFields = document.querySelectorAll('.success');
   var footerButton = document.querySelector('.footer');
-  const footerSend = document.querySelector('.footer__button');
 
   const errorMessage = document.querySelector('.error-message');
   const errorMessageText = document.querySelector('.error-message__text');
+  const errorMessageHeight = errorMessage.offsetHeight;
+  const cardHeight = document.querySelector('.card').offsetHeight;
+  const card = document.querySelector('.card');
 
   const date = new Date;
   if (!fields) { return; }
@@ -371,8 +373,13 @@ if (card) {
     };
 
     function showError(errorText) {
-      errorMessage.classList.add('error-message_active')
+      console.log(cardHeight, errorMessageHeight)
+      errorMessage.classList.add('error-message_active');
       errorMessageText.innerText = errorText;
+      setTimeout(function() {
+        const errorMessageHeight = errorMessage.offsetHeight;
+        card.style.height = (cardHeight + errorMessageHeight) + 'px';
+      }, 0)
     }
     
     // setTimeout(function() {showError('Hello')}, 2000);
