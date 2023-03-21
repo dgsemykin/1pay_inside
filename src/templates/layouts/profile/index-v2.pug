@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900&amp;subset=cyrillic-ext" rel="stylesheet")
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css", rel="stylesheet", type="text/css")
+    link(href="./css/personal.css", rel="stylesheet", type="text/css")
+    link(href="./css/chat.css", rel="stylesheet", type="text/css")
+    // build:css styles/vendor.css
+    // bower:css
+    // endbower
+    // endbuild
+  body
+    .profile
+      header.profile__header
+        .wrapper
+          include header-v2
+      .profile__body.wrapper
+        aside.profile__aside
+          include aside
+        main.profile__main
+          block content
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js')
+    script(src='./js/polyfill.js')
+    script(src='./js/libs/moment.min.js')
+    script(src='./js/libs/daterangepicker.js')
+    script(src='./js/libs/text-mask.min.js')
+    script(src='./js/libs/list.js')
+    script(src='./js/libs/perfect-scrollbar.min.js')
+    script(src='./js/libs/vanilla-js-select.min.js')
+    script(src='./js/accordion.js')
+    script(src='./js/chart.js')
+    script(src='./js/datepicker.js')
+    script(src='./js/profile.js')
