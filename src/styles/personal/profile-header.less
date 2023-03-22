@@ -21,6 +21,20 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    justify-content: flex-end;
+
+    &_active {
+      & .profile-header__full-block {
+        opacity: 1;
+        width: 100%;
+        display: flex;
+      }
+
+      & .profile-header__active-block {
+        opacity: 0;
+        display: none;
+      }
+    }
 
     &-block {
       display: flex;
@@ -164,5 +178,18 @@
       margin-right: 5px;
     }
   }
-  &__controls {}
+
+  &__full-block {
+    display: none;
+    width: 0;
+    opacity: 0;
+    transition: all .4s;
+
+    &_active {
+      // opacity: 1;
+      // width: 100%;
+      // display: flex;
+      transition: all .4s;
+    }
+  }
 }
