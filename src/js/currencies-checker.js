@@ -1,10 +1,26 @@
-const amountBlock = document.querySelector('.profile-header__amount');
+const amountBlockMain = document.querySelector('.profile-header__amount');
 const activeBlock = document.querySelector('.profile-header__active-block');
 
-amountBlock.addEventListener('click', function(event) {
-  amountBlock.classList.toggle('profile-header__amount_active');
+const amountBlocks = document.querySelectorAll('.profile-header__amount-block');
 
-  const html = event.target.parentElement;
-  activeBlock.innerHTML = '';
-  activeBlock.appendChild(html);
+amountBlockMain.addEventListener('click', function(event) {
+  amountBlockMain.classList.toggle('profile-header__amount_active');
+
+  // const html = event.target.parentElement;
+  // activeBlock.innerHTML = '';
+  // activeBlock.appendChild(html);
+})
+
+amountBlocks.forEach(function(amountBlock) {
+  amountBlock.addEventListener('click', function(event) {
+    let html;
+    if(event.target.parentElement.id === '') {
+      html = event.target.parentElement.parentElement.parentElement;
+    } else {
+      html = event.target.parentElement;
+    }
+    const htmlClone = html.cloneNode(true);
+    activeBlock.innerHTML = '';
+    activeBlock.appendChild(htmlClone);
+  })
 })
