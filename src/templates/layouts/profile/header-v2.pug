@@ -5,79 +5,90 @@ include ../profile/notice-context
     img(src="./files/logos/1pay.png", alt="1pay", srcset="./files/logos/1pay.png 1x, ./files/logos/1pay@2x.png 2x, ./files/logos/1pay@3x.png 3x")
   .profile-header__content
     .profile-header__amount.amount
-      img.profile-header__arrow(src='./files/arrow.svg')
-      .profile-header__amount-block
-        img.profile-header__amount-logo(src='./files/rub.svg')
-        .profile-header__money-block
-          .profile-header__available-block
-            .profile-header__available-integer 345 617
-            .profile-header__available-float 23
-            .profile-header__notify-block.profile-header__notify-block_available
-              .profile-header__notify-text Доступно к выводу
-          .profile-header__waiting-block
-            .profile-header__waiting-integer 526 784
-            .profile-header__waiting-float 44
-            .profile-header__notify-block.profile-header__notify-block_waiting
-              .profile-header__notify-text Ожидает зачисления
-      .profile-header__amount-block
-        img.profile-header__amount-logo(src='./img/header/dollar.svg')
-        .profile-header__money-block
-          .profile-header__available-block
-            .profile-header__available-integer 345 617
-            .profile-header__available-float 23
-            .profile-header__notify-block.profile-header__notify-block_available
-              .profile-header__notify-text Доступно к выводу
-          .profile-header__waiting-block
-            .profile-header__waiting-integer 526 784
-            .profile-header__waiting-float 44
-            .profile-header__notify-block.profile-header__notify-block_waiting
-              .profile-header__notify-text Ожидает зачисления
-      .profile-header__amount-block
-        img.profile-header__amount-logo(src='./img/header/euro.svg')
-        .profile-header__money-block
-          .profile-header__available-block
-            .profile-header__available-integer 345 617
-            .profile-header__available-float 23
-            .profile-header__notify-block.profile-header__notify-block_available
-              .profile-header__notify-text Доступно к выводу
-          .profile-header__waiting-block
-            .profile-header__waiting-integer 526 784
-            .profile-header__waiting-float 44
-            .profile-header__notify-block.profile-header__notify-block_waiting
-              .profile-header__notify-text Ожидает зачисления
-      .profile-header__amount-block
-        img.profile-header__amount-logo(src='./img/header/tenge.svg')
-        .profile-header__money-block
-          .profile-header__available-block
-            .profile-header__available-integer 345 617
-            .profile-header__available-float 23
-            .profile-header__notify-block.profile-header__notify-block_available
-              .profile-header__notify-text Доступно к выводу
-          .profile-header__waiting-block
-            .profile-header__waiting-integer 526 784
-            .profile-header__waiting-float 44
-            .profile-header__notify-block.profile-header__notify-block_waiting
-              .profile-header__notify-text Ожидает зачисления
-      .profile-header__amount-block
-        img.profile-header__amount-logo(src='./img/header/rupee.svg')
-        .profile-header__money-block
-          .profile-header__available-block
-            .profile-header__available-integer 345 617
-            .profile-header__available-float 23
-            .profile-header__notify-block.profile-header__notify-block_available
-              .profile-header__notify-text Доступно к выводу
-          .profile-header__waiting-block
-            .profile-header__waiting-integer 526 784
-            .profile-header__waiting-float 44
-            .profile-header__notify-block.profile-header__notify-block_waiting
-              .profile-header__notify-text Ожидает зачисления
+      img.profile-header__arrow-v2(src='./files/arrow.svg')
+      .profile-header__active-block-v2
+        .profile-header__amount-block-v2#rub
+          img.profile-header__amount-logo(src='./files/rub.svg')
+          .profile-header__money-block
+            .profile-header__available-block
+              .profile-header__available-integer 345 617
+              .profile-header__available-float 23
+              //- .profile-header__notify-block.profile-header__notify-block_available
+                //- .profile-header__notify-text Доступно к выводу
+            .profile-header__waiting-block
+              .profile-header__waiting-integer 526 784
+              .profile-header__waiting-float 44
+              //- .profile-header__notify-block.profile-header__notify-block_waiting
+                //- .profile-header__notify-text Ожидает зачисления
+      .profile-header__full-block-v2
+        //- .profile-header__amount-block-v2#rub
+        //-   img.profile-header__amount-logo(src='./files/rub.svg')
+        //-   .profile-header__money-block
+        //-     .profile-header__available-block
+        //-       .profile-header__available-integer 345 617
+        //-       .profile-header__available-float 23
+        //-     .profile-header__waiting-block
+        //-       .profile-header__waiting-integer 526 784
+        //-       .profile-header__waiting-float 44
+        .profile-header__amount-block-v2#dollar
+          img.profile-header__amount-logo(src='./img/header/dollar.svg')
+          .profile-header__money-block
+            .profile-header__available-block
+              .profile-header__available-integer 345 617
+              .profile-header__available-float 23
+              //- .profile-header__notify-block.profile-header__notify-block_available
+                //- .profile-header__notify-text Доступно к выводу
+            .profile-header__waiting-block
+              .profile-header__waiting-integer 526 784
+              .profile-header__waiting-float 44
+              //- .profile-header__notify-block.profile-header__notify-block_waiting
+                //- .profile-header__notify-text Ожидает зачисления
+        .profile-header__amount-block-v2#euro
+          img.profile-header__amount-logo(src='./img/header/euro.svg')
+          .profile-header__money-block
+            .profile-header__available-block
+              .profile-header__available-integer 345 617
+              .profile-header__available-float 23
+              //- .profile-header__notify-block.profile-header__notify-block_available
+                //- .profile-header__notify-text Доступно к выводу
+            .profile-header__waiting-block
+              .profile-header__waiting-integer 526 784
+              .profile-header__waiting-float 44
+              //- .profile-header__notify-block.profile-header__notify-block_waiting
+                //- .profile-header__notify-text Ожидает зачисления
+        .profile-header__amount-block-v2#tenge
+          img.profile-header__amount-logo(src='./img/header/tenge.svg')
+          .profile-header__money-block
+            .profile-header__available-block
+              .profile-header__available-integer 345 617
+              .profile-header__available-float 23
+              //- .profile-header__notify-block.profile-header__notify-block_available
+                //- .profile-header__notify-text Доступно к выводу
+            .profile-header__waiting-block
+              .profile-header__waiting-integer 526 784
+              .profile-header__waiting-float 44
+              //- .profile-header__notify-block.profile-header__notify-block_waiting
+                //- .profile-header__notify-text Ожидает зачисления
+        .profile-header__amount-block-v2#rupee
+          img.profile-header__amount-logo(src='./img/header/rupee.svg')
+          .profile-header__money-block
+            .profile-header__available-block
+              .profile-header__available-integer 345 617
+              .profile-header__available-float 23
+              //- .profile-header__notify-block.profile-header__notify-block_available
+                //- .profile-header__notify-text Доступно к выводу
+            .profile-header__waiting-block
+              .profile-header__waiting-integer 526 784
+              .profile-header__waiting-float 44
+              //- .profile-header__notify-block.profile-header__notify-block_waiting
+                //- .profile-header__notify-text Ожидает зачисления
     .profile-header__controls
       .control
         .control__item._notice
           .control__caller.js-call-context
           +notice-context
           .control__counter 999
-        .control__item._support
+        .control__item._support-black
         .control__item._nav
           .control__caller.js-call-context
           .context-menu._nav
