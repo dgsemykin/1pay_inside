@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/payment-form.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/PT ROOT.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/Glyphter.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card _payment _error">
+        <div class="header">
+          <div class="header__name">Оплата invoice_548926</div>
+          <div class="header__price">1 500.00 RUB</div>
+        </div>
+        <div class="card__body">
+          <div class="error-message error-message_active">
+            <div class="error-message__container">
+              <div class="error-message__text-v2">Оплата по картам МИР временно недоступна</div>
+            </div>
+          </div>
+          <div class="screen-3">
+            <form class="card-form">
+              <div class="card-form__row">
+                <div class="field card-form__number _required">
+                  <div class="field__body">
+                    <div class="field__error">Введите корректный номер карты</div>
+                    <input class="field__input" type="text" tabindex="1" autofocus="autofocus" inputmode="numeric" placeholder="Введите номер карты"/>
+                    <div class="field__icon">
+                      <div class="field__icon-pic _card"></div>
+                    </div>
+                    <div class="field__type-icon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-form__row">
+                <div class="card-form__row">
+                  <div class="field card-form__validity _required">
+                    <label class="field__body">
+                      <input class="field__input" type="text" tabindex="2" inputmode="numeric" placeholder="12        24"/>
+                      <div class="field__icon">
+                        <div class="field__icon-pic _calendar"></div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="field card-form__cvc _required">
+                  <label class="field__body">
+                    <input class="field__input" type="text" tabindex="3" inputmode="numeric" placeholder="123"/>
+                    <div class="field__icon">
+                      <div class="field__icon-pic _lock"></div>
+                    </div>
+                    <div class="field__icon _cvc tooltip">
+                      <div class="field__icon-pic _help"></div>
+                      <div class="tooltip__text _inverse">Трехзначный номер на&nbsp;обратной&nbsp;стороне вашей карты<img class="tooltip__cvc" src="./img/cvc-code.svg"/></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="card-form__row">
+                <div class="field card-form__cardholder _required">
+                  <label class="field__body">
+                    <input class="field__input _transliteration" type="text" tabindex="4" placeholder="IVAN IVANOV"/>
+                    <div class="field__icon">
+                      <div class="field__icon-pic _person"></div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="footer" tabindex="5">
+                <button class="footer__button" disabled="true">Оплатить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="outcard">
+          <div class="outcard__icon _visa"></div>
+          <div class="outcard__icon _mastercard"></div>
+          <div class="outcard__icon _pci"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/polyfill.js"></script>
+    <script src="./js/libs/text-mask.min.js"></script>
+    <script src="./js/libs/vanilla-js-select.min.js"></script>
+    <script src="./js/libs/сyrillicToTranslit.js"></script>
+    <script src="./js/transliteration.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/payment-form-status.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

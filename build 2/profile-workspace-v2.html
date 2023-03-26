@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900&amp;amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/personal.css" rel="stylesheet" type="text/css">
+    <link href="./css/chat.css" rel="stylesheet" type="text/css">
+    <!-- build:css styles/vendor.css-->
+    <!-- bower:css-->
+    <!-- endbower-->
+    <!-- endbuild-->
+  </head>
+  <body>
+    <div class="profile">
+      <header class="profile__header">
+        <div class="wrapper">
+          <div class="profile-header">
+            <div class="profile-header__logo"><img src="./files/logos/1pay.png" alt="1pay" srcset="./files/logos/1pay.png 1x, ./files/logos/1pay@2x.png 2x, ./files/logos/1pay@3x.png 3x"></div>
+            <div class="profile-header__content">
+              <div class="profile-header__amount amount"><img class="profile-header__arrow-v2" src="./files/arrow.svg">
+                <div class="profile-header__active-block-v2">
+                  <div class="profile-header__amount-block-v2" id="rub"><img class="profile-header__amount-logo" src="./files/rub.svg">
+                    <div class="profile-header__money-block">
+                      <div class="profile-header__available-block">
+                        <div class="profile-header__available-integer">345 617</div>
+                        <div class="profile-header__available-float">23</div>
+                      </div>
+                      <div class="profile-header__waiting-block">
+                        <div class="profile-header__waiting-integer">526 784</div>
+                        <div class="profile-header__waiting-float">44</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-header__full-block-v2">
+                  <div class="profile-header__amount-block-v2" id="dollar"><img class="profile-header__amount-logo" src="./img/header/dollar.svg">
+                    <div class="profile-header__money-block">
+                      <div class="profile-header__available-block">
+                        <div class="profile-header__available-integer">345 617</div>
+                        <div class="profile-header__available-float">23</div>
+                      </div>
+                      <div class="profile-header__waiting-block">
+                        <div class="profile-header__waiting-integer">526 784</div>
+                        <div class="profile-header__waiting-float">44</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="profile-header__amount-block-v2" id="euro"><img class="profile-header__amount-logo" src="./img/header/euro.svg">
+                    <div class="profile-header__money-block">
+                      <div class="profile-header__available-block">
+                        <div class="profile-header__available-integer">345 617</div>
+                        <div class="profile-header__available-float">23</div>
+                      </div>
+                      <div class="profile-header__waiting-block">
+                        <div class="profile-header__waiting-integer">526 784</div>
+                        <div class="profile-header__waiting-float">44</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="profile-header__amount-block-v2" id="tenge"><img class="profile-header__amount-logo" src="./img/header/tenge.svg">
+                    <div class="profile-header__money-block">
+                      <div class="profile-header__available-block">
+                        <div class="profile-header__available-integer">345 617</div>
+                        <div class="profile-header__available-float">23</div>
+                      </div>
+                      <div class="profile-header__waiting-block">
+                        <div class="profile-header__waiting-integer">526 784</div>
+                        <div class="profile-header__waiting-float">44</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="profile-header__amount-block-v2" id="rupee"><img class="profile-header__amount-logo" src="./img/header/rupee.svg">
+                    <div class="profile-header__money-block">
+                      <div class="profile-header__available-block">
+                        <div class="profile-header__available-integer">345 617</div>
+                        <div class="profile-header__available-float">23</div>
+                      </div>
+                      <div class="profile-header__waiting-block">
+                        <div class="profile-header__waiting-integer">526 784</div>
+                        <div class="profile-header__waiting-float">44</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-header__controls">
+                <div class="control">
+                  <div class="control__item _notice">
+                    <div class="control__caller js-call-context"></div>
+                              <div class="context-menu _notice notice-mini">
+                                <div class="notice-mini__item">
+                                  <div class="notice-mini__date-time">11 июля 2018, 17:35</div>
+                                  <div class="notice-mini__text">Сервис tralolo.com успешно прошел модерацию</div>
+                                </div>
+                                <div class="notice-mini__item">
+                                  <div class="notice-mini__date-time">11 июля 2018, 17:35</div>
+                                  <div class="notice-mini__text">Наблюдаются проблемы с прохождением платежей по оператору Мегафон</div>
+                                </div>
+                                <div class="notice-mini__item">
+                                  <div class="notice-mini__date-time">11 июля 2018, 17:35</div>
+                                  <div class="notice-mini__text">Для сервиса dating.ru подключен оператор Билайн</div>
+                                </div><a class="btn _green notice-mini__btn" href="#">Перейти в архив</a>
+                              </div>
+                    <div class="control__counter">999</div>
+                  </div>
+                  <div class="control__item _support-black"></div>
+                  <div class="control__item _nav">
+                    <div class="control__caller js-call-context"></div>
+                    <div class="context-menu _nav">
+                      <div class="context-menu__item">Настройки</div>
+                      <div class="context-menu__item">Выйти</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="profile__body wrapper">
+        <aside class="profile__aside">
+          <nav class="nav">
+            <ul class="nav__menu">
+              <li class="nav__item active">
+                <div class="nav__icon"><img src="./img/home.svg"></div><a href="#">Рабочий стол</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/statistic.svg"></div><a href="#">Статистика</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/projects.svg"></div><a href="#">Проекты</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/documents.svg"></div><a href="#">Документация</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/max-payment.svg"></div><a href="#">Выплаты</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/users.svg"></div><a href="#">Сотрудники</a>
+              </li>
+            </ul>
+            <div class="nav__block">
+              <div class="nav__title active"><a href="tel:+74953746168">+7 (495) 374-61-68</a></div>
+              <div class="nav__description">пн-пт с 10 до 19</div>
+              <div class="nav__title nav__title_link active"><a href="mailto:info@mpay.ru">info@mpay.ru</a></div>
+              <div class="nav__description">круглосуточно</div>
+            </div>
+            <div class="nav__block">
+              <div class="nav__title nav__title_inline">© MPay 2015 - 2018
+                <div class="lang">
+                  <div class="lang__item">RU</div>
+                  <div class="lang__item active">EN</div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </aside>
+        <main class="profile__main">
+          <div class="top-bar">
+            <div class="top-bar__menu"><a class="top-bar__item active" href="#">Сегодня</a><a class="top-bar__item" href="#">Неделя</a><a class="top-bar__item" href="#">Прошлая неделя</a><a class="top-bar__item" href="#">Месяц</a><a class="top-bar__item" href="#">Прошлый месяц</a></div>
+            <div class="top-bar__calendar">
+              <div class="datepicker-wrapper">
+                <div class="datepicker-wrapper__icon"><img src="./img/calendar.svg"></div>
+                <div class="datepicker-wrapper__text js-datepicker">Выберите период</div>
+              </div>
+            </div>
+          </div>
+          <h1 class="title">
+            <div class="title__text">Доход за 13.07 составил:</div>
+            <div class="title__amount amount">
+              <div class="amount__integer">345 617</div>
+              <div class="amount__float">86</div>
+              <div class="amount__currency amount__currency_bold"></div>
+            </div>
+          </h1>
+          <div class="cell">
+            <div class="cell__left">
+              <div class="cell__item cell__item_one">
+                <div class="cell__wrapper cell__wrapper_hoverable">
+                  <div class="cell__header">
+                    <div class="cell__title">
+                      <div class="cell__text">ВСЕГО ПЛАТЕЖЕЙ</div>
+                      <div class="cell__count">7380</div>
+                    </div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="cell__value amount amount_in-cell amount_big">
+                      <div class="amount__integer">2 345 617</div>
+                      <div class="amount__float">23</div>
+                      <div class="amount__currency"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_one">
+                <div class="cell__wrapper cell__wrapper_hoverable">
+                  <div class="cell__header">
+                    <div class="cell__title">
+                      <div class="cell__text">Оплачено</div>
+                      <div class="cell__count">3245</div>
+                    </div>
+                    <div class="cell__icon"><img src="img/access.svg" alt=""></div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="cell__value amount amount_in-cell amount_big">
+                      <div class="amount__integer">2 345 617</div>
+                      <div class="amount__float">23</div>
+                      <div class="amount__currency"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_one">
+                <div class="cell__wrapper cell__wrapper_hoverable">
+                  <div class="cell__header">
+                    <div class="cell__title">
+                      <div class="cell__text">Не оплачено</div>
+                      <div class="cell__count">4135</div>
+                    </div>
+                    <div class="cell__icon"><img src="img/cancel.svg" alt=""></div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="cell__value amount amount_in-cell amount_big">
+                      <div class="amount__integer">2 345 617</div>
+                      <div class="amount__float">23</div>
+                      <div class="amount__currency"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_three">
+                <div class="cell__wrapper">
+                  <div class="cell__header cell__header_pb-line">
+                    <div class="cell__title">
+                      <div class="cell__text">СВОДНАЯ СТАТИСТИКА</div>
+                    </div>
+                    <div class="cell__control">
+                      <button class="cell__control_chart-switcher js-toggle-chart _active" data-type="line"><?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g  stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g  transform="translate(-860.000000, -320.000000)" fill-rule="nonzero" stroke-width="3">
+            <g id="Group-5" transform="translate(289.000000, 305.000000)">
+                <g id="lines" transform="translate(571.000000, 15.000000)">
+                    <path d="M1.49900715,14 C2.08974391,6.00799663 4.25183155,2.01199495 7.98527009,2.01199495 C11.7187086,2.01199495 13.8807963,6.00799663 14.471533,14" id="Path-4"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                      </button>
+                      <button class="cell__control_chart-switcher js-toggle-chart" data-type="bar"><?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g  stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g  transform="translate(-886.000000, -320.000000)" fill-rule="nonzero">
+            <g id="Group-5" transform="translate(289.000000, 305.000000)">
+                <g id="bars" transform="translate(597.000000, 15.000000)">
+                    <rect id="Rectangle-20" x="0" y="12" width="4" height="4"></rect>
+                    <rect id="Rectangle-20-Copy" x="6" y="8" width="4" height="8"></rect>
+                    <rect id="Rectangle-20-Copy-2" x="12" y="0" width="4" height="16"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                      </button><a href="">Детальная статистика</a>
+                    </div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="chart chart_line chart_active" data-type="line">
+                      <canvas id="line"></canvas>
+                    </div>
+                    <div class="chart chart_bar" data-type="bar">
+                      <canvas id="bar"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_one">
+                <div class="cell__wrapper">
+                  <div class="cell__header">
+                    <div class="cell__title">
+                      <div class="cell__text">СРЕДНИЙ ЧЕК</div>
+                    </div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="cell__value amount">
+                      <div class="amount__integer">345 617</div>
+                      <div class="amount__float">23</div>
+                      <div class="amount__currency"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_one">
+                <div class="cell__wrapper">
+                  <div class="cell__header">
+                    <div class="cell__title">
+                      <div class="cell__text">МАКСИМАЛЬНЫЙ ПЛАТЕЖ</div>
+                    </div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="cell__value amount">
+                      <div class="amount__integer">345 617</div>
+                      <div class="amount__float">23</div>
+                      <div class="amount__currency"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_one">
+                <div class="cell__wrapper">
+                  <div class="cell__header">
+                    <div class="cell__title">
+                      <div class="cell__text">МИНИМАЛЬНЫЙ ПЛАТЕЖ</div>
+                    </div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="cell__value amount">
+                      <div class="amount__integer">345 617</div>
+                      <div class="amount__float">23</div>
+                      <div class="amount__currency"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_three">
+                <div class="cell__wrapper">
+                  <div class="cell__header cell__header_pb-line">
+                    <div class="cell__title">
+                      <div class="cell__text cell__text_triangle _opened" id="newsButton">НОВОСТИ</div>
+                    </div>
+                    <div class="cell__control"><a href="">Все новости</a></div>
+                  </div>
+                  <div class="cell__body" id="newsBody">
+                    <div id="newsWrap">
+                      <div class="news">
+                        <div class="news__title">Новость 1</div>
+                        <div class="news__date">11 июля 2018, 17:31</div>
+                        <div class="news__body">
+                          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                        </div>
+                      </div>
+                      <div class="news">
+                        <div class="news__title">Новость 2</div>
+                        <div class="news__date">11 июля 2018, 17:32</div>
+                        <div class="news__body">
+                          <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell__right">
+              <div class="cell__item cell__item_three">
+                <div class="cell__wrapper">
+                  <div class="cell__header">
+                    <div class="cell__title">
+                      <div class="cell__text">Конверсия</div>
+                      <div class="cell__count">45</div>
+                    </div>
+                    <div class="cell__icon"><img src="img/percent.svg" alt=""></div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="cell__value amount amount_in-cell amount_big">
+                      <div class="amount__percent">70</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_three">
+                <div class="cell__wrapper cell__wrapper_hoverable">
+                  <div class="cell__header">
+                    <div class="cell__title">
+                      <div class="cell__text">КОРРЕКТИРОВКИ</div>
+                      <div class="cell__count">300</div>
+                    </div>
+                    <div class="cell__icon"><img src="img/faders.svg" alt=""></div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="cell__value amount amount_in-cell amount_big">
+                      <div class="amount__integer">-16457</div>
+                      <div class="amount__float">45</div>
+                      <div class="amount__currency"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_three">
+                <div class="cell__wrapper cell__wrapper_hoverable">
+                  <div class="cell__header">
+                    <div class="cell__title">
+                      <div class="cell__text">РАССЫЛКИ</div>
+                      <div class="cell__count">30</div>
+                    </div>
+                    <div class="cell__icon"><img src="img/mind.svg" alt=""></div>
+                  </div>
+                  <div class="cell__body">
+                    <div class="cell__value amount amount_in-cell amount_big">
+                      <div class="amount__integer">-16457</div>
+                      <div class="amount__float">23</div>
+                      <div class="amount__currency"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_three">
+                <div class="cell__wrapper">
+                  <div class="cell__header cell__header_pb-line">
+                    <div class="cell__title">
+                      <div class="cell__text">ПРОЕКТЫ</div>
+                    </div>
+                    <div class="cell__header-button">
+                      <button data-template="activeList">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                          <path d="M6 2h9a1 1 0 0 1 0 2H6a1 1 0 1 1 0-2zM1.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7h9a1 1 0 0 1 0 2H6a1 1 0 1 1 0-2zM1.5 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 12h9a1 1 0 0 1 0 2H6a1 1 0 0 1 0-2zm-4.5 2.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path>
+                        </svg>
+                      </button>
+                      <button class="active" data-template="activePie">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                          <path d="M8 1a7 7 0 0 0 0 14V1zm0 7v7a7 7 0 0 0 7-7H8zm1.75-1.75H15C15 3.35 12.65 1 9.75 1v5.25z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="js-scroll">
+                    <div class="cell__body cell__body_scroll activePie">
+                      <div class="list-view">
+                        <div class="list-view__item">
+                          <div class="list-view__description">
+                            <div class="list-view__title">Pandawow</div>
+                            <div class="list-view__tag list-view__tag_blue">Игры</div>
+                          </div>
+                          <div class="list-view__sum">
+                            <div class="amount">
+                              <div class="amount__integer">345 617</div>
+                              <div class="amount__float">23</div>
+                              <div class="amount__currency"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-view__item">
+                          <div class="list-view__description">
+                            <div class="list-view__title">EcoSet</div>
+                            <div class="list-view__tag list-view__tag_green">Здоровье</div>
+                          </div>
+                          <div class="list-view__sum">
+                            <div class="amount">
+                              <div class="amount__integer">345 617</div>
+                              <div class="amount__float">23</div>
+                              <div class="amount__currency"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-view__item">
+                          <div class="list-view__description">
+                            <div class="list-view__title">HealthCare</div>
+                            <div class="list-view__tag list-view__tag_pink">Эротика</div>
+                          </div>
+                          <div class="list-view__sum">
+                            <div class="amount">
+                              <div class="amount__integer">345 617</div>
+                              <div class="amount__float">23</div>
+                              <div class="amount__currency"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-view__item">
+                          <div class="list-view__description">
+                            <div class="list-view__title">NinjaWorld</div>
+                            <div class="list-view__tag list-view__tag_blue">Игры</div>
+                          </div>
+                          <div class="list-view__sum">
+                            <div class="amount">
+                              <div class="amount__integer">345 617</div>
+                              <div class="amount__float">23</div>
+                              <div class="amount__currency"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-view__item">
+                          <div class="list-view__description">
+                            <div class="list-view__title">Pandawow</div>
+                            <div class="list-view__tag list-view__tag_blue">Игры</div>
+                          </div>
+                          <div class="list-view__sum">
+                            <div class="amount">
+                              <div class="amount__integer">345 617</div>
+                              <div class="amount__float">23</div>
+                              <div class="amount__currency"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="chart chart_pie">
+                        <canvas id="pie1"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell__item cell__item_three">
+                <div class="cell__wrapper">
+                  <div class="cell__header cell__header_pb-line">
+                    <div class="cell__title">
+                      <div class="cell__text">СПОСОБЫ ОПЛАТЫ</div>
+                    </div>
+                    <div class="cell__header-button">
+                      <div class="cell__header-button"></div>
+                      <button class="active" data-template="activeList">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                          <path d="M6 2h9a1 1 0 0 1 0 2H6a1 1 0 1 1 0-2zM1.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7h9a1 1 0 0 1 0 2H6a1 1 0 1 1 0-2zM1.5 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 12h9a1 1 0 0 1 0 2H6a1 1 0 0 1 0-2zm-4.5 2.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path>
+                        </svg>
+                      </button>
+                      <button data-template="activePie">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                          <path d="M8 1a7 7 0 0 0 0 14V1zm0 7v7a7 7 0 0 0 7-7H8zm1.75-1.75H15C15 3.35 12.65 1 9.75 1v5.25z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="cell__body cell__body_scroll activeList">
+                    <div class="list-view">
+                      <div class="list-view__item">
+                        <div class="list-view__description list-view__description_brand">
+                          <div class="list-view__icon"><img src="img/mts-icon.svg"></div>
+                          <div class="list__brand">МТС</div>
+                        </div>
+                        <div class="list-view__sum">
+                          <div class="amount">
+                            <div class="amount__integer">3459</div>
+                            <div class="amount__float">00</div>
+                            <div class="amount__currency"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="list-view__item">
+                        <div class="list-view__description list-view__description_brand">
+                          <div class="list-view__icon"><img src="img/megafon-icon.svg"></div>
+                          <div class="list__brand">Мегафон</div>
+                        </div>
+                        <div class="list-view__sum">
+                          <div class="amount">
+                            <div class="amount__integer">38459</div>
+                            <div class="amount__float">00</div>
+                            <div class="amount__currency"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="list-view__item">
+                        <div class="list-view__description list-view__description_brand">
+                          <div class="list-view__icon"><img src="img/beeline-icon.svg"></div>
+                          <div class="list__brand">Билайн</div>
+                        </div>
+                        <div class="list-view__sum">
+                          <div class="amount">
+                            <div class="amount__integer">999459</div>
+                            <div class="amount__float">00</div>
+                            <div class="amount__currency"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="list-view__item">
+                        <div class="list-view__description list-view__description_brand">
+                          <div class="list-view__icon"><img src="img/apple-icon.svg"></div>
+                          <div class="list__brand">Apple Pay</div>
+                        </div>
+                        <div class="list-view__sum">
+                          <div class="amount">
+                            <div class="amount__integer">4459</div>
+                            <div class="amount__float">00</div>
+                            <div class="amount__currency"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chart chart_pie">
+                      <canvas id="pie2"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="./js/polyfill.js"></script>
+    <script src="./js/libs/moment.min.js"></script>
+    <script src="./js/libs/daterangepicker.js"></script>
+    <script src="./js/libs/text-mask.min.js"></script>
+    <script src="./js/libs/list.js"></script>
+    <script src="./js/libs/perfect-scrollbar.min.js"></script>
+    <script src="./js/libs/vanilla-js-select.min.js"></script>
+    <script src="./js/accordion.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/datepicker.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/currencies-checker-v2.js"></script>
+  </body>
+</html>

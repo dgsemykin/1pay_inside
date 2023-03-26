@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/payment-form.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/PT ROOT.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/Glyphter.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="header _error"><img class="header__icon _error" src="./img/error-icon.svg"/>
+          <div class="header__text">Оплата не&nbsp;прошла!</div>
+        </div>
+        <div class="card__body">
+          <div class="screen-5">
+            <div class="card__text-block _error">
+              <div class="card__header">Ваш банк отказал в&nbsp;проведении платежа</div>
+              <div class="card__text _error">Пожалуйста убедитесь, что на вашей карте достаточно средств и повторите оплату.</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer footer_back"><a class="footer__link" href="#">
+            <div class="footer__text">Вернуться в магазин</div></a></div>
+        <div class="outcard">
+          <div class="outcard__icon _visa"></div>
+          <div class="outcard__icon _mastercard"></div>
+          <div class="outcard__icon _pci"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/polyfill.js"></script>
+    <script src="./js/libs/text-mask.min.js"></script>
+    <script src="./js/libs/vanilla-js-select.min.js"></script>
+    <script src="./js/libs/сyrillicToTranslit.js"></script>
+    <script src="./js/transliteration.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/payment-form-status.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

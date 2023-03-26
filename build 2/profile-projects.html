@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900&amp;amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/personal.css" rel="stylesheet" type="text/css">
+    <link href="./css/chat.css" rel="stylesheet" type="text/css">
+    <!-- build:css styles/vendor.css-->
+    <!-- bower:css-->
+    <!-- endbower-->
+    <!-- endbuild-->
+  </head>
+  <body>
+    <div class="profile">
+      <header class="profile__header">
+        <div class="wrapper">
+          <div class="profile-header">
+            <div class="profile-header__logo"><img src="./files/logos/1pay.png" alt="1pay" srcset="./files/logos/1pay.png 1x, ./files/logos/1pay@2x.png 2x, ./files/logos/1pay@3x.png 3x"></div>
+            <div class="profile-header__content">
+              <div class="profile-header__amount amount">
+                <div class="amount__integer">345 617</div>
+                <div class="amount__float">23</div>
+                <div class="amount__currency"></div>
+              </div>
+              <div class="profile-header__controls">
+                <div class="control">
+                  <div class="control__item _notice">
+                    <div class="control__caller js-call-context"></div>
+                              <div class="context-menu _notice notice-mini">
+                                <div class="notice-mini__item">
+                                  <div class="notice-mini__date-time">11 июля 2018, 17:35</div>
+                                  <div class="notice-mini__text">Сервис tralolo.com успешно прошел модерацию</div>
+                                </div>
+                                <div class="notice-mini__item">
+                                  <div class="notice-mini__date-time">11 июля 2018, 17:35</div>
+                                  <div class="notice-mini__text">Наблюдаются проблемы с прохождением платежей по оператору Мегафон</div>
+                                </div>
+                                <div class="notice-mini__item">
+                                  <div class="notice-mini__date-time">11 июля 2018, 17:35</div>
+                                  <div class="notice-mini__text">Для сервиса dating.ru подключен оператор Билайн</div>
+                                </div><a class="btn _green notice-mini__btn" href="#">Перейти в архив</a>
+                              </div>
+                    <div class="control__counter">999</div>
+                  </div>
+                  <div class="control__item _support"></div>
+                  <div class="control__item _nav">
+                    <div class="control__caller js-call-context"></div>
+                    <div class="context-menu _nav">
+                      <div class="context-menu__item">Настройки</div>
+                      <div class="context-menu__item">Выйти</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="profile__body wrapper">
+        <aside class="profile__aside">
+          <nav class="nav">
+            <ul class="nav__menu">
+              <li class="nav__item active">
+                <div class="nav__icon"><img src="./img/home.svg"></div><a href="#">Рабочий стол</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/statistic.svg"></div><a href="#">Статистика</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/projects.svg"></div><a href="#">Проекты</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/documents.svg"></div><a href="#">Документация</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/max-payment.svg"></div><a href="#">Выплаты</a>
+              </li>
+              <li class="nav__item">
+                <div class="nav__icon"><img src="./img/users.svg"></div><a href="#">Сотрудники</a>
+              </li>
+            </ul>
+            <div class="nav__block">
+              <div class="nav__title active"><a href="tel:+74953746168">+7 (495) 374-61-68</a></div>
+              <div class="nav__description">пн-пт с 10 до 19</div>
+              <div class="nav__title nav__title_link active"><a href="mailto:info@mpay.ru">info@mpay.ru</a></div>
+              <div class="nav__description">круглосуточно</div>
+            </div>
+            <div class="nav__block">
+              <div class="nav__title nav__title_inline">© MPay 2015 - 2018
+                <div class="lang">
+                  <div class="lang__item">RU</div>
+                  <div class="lang__item active">EN</div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </aside>
+        <main class="profile__main">
+          <div class="panel">
+            <div class="panel__caption"><span class="panel__caption-title">Мои проекты: 6</span>
+              <div class="panel__caption-right-column">
+                <div class="field search panel__search">
+                  <label class="field__body icons-bg-clean pl-to-icon">
+                    <input class="field__input" type="text" placeholder="" value="./img/search.svg"/>
+                    <div class="field__icon"><img src="Название проекта, адрес сайта"/></div>
+                  </label>
+                </div>
+                <button class="btn _green"><img class="btn__icon" src="./img/icons/plus.svg">Добавить</button>
+              </div>
+            </div>
+            <div class="panel__body">
+              <table class="table-projects" id="projects">
+                <thead>
+                  <tr>
+                    <th class="table-projects__date">
+                      <div class="sort" data-sort="date">
+                        <div class="sort__title">Создан</div>
+                        <div class="sort__arrow"></div>
+                      </div>
+                    </th>
+                    <th class="table-projects__id">
+                      <div class="sort" data-sort="id">
+                        <div class="sort__title">Id</div>
+                        <div class="sort__arrow"></div>
+                      </div>
+                    </th>
+                    <th class="table-projects__name">
+                      <div class="sort" data-sort="name">
+                        <div class="sort__title">Название</div>
+                        <div class="sort__arrow"></div>
+                      </div>
+                    </th>
+                    <th class="table-projects__category">
+                      <div class="sort" data-sort="category">
+                        <div class="sort__title">Категория</div>
+                        <div class="sort__arrow"></div>
+                      </div>
+                    </th>
+                    <th class="table-projects__site">
+                      <div class="sort" data-sort="site">
+                        <div class="sort__title">Сайт</div>
+                        <div class="sort__arrow"></div>
+                      </div>
+                    </th>
+                    <th class="table-projects__status">
+                      <div class="sort" data-sort="status">
+                        <div class="sort__title">Статус</div>
+                        <div class="sort__arrow"></div>
+                      </div>
+                    </th>
+                    <th class="table-projects__income-total">
+                      <div class="sort" data-sort="income-total">
+                        <div class="sort__title">Доход за всё время</div>
+                        <div class="sort__arrow"></div>
+                      </div>
+                    </th>
+                    <th class="table-projects__income-week">
+                      <div class="sort" data-sort="income-week">
+                        <div class="sort__title">Доход за неделю</div>
+                        <div class="sort__arrow"></div>
+                      </div>
+                    </th>
+                    <th class="table-projects__controls"></th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                  <tr class="table-projects__row">
+                    <td class="table-projects__date date" data-timestamp="1533230873">02.08.18</td>
+                    <td class="table-projects__id id">34563</td>
+                    <td class="table-projects__name name">LoveDate360</td>
+                    <td class="table-projects__category category-name _velvet">Знакомства</td>
+                    <td class="table-projects__site site">dating.ru</td>
+                    <td class="table-projects__status">
+                      <div class="status status_orange">Ожидает подтверждения</div>
+                    </td>
+                    <td class="table-projects__income-total income-total" data-income="0"></td>
+                    <td class="table-projects__income-week income-week" data-income="0"></td>
+                    <td class="table-projects__controls"><img class="js-edit-button" src="./img/icons/pen.svg"></td>
+                  </tr>
+                  <tr class="table-projects__row">
+                    <td class="table-projects__date date" data-timestamp="1532539672">25.07.18</td>
+                    <td class="table-projects__id id">34562</td>
+                    <td class="table-projects__name name">Panda24</td>
+                    <td class="table-projects__category category-name _blue">Игры</td>
+                    <td class="table-projects__site site">pandagames.ru</td>
+                    <td class="table-projects__status">
+                      <div class="status status_blue">На модерации</div>
+                    </td>
+                    <td class="table-projects__income-total income-total" data-income="0"></td>
+                    <td class="table-projects__income-week income-week" data-income="0"></td>
+                    <td class="table-projects__controls"><img class="js-edit-button" src="./img/icons/pen.svg"></td>
+                  </tr>
+                  <tr class="table-projects__row">
+                    <td class="table-projects__date date" data-timestamp="1532626072">26.07.18</td>
+                    <td class="table-projects__id id">34563</td>
+                    <td class="table-projects__name name">EcoMeal</td>
+                    <td class="table-projects__category category-name _green">Здоровье</td>
+                    <td class="table-projects__site site">ecoset.ru</td>
+                    <td class="table-projects__status">
+                      <div class="status status_danger">Отклонен</div>
+                    </td>
+                    <td class="table-projects__income-total"></td>
+                    <td class="table-projects__income-week"></td>
+                    <td class="table-projects__controls"><img class="js-edit-button" src="./img/icons/pen.svg"></td>
+                  </tr>
+                  <tr class="table-projects__row">
+                    <td class="table-projects__date date" data-timestamp="1533144472">01.08.18</td>
+                    <td class="table-projects__id id">34566</td>
+                    <td class="table-projects__name name">Pron</td>
+                    <td class="table-projects__category category-name _pink">Эротика</td>
+                    <td class="table-projects__site site">xxx-be.ru</td>
+                    <td class="table-projects__status">
+                      <div class="status status_success">Отклонен</div>
+                    </td>
+                    <td class="table-projects__income-total income-total" data-income="180.00">
+                      <div class="amount">
+                        <div class="amount__integer">180</div>
+                        <div class="amount__float">00</div>
+                        <div class="amount__currency"></div>
+                      </div>
+                    </td>
+                    <td class="table-projects__income-week income-week" data-income="14.00">
+                      <div class="amount">
+                        <div class="amount__integer">14</div>
+                        <div class="amount__float">00</div>
+                        <div class="amount__currency"></div>
+                      </div>
+                    </td>
+                    <td class="table-projects__controls"><img class="js-edit-button" src="./img/icons/pen.svg"></td>
+                  </tr>
+                  <tr class="table-projects__row">
+                    <td class="table-projects__date date" data-timestamp="1539106072">10.09.18</td>
+                    <td class="table-projects__id id">34572</td>
+                    <td class="table-projects__name name">finance</td>
+                    <td class="table-projects__category category-name _turquoise">Бизнес</td>
+                    <td class="table-projects__site site">trading.moscow</td>
+                    <td class="table-projects__status">
+                      <div class="status status_wait">Приостановлен</div>
+                    </td>
+                    <td class="table-projects__income-total income-total" data-income="181.00">
+                      <div class="amount">
+                        <div class="amount__integer">181</div>
+                        <div class="amount__float">00</div>
+                        <div class="amount__currency"></div>
+                      </div>
+                    </td>
+                    <td class="table-projects__income-week income-week" data-income="15.00">
+                      <div class="amount">
+                        <div class="amount__integer">15</div>
+                        <div class="amount__float">00</div>
+                        <div class="amount__currency"></div>
+                      </div>
+                    </td>
+                    <td class="table-projects__controls"><img class="js-edit-button" src="./img/icons/pen.svg"></td>
+                  </tr>
+                  <tr class="table-projects__row">
+                    <td class="table-projects__date date" data-timestamp="1522603672">01.04.18</td>
+                    <td class="table-projects__id id">34572</td>
+                    <td class="table-projects__name name">Velo</td>
+                    <td class="table-projects__category category-name _orange">Спорт</td>
+                    <td class="table-projects__site site">velobike.tv</td>
+                    <td class="table-projects__status">
+                      <div class="status status_success">Активен</div>
+                    </td>
+                    <td class="table-projects__income-total income-total" data-income="182.00">
+                      <div class="amount">
+                        <div class="amount__integer">182</div>
+                        <div class="amount__float">00</div>
+                        <div class="amount__currency"></div>
+                      </div>
+                    </td>
+                    <td class="table-projects__income-week income-week" data-income="16.00">
+                      <div class="amount">
+                        <div class="amount__integer">16</div>
+                        <div class="amount__float">00</div>
+                        <div class="amount__currency"></div>
+                      </div>
+                    </td>
+                    <td class="table-projects__controls"><img class="js-edit-button" src="./img/icons/pen.svg"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagination table-projects__pagination"><a class="pagination__arrow _prev _disabled">Назад</a><a class="pagination__page _current">1</a><a class="pagination__page">2</a><a class="pagination__page">3</a><a class="pagination__page">4</a><span class="pagination__pointer">...</span><a class="pagination__page">10</a><a class="pagination__arrow _next">Вперёд</a></div>
+              <div class="clr"></div>
+            </div>
+          </div>
+          <script src="/js/personal-table.js"></script>
+          <script>
+            document.querySelector('.nav__item.active').classList.remove('active');
+            document.querySelector('.nav__item:nth-child(3)').classList.add('active');
+          </script>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="./js/polyfill.js"></script>
+    <script src="./js/libs/moment.min.js"></script>
+    <script src="./js/libs/daterangepicker.js"></script>
+    <script src="./js/libs/text-mask.min.js"></script>
+    <script src="./js/libs/list.js"></script>
+    <script src="./js/libs/perfect-scrollbar.min.js"></script>
+    <script src="./js/libs/vanilla-js-select.min.js"></script>
+    <script src="./js/accordion.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/datepicker.js"></script>
+    <script src="./js/profile.js"></script>
+  </body>
+</html>

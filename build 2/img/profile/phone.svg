@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="16px" viewBox="0 0 11 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Профиль-№1" transform="translate(-321.000000, -380.000000)" fill="#272424" fill-rule="nonzero">
+            <g id="Group-18-Copy" transform="translate(305.000000, 368.000000)">
+                <g id="phone" transform="translate(14.000000, 12.000000)">
+                    <path d="M3,0 L12,0 C12.5522847,-1.01453063e-16 13,0.44771525 13,1 L13,15 C13,15.5522847 12.5522847,16 12,16 L3,16 C2.44771525,16 2,15.5522847 2,15 L2,1 C2,0.44771525 2.44771525,1.01453063e-16 3,0 Z M4,2 L4,12 L11,12 L11,2 L4,2 Z M7.5,15 C8.05228475,15 8.5,14.5522847 8.5,14 C8.5,13.4477153 8.05228475,13 7.5,13 C6.94771525,13 6.5,13.4477153 6.5,14 C6.5,14.5522847 6.94771525,15 7.5,15 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/payment-form.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/PT ROOT.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/Glyphter.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="header">
+          <div class="header__top">
+            <div class="header__info">
+              <div class="header__title"><a href="/">brick-studio.ru</a></div>
+            </div>
+            <div class="header__logo"><img src="./files/logos/brick.png"/></div>
+          </div>
+          <div class="header__caption">Верстка письма, счет №147</div>
+        </div>
+        <div class="card__body">
+          <div class="chosen-payway">
+            <div class="chosen-payway__title">Билайн</div><img class="chosen-payway__logo" src="./img/payways/beeline.png"/>
+            <div class="chosen-payway__change">Другие<br/>способы<br/>оплаты</div>
+          </div>
+          <form class="card-form">
+            <div class="field card-form__phone">
+              <div class="field__label">Номер мобильного телефона</div>
+              <label class="field__body">
+                <input class="field__input" type="text" placeholder="000 000 00 00"/>
+                <div class="field__icon"></div>
+              </label>
+            </div>
+          </form>
+          <div class="payment-info">
+            <div class="payment-info__row">
+              <div class="payment-info__icon _rub"></div>
+              <div class="payment-info__text">Минимальная сумма оплаты 1 ₽.</div>
+            </div>
+            <div class="payment-info__row">
+              <div class="payment-info__icon _wallet"></div>
+              <div class="payment-info__text">После оплаты на счету должно остаться 10 ₽.</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <button class="footer__submit btn _green">Оплатить
+            <div class="footer__integer">9 050</div>
+            <div class="footer__float">00</div>
+            <div class="footer__currency">₽</div>
+          </button>
+        </div>
+        <div class="outcard">
+          <div class="outcard__icon _msg"></div>
+          <div class="outcard__icon _lang">EN</div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/polyfill.js"></script>
+    <script src="./js/libs/text-mask.min.js"></script>
+    <script src="./js/libs/vanilla-js-select.min.js"></script>
+    <script src="./js/libs/сyrillicToTranslit.js"></script>
+    <script src="./js/transliteration.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/payment-form-status.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

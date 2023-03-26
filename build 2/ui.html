@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/payment-form.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/PT ROOT.css" rel="stylesheet" type="text/css">
+    <link href="./fonts/Glyphter.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrap">
+      <style>
+        .ui {
+          padding: 30px;
+          text-align: left
+        }
+        .ui__column {
+          display: inline-block;
+          vertical-align: top;
+          width: 280px;
+          margin-right: 30px;
+        }
+        .ui__row {
+          display: flex;
+          margin-bottom: 15px;
+        }
+        .payway {
+          margin-right: 8px;
+        }
+      </style>
+      <div class="ui">
+        <div class="ui__column">
+          <div class="ui__row">
+            <div class="field card-form__number">
+              <label class="field__body">
+                <input class="field__input" type="text" placeholder=""/>
+                <div class="field__icon"><img src="0000   0000   0000   0000"/></div>
+              </label>
+            </div>
+          </div>
+          <div class="ui__row">
+            <div class="field card-form__number">
+              <label class="field__body">
+                <input class="field__input" type="text" placeholder="" value="12"/>
+                <div class="field__icon"><img src="0000   0000   0000   0000"/></div>
+              </label>
+            </div>
+          </div>
+          <div class="ui__row">
+            <div class="field card-form__number">
+              <label class="field__body">
+                <input class="field__input" type="text" placeholder="" value="" disabled="disabled"/>
+                <div class="field__icon"><img src="0000   0000   0000   0000"/></div>
+              </label>
+            </div>
+          </div>
+          <div class="ui__row">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" checked="checked"/>
+              <div class="checkbox__button"></div>
+              <div class="checkbox__label"><span class="checkbox__text">Чекбокс чекнут</span>
+              </div>
+            </label>
+          </div>
+          <div class="ui__row">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox"/>
+              <div class="checkbox__button"></div>
+              <div class="checkbox__label"><span class="checkbox__text">Чекбокс не чекнут</span>
+              </div>
+            </label>
+          </div>
+          <div class="ui__row">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" disabled="disabled"/>
+              <div class="checkbox__button"></div>
+              <div class="checkbox__label"><span class="checkbox__text">Чекбокс неактивен</span>
+              </div>
+            </label>
+          </div><br>
+          <div class="ui__row">
+            <label class="radio">
+              <input class="radio__input" type="radio" name="Радиокнопка выбрана"/>
+              <div class="radio__button"></div>
+              <div class="radio__label">true</div>
+            </label>
+          </div>
+          <div class="ui__row">
+            <label class="radio">
+              <input class="radio__input" type="radio" name="Радиокнопка не выбрана"/>
+              <div class="radio__button"></div>
+            </label>
+          </div>
+          <div class="ui__row">
+            <label class="radio">
+              <input class="radio__input" type="radio" name="Радиокнопка неактивна" checked="checked"/>
+              <div class="radio__button"></div>
+            </label>
+          </div><br>
+          <div class="ui__row">
+            <label class="switch">
+              <input class="switch__input" type="checkbox" checked="checked"/>
+              <div class="switch__button"></div>
+              <div class="switch__label">Свитчер</div>
+            </label>
+          </div>
+        </div>
+        <div class="ui__column">
+          <div class="ui__row">
+            <div class="field card-form__number _required">
+              <div class="field__body">
+                <div class="field__error">Введите корректный номер карты</div>
+                <input class="field__input" type="text" tabindex="1" autofocus="autofocus" inputmode="numeric" placeholder="Введите номер карты"/>
+                <div class="field__icon">
+                  <div class="field__icon-pic _card"></div>
+                </div>
+                <div class="field__type-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ui__row">
+            <div class="field card-form__number _required">
+              <div class="field__body">
+                <div class="field__error">Введите корректный номер карты</div>
+                <input class="field__input" type="text" tabindex="1" autofocus="autofocus" inputmode="numeric" placeholder="Введите номер карты"/>
+                <div class="field__icon">
+                  <div class="field__icon-pic _card"></div>
+                </div>
+                <div class="field__type-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ui__row">
+            <div class="field card-form__number _required">
+              <div class="field__body">
+                <div class="field__error">Введите корректный номер карты</div>
+                <input class="field__input" type="text" tabindex="1" autofocus="autofocus" inputmode="numeric" placeholder="Введите номер карты"/>
+                <div class="field__icon">
+                  <div class="field__icon-pic _card"></div>
+                </div>
+                <div class="field__type-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ui__row">
+            <div class="field card-form__number _required">
+              <div class="field__body">
+                <div class="field__error">Введите корректный номер карты</div>
+                <input class="field__input" type="text" tabindex="1" autofocus="autofocus" inputmode="numeric" placeholder="Введите номер карты"/>
+                <div class="field__icon">
+                  <div class="field__icon-pic _card"></div>
+                </div>
+                <div class="field__type-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ui__row">
+            <div class="field card-form__phone">
+              <label class="field__body">
+                <input class="field__input" type="text" placeholder="000 000 00 00" value="916"/>
+                <div class="field__icon"></div>
+                <div class="field__type-icon _mts"></div>
+              </label>
+            </div>
+          </div>
+          <div class="ui__row">
+            <div class="field card-form__phone">
+              <label class="field__body">
+                <input class="field__input" type="text" placeholder="000 000 00 00" value="988"/>
+                <div class="field__icon"></div>
+                <div class="field__type-icon _megafon"></div>
+              </label>
+            </div>
+          </div>
+          <div class="ui__row">
+            <div class="field card-form__phone">
+              <label class="field__body">
+                <input class="field__input" type="text" placeholder="000 000 00 00" value="926"/>
+                <div class="field__icon"></div>
+                <div class="field__type-icon _beeline"></div>
+              </label>
+            </div>
+          </div>
+          <div class="ui__row">
+            <div class="field card-form__phone">
+              <label class="field__body">
+                <input class="field__input" type="text" placeholder="000 000 00 00" value="999"/>
+                <div class="field__icon"></div>
+                <div class="field__type-icon _tele2"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="ui__column">
+          <div class="ui__row">
+            <select class="select-input" id="select1">
+              <option>Пункт 1</option>
+              <option>Пункт 2</option>
+              <option>Пункт 3</option>
+              <option>Пункт 4</option>
+            </select>
+          </div>
+          <div class="ui__row">
+            <button class="footer__submit btn _green">Оплатить
+              <div class="footer__integer">4999</div>
+              <div class="footer__float">99</div>
+              <div class="footer__currency">₽</div>
+            </button>
+          </div>
+          <div class="ui__row">
+            <button class="footer__submit btn _green" disabled>Оплатить
+              <div class="footer__integer">4999</div>
+              <div class="footer__float">99</div>
+              <div class="footer__currency">₽</div>
+            </button>
+          </div>
+          <div class="ui__row">
+            <div class="payway"><img class="payway__logo" src="./img/payways/ethereum.png"></div>
+            <div class="payway _selected"><img class="payway__logo" src="./img/payways/ethereum.png"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/polyfill.js"></script>
+    <script src="./js/libs/text-mask.min.js"></script>
+    <script src="./js/libs/vanilla-js-select.min.js"></script>
+    <script src="./js/libs/сyrillicToTranslit.js"></script>
+    <script src="./js/transliteration.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/payment-form-status.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

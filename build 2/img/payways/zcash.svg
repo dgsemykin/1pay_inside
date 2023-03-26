@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>circle-zcash-color</title>
+    <defs>
+        <linearGradient x1="85.35405%" y1="14.640075%" x2="14.643375%" y2="85.35075%" id="linearGradient-1">
+            <stop stop-color="#FFD35D" offset="0%"></stop>
+            <stop stop-color="#CC842A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="style-3" transform="translate(-964.000000, -1029.000000)" fill-rule="nonzero">
+            <g id="Group-12-Copy-5" transform="translate(926.000000, 379.000000)">
+                <g id="Group-Copy">
+                    <g id="Group-42" transform="translate(16.000000, 110.000000)">
+                        <g id="Group-40" transform="translate(0.000000, 436.000000)">
+                            <g id="Group-15-Copy-2" transform="translate(0.000000, 93.000000)">
+                                <g id="circle-zcash-color" transform="translate(22.000000, 11.000000)">
+                                    <circle id="XMLID_18_" fill="#010101" cx="19.968932" cy="20.031068" r="19.961165"></circle>
+                                    <circle id="XMLID_17_" fill="url(#linearGradient-1)" cx="19.968932" cy="20.031068" r="15.5339806"></circle>
+                                    <path d="M27.4485437,24.8854369 L19.176699,24.8854369 L19.176699,24.807767 C20.1553398,23.7592233 21.0407767,22.5553398 21.9883495,21.3048544 L27.161165,14.0970874 L27.161165,10.5553398 L22.0427184,10.5553398 L22.0427184,7.08349515 L17.7475728,7.08349515 L17.7475728,10.5553398 L13.0873786,10.5553398 L13.0873786,15.238835 L20.6524272,15.238835 L20.6524272,15.3165049 C19.6737864,16.4815534 18.8970874,17.4135922 17.9106796,18.7029126 L12.4893204,26.2213592 L12.4893204,29.6 L17.7475728,29.6 L17.7475728,32.9786408 L22.0427184,32.9786408 L22.0427184,29.6 L27.4485437,29.6 L27.4485437,24.8854369 Z" id="Shape" fill="#010101"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
