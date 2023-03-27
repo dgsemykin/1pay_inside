@@ -4,6 +4,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+
   &__logo {
     height: 32px;
     img {
@@ -29,11 +30,19 @@
         opacity: 1;
         width: 100%;
         display: flex;
+        transition: all .6s;
+
+        // & .profile-header__money-block {
+        //   opacity: 1;
+        //   transition: all 4.2s;
+        // }
 
         &-v2 {
           // position: absolute;
           // top: 0;
           display: block;
+          top: 42px;
+          transition: all .6s;
         }
       }
 
@@ -162,6 +171,7 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 18px;
+      width: max-content;
 
       &::after {
         content: ',';
@@ -201,6 +211,7 @@
       font-weight: 400;
       font-size: 12px;
       line-height: 12px;
+      width: max-content;
       &::after {
         content: ',';
       }
@@ -215,21 +226,29 @@
   }
 
   &__full-block {
-    display: none;
-    width: 0;
+    // display: none;
+    width: 0%;
     opacity: 0;
-    transition: all .4s;
+    transition: all .6s;
+    display: flex;
+
+    // & .profile-header__money-block {
+    //   opacity: 0;
+    //   transition: all 1.2s;
+    // }
 
     &-v2 {
-      display: none;
+      display: block;
       padding: 16px;
       width: 178px;
       position: absolute;
-      top: 42px;
+      top: -250px;
+      // top: 42px;
       left: 0;
       background: #FFFFFF;
       box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
       border-radius: 3px;
+      transition: all .6s;
     }
 
     &_active {
