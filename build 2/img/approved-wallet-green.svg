@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="approved-wallet-selected" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle id="Oval-4" fill="#4CAF50" cx="8" cy="4" r="4"></circle>
-        <path d="M0,12 C2.66872923,10 5.33616199,9 8.00229828,9 C10.6684346,9 13.3343351,10 16,12 L16,16 L0,16 L0,12 Z" id="Rectangle-8" fill="#4CAF50"></path>
-    </g>
-</svg>
